@@ -120,6 +120,7 @@ static NSString* requestContentType = nil;
 
     //type is set, just add charset
     NSString *charset = (NSString *)CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+    
     return [NSString stringWithFormat:@"%@; charset=%@", contentType, charset];
 }
 
