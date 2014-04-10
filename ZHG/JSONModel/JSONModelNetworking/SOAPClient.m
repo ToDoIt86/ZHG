@@ -37,11 +37,10 @@ static dispatch_queue_t soapRequestQueue;
             [middle appendString:xmlNode];
         }
         
-        NSURL *soapActionURL = [NSURL URLWithString:soapAction];
-        NSString *soapMethod = [[soapActionURL pathComponents] lastObject];
-        
         JSONModelError* error = nil;
         NSData *responseData  = nil;
+        NSURL *soapActionURL  = [NSURL URLWithString:soapAction];
+        NSString *soapMethod  = [[soapActionURL pathComponents] lastObject];
         NSURL *requstURL      = [NSURL URLWithString:url];
         NSDictionary *header  = @{@"SOAPAction":[soapAction copy]};
         NSString *soapMessage = [NSString stringWithFormat:@"%@<%@ xmlns=\"http://hmwj.com/\">%@</%@>%@",start,soapMethod,middle,soapMethod,end];
