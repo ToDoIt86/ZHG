@@ -7,6 +7,7 @@
 //
 
 #import "HomeVC.h"
+#import "SOAPClient.h"
 
 @interface HomeVC ()
 
@@ -26,7 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [SOAPClient requestFromURL:@"http://222.87.129.196/Service/user/UserService.asmx"
+                    soapAction:@"http://hmwj.com/chkLogin"
+                        params:@{@"account":@"lihongtest",@"pwd":@"lihong2013"}
+                    completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning

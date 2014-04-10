@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */; };
 		CD9F21FF18F43F6C009C25C4 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F21FE18F43F6C009C25C4 /* BaseVC.m */; };
 		CD9F220318F43F81009C25C4 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F220118F43F81009C25C4 /* HomeVC.m */; };
 		CD9F220418F43F81009C25C4 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9F220218F43F81009C25C4 /* HomeVC.xib */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD2C6BE018F6C92A0004ABD5 /* SOAPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOAPClient.h; sourceTree = "<group>"; };
+		CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOAPClient.m; sourceTree = "<group>"; };
 		CD9F21FD18F43F6C009C25C4 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		CD9F21FE18F43F6C009C25C4 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		CD9F220018F43F81009C25C4 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
@@ -285,6 +288,8 @@
 				CDE5F81B18F3E4B200335B45 /* JSONHTTPClient.m */,
 				CDE5F81C18F3E4B200335B45 /* JSONModel+networking.h */,
 				CDE5F81D18F3E4B200335B45 /* JSONModel+networking.m */,
+				CD2C6BE018F6C92A0004ABD5 /* SOAPClient.h */,
+				CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */,
 			);
 			path = JSONModelNetworking;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 				CD9F220A18F44609009C25C4 /* MUser.m in Sources */,
 				CDE5F82718F3E4B200335B45 /* JSONModelError.m in Sources */,
 				CDE5F82818F3E4B200335B45 /* NSArray+JSONModel.m in Sources */,
+				CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */,
 				CDE5F82618F3E4B200335B45 /* JSONModelClassProperty.m in Sources */,
 				CD9F220318F43F81009C25C4 /* HomeVC.m in Sources */,
 				CDE5F82318F3E4B200335B45 /* JSONModel+CoreData.m in Sources */,

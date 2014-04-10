@@ -102,6 +102,7 @@ typedef void (^JSONObjectBlock)(id json, JSONModelError* err);
  */
 +(void)setRequestContentType:(NSString*)contentTypeString;
 
++(NSData*)syncRequestDataFromURL:(NSURL*)url method:(NSString*)method requestBody:(NSData*)bodyData headers:(NSDictionary*)headers etag:(NSString**)etag error:(JSONModelError**)err;
 /////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - GET asynchronious JSON calls
 
