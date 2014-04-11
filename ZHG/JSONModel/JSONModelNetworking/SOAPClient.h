@@ -8,10 +8,10 @@
 
 #import "JSONHTTPClient.h"
 
-
+typedef void (^JSONModelObjectBlock)(JSONModel *model, JSONModelError* err);
 
 @interface SOAPClient : JSONHTTPClient
 
-+ (void)requestFromURL:(NSString *)url soapAction:(NSString *)soapAction params:(NSDictionary*)params completion:(JSONObjectBlock)completeBlock;
++ (void)requestFromURL:(NSString *)url soapAction:(NSString *)soapAction params:(NSDictionary*)params completion:(JSONModelObjectBlock)completeBlock;
 
 @end

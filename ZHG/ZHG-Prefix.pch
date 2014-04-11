@@ -13,4 +13,9 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+#define LOG(msg) \
+    NSLog(@"\n\n{\n文件: %s\n方法: %s\n行号: %d\n消息: %@\n\n}",__FILE__,__FUNCTION__,__LINE__,msg)
+
+
 #endif

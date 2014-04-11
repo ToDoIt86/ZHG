@@ -33,7 +33,7 @@ NSString* const kContentTypeXML          = @"text/xml";
 static NSStringEncoding defaultTextEncoding = NSUTF8StringEncoding;
 static NSURLRequestCachePolicy defaultCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
 
-static int defaultTimeoutInSeconds = 60;
+static int defaultTimeoutInSeconds = 15;
 
 /**
  * Whether the iPhone net indicator automatically shows when making requests

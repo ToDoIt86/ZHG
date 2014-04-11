@@ -7,10 +7,19 @@
 //
 
 #import "SOAPClient.h"
+#import "MWSResponse.h"
+
+#define SOAPClientLog(message,url,action)\
+{\
+    NSString *msg = [NSString stringWithFormat:@"{\n\t\t%@ \n\t\tRequestURL:%@ \n\t\tSOAPAction:%@\n\t}",message,url,action];\
+    LOG(msg);\
+}
+
 
 static dispatch_queue_t soapRequestQueue;
 
 @implementation SOAPClient
+
 
 + (void) initialize
 {
@@ -18,7 +27,7 @@ static dispatch_queue_t soapRequestQueue;
     
 }
 
-+ (void)requestFromURL:(NSString *)url soapAction:(NSString *)soapAction params:(NSDictionary*)params completion:(JSONObjectBlock)completeBlock
++ (void)requestFromURL:(NSString *)url soapAction:(NSString *)soapAction params:(NSDictionary*)params completion:(JSONModelObjectBlock)completeBlock
 {
     dispatch_async(soapRequestQueue, ^{
         
@@ -39,10 +48,9 @@ static dispatch_queue_t soapRequestQueue;
         
         JSONModelError* error = nil;
         NSData *responseData  = nil;
-        NSURL *soapActionURL  = [NSURL URLWithString:soapAction];
-        NSString *soapMethod  = [[soapActionURL pathComponents] lastObject];
         NSURL *requstURL      = [NSURL URLWithString:url];
         NSDictionary *header  = @{@"SOAPAction":[soapAction copy]};
+        NSString *soapMethod  = [[[NSURL URLWithString:soapAction] pathComponents] lastObject];
         NSString *soapMessage = [NSString stringWithFormat:@"%@<%@ xmlns=\"http://hmwj.com/\">%@</%@>%@",start,soapMethod,middle,soapMethod,end];
         NSData *soapMessageData = [soapMessage dataUsingEncoding:NSUTF8StringEncoding];
         
@@ -56,32 +64,51 @@ static dispatch_queue_t soapRequestQueue;
                                              error:&error];
         }
         @catch (NSException *exception) {
+            SOAPClientLog(@"JSONHTTPClient 请求异常", url, soapAction);
             error = [JSONModelError errorBadResponse];
         }
     
-        if(responseData == nil || error)  error = [JSONModelError errorBadResponse];
-        
-        NSString *xmlString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-        NSString *jsonString = nil;
-       
-        if(xmlString){
+        if(responseData && error == nil){
+            
+            NSString *xmlString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+            NSString *jsonString = nil;
+            if(xmlString == nil){
+                SOAPClientLog(@"不能将服务器返回的数据转换为字符串", url, soapAction);
+                goto GetJSONFail;
+            }
             
             NSString *separator = [NSString stringWithFormat:@"<%@Result>",soapMethod];
             NSArray *component = [xmlString componentsSeparatedByString:separator];
-            if(component.count == 0) goto GetJSONFail;
+            if(component.count == 0){
+                SOAPClientLog(@"从xml字符串中查找json字符串时出错(1)", url, soapAction);
+                goto GetJSONFail;
+            }
             
             separator = [NSString stringWithFormat:@"</%@Result>",soapMethod];
             xmlString = [component lastObject];
             component = [xmlString componentsSeparatedByString:@"<"];
-            if(component.count == 0) goto GetJSONFail;
+            if(component.count == 0){
+                SOAPClientLog(@"从xml字符串中查找json字符串时出错(2)", url, soapAction);
+                goto GetJSONFail;
+            }
             
             jsonString = [component firstObject];
-            if(completeBlock) completeBlock(jsonString, error);
+            MWSResponse *jsonModel = [[MWSResponse alloc] initWithString:jsonString error:&error];
+            if(completeBlock){
+                completeBlock(jsonModel, nil);
+            }
+            
             return;
+            
+        }else{
+            SOAPClientLog(@"不能从服务器获取数据", url, soapAction);
+            error = [JSONModelError errorBadResponse];
         }
-        
+
         GetJSONFail:
-        if(completeBlock) completeBlock(jsonString, error);
+        if(completeBlock){
+            completeBlock(nil, error);
+        }
     });
 }
 @end
