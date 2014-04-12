@@ -7,6 +7,8 @@
 //
 
 #import "JSONHTTPClient.h"
+#import "SOAPService.h"
+#import "SOAPAction.h"
 
 typedef void (^JSONModelObjectBlock)(JSONModel *model, JSONModelError* err);
 

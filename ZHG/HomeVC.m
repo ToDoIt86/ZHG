@@ -8,6 +8,7 @@
 
 #import "HomeVC.h"
 #import "SOAPClient.h"
+#import "FoodShopsListVC.h"
 
 @interface HomeVC ()
 
@@ -28,8 +29,8 @@
 {
     [super viewDidLoad];
     
-    [SOAPClient requestFromURL:@"http://222.87.129.196/Service/user/UserService.asmx"
-                    soapAction:@"http://hmwj.com/chkLogin"
+    [SOAPClient requestFromURL:[SOAPService shared].userService
+                    soapAction:[SOAPAction shared].userLogin
                         params:@{@"account":@"lihongtest",@"pwd":@"lihong2013"}
                     completion:NULL];
 }
@@ -38,6 +39,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Action
+- (IBAction)pushFoodShopsListVC:(UIButton *)sender
+{
+    FoodShopsListVC *vc = [[FoodShopsListVC alloc] initWithNibName:@"FoodShopsListVC" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

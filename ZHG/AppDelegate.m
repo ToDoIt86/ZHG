@@ -15,7 +15,7 @@
 {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[HomeVC alloc] initWithNibName:@"HomeVC" bundle:nil];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[HomeVC alloc] initWithNibName:@"HomeVC" bundle:nil]];
     
     return YES;
 }

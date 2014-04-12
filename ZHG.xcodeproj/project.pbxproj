@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD22C56418F98A350086511D /* SOAPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CD22C56318F98A350086511D /* SOAPAction.m */; };
+		CD22C56718F98B2C0086511D /* SOAPService.m in Sources */ = {isa = PBXBuildFile; fileRef = CD22C56618F98B2C0086511D /* SOAPService.m */; };
 		CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */; };
 		CD8F96B918F77F3100A8F758 /* WSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F96B818F77F3100A8F758 /* WSUser.m */; };
+		CD9C14AC18F7CC6F0043B738 /* FoodShopsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C14AA18F7CC6F0043B738 /* FoodShopsListVC.m */; };
+		CD9C14AD18F7CC6F0043B738 /* FoodShopsListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9C14AB18F7CC6F0043B738 /* FoodShopsListVC.xib */; };
 		CD9F21FF18F43F6C009C25C4 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F21FE18F43F6C009C25C4 /* BaseVC.m */; };
 		CD9F220318F43F81009C25C4 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F220118F43F81009C25C4 /* HomeVC.m */; };
 		CD9F220418F43F81009C25C4 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9F220218F43F81009C25C4 /* HomeVC.xib */; };
@@ -51,10 +55,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD22C56218F98A350086511D /* SOAPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOAPAction.h; sourceTree = "<group>"; };
+		CD22C56318F98A350086511D /* SOAPAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOAPAction.m; sourceTree = "<group>"; };
+		CD22C56518F98B2C0086511D /* SOAPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOAPService.h; sourceTree = "<group>"; };
+		CD22C56618F98B2C0086511D /* SOAPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOAPService.m; sourceTree = "<group>"; };
 		CD2C6BE018F6C92A0004ABD5 /* SOAPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOAPClient.h; path = JSONModel/JSONModelNetworking/SOAPClient.h; sourceTree = "<group>"; };
 		CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOAPClient.m; path = JSONModel/JSONModelNetworking/SOAPClient.m; sourceTree = "<group>"; };
 		CD8F96B718F77F3100A8F758 /* WSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUser.h; sourceTree = "<group>"; };
 		CD8F96B818F77F3100A8F758 /* WSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUser.m; sourceTree = "<group>"; };
+		CD9C14A918F7CC6F0043B738 /* FoodShopsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodShopsListVC.h; sourceTree = "<group>"; };
+		CD9C14AA18F7CC6F0043B738 /* FoodShopsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodShopsListVC.m; sourceTree = "<group>"; };
+		CD9C14AB18F7CC6F0043B738 /* FoodShopsListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodShopsListVC.xib; sourceTree = "<group>"; };
 		CD9F21FD18F43F6C009C25C4 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		CD9F21FE18F43F6C009C25C4 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		CD9F220018F43F81009C25C4 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
@@ -146,6 +157,7 @@
 		CD6369A018EEA68A00BA5D99 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CD9C14A518F7CC140043B738 /* Food */,
 				CD9F21FD18F43F6C009C25C4 /* BaseVC.h */,
 				CD9F21FE18F43F6C009C25C4 /* BaseVC.m */,
 				CD9F220018F43F81009C25C4 /* HomeVC.h */,
@@ -167,6 +179,10 @@
 			children = (
 				CD2C6BE018F6C92A0004ABD5 /* SOAPClient.h */,
 				CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */,
+				CD22C56218F98A350086511D /* SOAPAction.h */,
+				CD22C56318F98A350086511D /* SOAPAction.m */,
+				CD22C56518F98B2C0086511D /* SOAPService.h */,
+				CD22C56618F98B2C0086511D /* SOAPService.m */,
 				CD8F96B718F77F3100A8F758 /* WSUser.h */,
 				CD8F96B818F77F3100A8F758 /* WSUser.m */,
 			);
@@ -178,6 +194,16 @@
 			children = (
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		CD9C14A518F7CC140043B738 /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				CD9C14A918F7CC6F0043B738 /* FoodShopsListVC.h */,
+				CD9C14AA18F7CC6F0043B738 /* FoodShopsListVC.m */,
+				CD9C14AB18F7CC6F0043B738 /* FoodShopsListVC.xib */,
+			);
+			name = Food;
 			sourceTree = "<group>";
 		};
 		CDB021AB18ED9F30003B5A10 = {
@@ -396,6 +422,7 @@
 			files = (
 				CDB021D018ED9F30003B5A10 /* Images.xcassets in Resources */,
 				CD9F220418F43F81009C25C4 /* HomeVC.xib in Resources */,
+				CD9C14AD18F7CC6F0043B738 /* FoodShopsListVC.xib in Resources */,
 				CDB021C218ED9F30003B5A10 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +444,7 @@
 			files = (
 				CD9F220A18F44609009C25C4 /* MUser.m in Sources */,
 				CDE5F82718F3E4B200335B45 /* JSONModelError.m in Sources */,
+				CD22C56718F98B2C0086511D /* SOAPService.m in Sources */,
 				CDE5F82818F3E4B200335B45 /* NSArray+JSONModel.m in Sources */,
 				CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */,
 				CDE5F82618F3E4B200335B45 /* JSONModelClassProperty.m in Sources */,
@@ -429,7 +457,9 @@
 				CD9F21FF18F43F6C009C25C4 /* BaseVC.m in Sources */,
 				CDE5F82B18F3E4B200335B45 /* JSONModel+networking.m in Sources */,
 				CDB021C418ED9F30003B5A10 /* main.m in Sources */,
+				CD9C14AC18F7CC6F0043B738 /* FoodShopsListVC.m in Sources */,
 				CDE5F82918F3E4B200335B45 /* JSONAPI.m in Sources */,
+				CD22C56418F98A350086511D /* SOAPAction.m in Sources */,
 				CD9F220D18F44626009C25C4 /* MWSResponse.m in Sources */,
 				CDE5F82D18F3E4B200335B45 /* JSONValueTransformer.m in Sources */,
 				CDE5F82A18F3E4B200335B45 /* JSONHTTPClient.m in Sources */,
