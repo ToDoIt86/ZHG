@@ -93,7 +93,24 @@ static dispatch_queue_t soapRequestQueue;
             }
             
             jsonString = [component firstObject];
+            
+            /* 如果Datas字段的值为null,将null替换为空字符串""。
+               例如将{"Success":flase,"Message":"登录失败","Datas":null} 替换为
+               {"Success":flase,"Message":"登录失败","Datas":""}。
+               否则在下面创建MWSResponse对象时将会失败
+             */
+            component = [jsonString componentsSeparatedByString:@"Datas"];
+            NSString *datas = [component objectAtIndex:1];
+            if([datas isEqualToString:@"\":null}"]){
+                jsonString = [NSString stringWithFormat:@"%@Datas\":%@",component[0],@"\"\"}"];
+            }
+            
             MWSResponse *jsonModel = [[MWSResponse alloc] initWithString:jsonString error:&error];
+            if(jsonModel == nil || error){
+                SOAPClientLog(@"从JSON字符串创建响应对象时出错", url, soapAction);
+                goto GetJSONFail;
+            }
+            
             if(completeBlock){
                 completeBlock(jsonModel, nil);
             }

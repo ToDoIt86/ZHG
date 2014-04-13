@@ -10,4 +10,13 @@
 
 @implementation MWSResponse
 
+
++ (JSONKeyMapper *)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+            @"Success":@"success",
+            @"Message":@"message",
+            @"Datas"  :@"datas"
+    }];
+}
 @end

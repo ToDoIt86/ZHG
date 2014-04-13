@@ -9,7 +9,7 @@
 #import "SOAPService.h"
 
 #define makeSOAPService(servicePath)\
-[NSString stringWithFormat:@"http://222.87.129.196/%@",servicePath]
+[NSString stringWithFormat:@"http://hyxx.nat123.net/%@",servicePath]
 
 @implementation SOAPService
 
@@ -27,6 +27,6 @@
 
 - (NSString *)userService
 {
-    return makeSOAPService(@"Service/user/UserService.asmx");
+    return makeSOAPService(@"HMWJservices/user/userservice.asmx");
 }
 @end
