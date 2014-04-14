@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD22C56418F98A350086511D /* SOAPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CD22C56318F98A350086511D /* SOAPAction.m */; };
-		CD22C56718F98B2C0086511D /* SOAPService.m in Sources */ = {isa = PBXBuildFile; fileRef = CD22C56618F98B2C0086511D /* SOAPService.m */; };
 		CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */; };
 		CD35AE8918FA1392002E1882 /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35AE8818FA1392002E1882 /* TabBar.m */; };
+		CD35AEA118FAA0DC002E1882 /* WSFoodShops.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35AEA018FAA0DC002E1882 /* WSFoodShops.m */; };
 		CD8F96B918F77F3100A8F758 /* WSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F96B818F77F3100A8F758 /* WSUser.m */; };
 		CD9C14AC18F7CC6F0043B738 /* FoodShopsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C14AA18F7CC6F0043B738 /* FoodShopsListVC.m */; };
 		CD9C14AD18F7CC6F0043B738 /* FoodShopsListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9C14AB18F7CC6F0043B738 /* FoodShopsListVC.xib */; };
@@ -43,6 +42,8 @@
 		CDE5F82B18F3E4B200335B45 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F81D18F3E4B200335B45 /* JSONModel+networking.m */; };
 		CDE5F82C18F3E4B200335B45 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F82018F3E4B200335B45 /* JSONKeyMapper.m */; };
 		CDE5F82D18F3E4B200335B45 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F82218F3E4B200335B45 /* JSONValueTransformer.m */; };
+		CDED974D18FBB2F800E74A0B /* FoodShopsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDED974B18FBB2F800E74A0B /* FoodShopsCell.m */; };
+		CDED974E18FBB2F800E74A0B /* FoodShopsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDED974C18FBB2F800E74A0B /* FoodShopsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,14 +57,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CD22C56218F98A350086511D /* SOAPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOAPAction.h; sourceTree = "<group>"; };
-		CD22C56318F98A350086511D /* SOAPAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOAPAction.m; sourceTree = "<group>"; };
-		CD22C56518F98B2C0086511D /* SOAPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOAPService.h; sourceTree = "<group>"; };
-		CD22C56618F98B2C0086511D /* SOAPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOAPService.m; sourceTree = "<group>"; };
 		CD2C6BE018F6C92A0004ABD5 /* SOAPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOAPClient.h; path = JSONModel/JSONModelNetworking/SOAPClient.h; sourceTree = "<group>"; };
 		CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOAPClient.m; path = JSONModel/JSONModelNetworking/SOAPClient.m; sourceTree = "<group>"; };
 		CD35AE8718FA1392002E1882 /* TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBar.h; sourceTree = "<group>"; };
 		CD35AE8818FA1392002E1882 /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
+		CD35AE9F18FAA0DC002E1882 /* WSFoodShops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFoodShops.h; sourceTree = "<group>"; };
+		CD35AEA018FAA0DC002E1882 /* WSFoodShops.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFoodShops.m; sourceTree = "<group>"; };
 		CD8F96B718F77F3100A8F758 /* WSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUser.h; sourceTree = "<group>"; };
 		CD8F96B818F77F3100A8F758 /* WSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUser.m; sourceTree = "<group>"; };
 		CD9C14A918F7CC6F0043B738 /* FoodShopsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodShopsListVC.h; sourceTree = "<group>"; };
@@ -118,6 +117,9 @@
 		CDE5F82018F3E4B200335B45 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		CDE5F82118F3E4B200335B45 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		CDE5F82218F3E4B200335B45 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		CDED974A18FBB2F800E74A0B /* FoodShopsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodShopsCell.h; sourceTree = "<group>"; };
+		CDED974B18FBB2F800E74A0B /* FoodShopsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodShopsCell.m; sourceTree = "<group>"; };
+		CDED974C18FBB2F800E74A0B /* FoodShopsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodShopsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,9 @@
 			children = (
 				CD35AE8718FA1392002E1882 /* TabBar.h */,
 				CD35AE8818FA1392002E1882 /* TabBar.m */,
+				CDED974A18FBB2F800E74A0B /* FoodShopsCell.h */,
+				CDED974B18FBB2F800E74A0B /* FoodShopsCell.m */,
+				CDED974C18FBB2F800E74A0B /* FoodShopsCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -184,12 +189,10 @@
 			children = (
 				CD2C6BE018F6C92A0004ABD5 /* SOAPClient.h */,
 				CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */,
-				CD22C56218F98A350086511D /* SOAPAction.h */,
-				CD22C56318F98A350086511D /* SOAPAction.m */,
-				CD22C56518F98B2C0086511D /* SOAPService.h */,
-				CD22C56618F98B2C0086511D /* SOAPService.m */,
 				CD8F96B718F77F3100A8F758 /* WSUser.h */,
 				CD8F96B818F77F3100A8F758 /* WSUser.m */,
+				CD35AE9F18FAA0DC002E1882 /* WSFoodShops.h */,
+				CD35AEA018FAA0DC002E1882 /* WSFoodShops.m */,
 			);
 			name = WebService;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDB021D018ED9F30003B5A10 /* Images.xcassets in Resources */,
+				CDED974E18FBB2F800E74A0B /* FoodShopsCell.xib in Resources */,
 				CD9F220418F43F81009C25C4 /* HomeVC.xib in Resources */,
 				CD9C14AD18F7CC6F0043B738 /* FoodShopsListVC.xib in Resources */,
 				CDB021C218ED9F30003B5A10 /* InfoPlist.strings in Resources */,
@@ -449,7 +453,6 @@
 			files = (
 				CD9F220A18F44609009C25C4 /* MUser.m in Sources */,
 				CDE5F82718F3E4B200335B45 /* JSONModelError.m in Sources */,
-				CD22C56718F98B2C0086511D /* SOAPService.m in Sources */,
 				CDE5F82818F3E4B200335B45 /* NSArray+JSONModel.m in Sources */,
 				CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */,
 				CDE5F82618F3E4B200335B45 /* JSONModelClassProperty.m in Sources */,
@@ -462,10 +465,11 @@
 				CD9F21FF18F43F6C009C25C4 /* BaseVC.m in Sources */,
 				CD35AE8918FA1392002E1882 /* TabBar.m in Sources */,
 				CDE5F82B18F3E4B200335B45 /* JSONModel+networking.m in Sources */,
+				CD35AEA118FAA0DC002E1882 /* WSFoodShops.m in Sources */,
+				CDED974D18FBB2F800E74A0B /* FoodShopsCell.m in Sources */,
 				CDB021C418ED9F30003B5A10 /* main.m in Sources */,
 				CD9C14AC18F7CC6F0043B738 /* FoodShopsListVC.m in Sources */,
 				CDE5F82918F3E4B200335B45 /* JSONAPI.m in Sources */,
-				CD22C56418F98A350086511D /* SOAPAction.m in Sources */,
 				CD9F220D18F44626009C25C4 /* MWSResponse.m in Sources */,
 				CDE5F82D18F3E4B200335B45 /* JSONValueTransformer.m in Sources */,
 				CDE5F82A18F3E4B200335B45 /* JSONHTTPClient.m in Sources */,

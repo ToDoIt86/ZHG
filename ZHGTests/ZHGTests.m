@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "WSUser.h"
 
 @interface ZHGTests : XCTestCase
 
@@ -26,9 +27,23 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testUserService
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSLog(@"%s",__FUNCTION__);
+    [WSUser registerWithUserName:@"FuckSBServerProgramer" andPassword:@"fuckyou" onCompleted:^(id m,NSError *err){
+        MWSResponse *response = (MWSResponse *)m;
+        NSLog(@"%@ %@",response.success?@"注册成功":@"注册失败",response.message);
+    }];
+    
+    [WSUser loginWithUserName:@"FuckSBServerProgramer" andPassword:@"fuckyou" onCompleted:^(id jsonString, JSONModelError *err) {
+        
+    }];
+    
+    [WSUser userInfoWithUserName:@"FuckSBServerProgramer" andPassword:@"fuckyou" onCompleted:^(id jsonString, JSONModelError *err) {
+        
+    }];
+    
+    while(1);
 }
 
 @end

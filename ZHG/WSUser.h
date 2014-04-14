@@ -7,9 +7,21 @@
 //
 
 #import "SOAPClient.h"
+#import "MWSResponse.h"
 
 @class MUser;
 
 @interface WSUser : SOAPClient
 
++ (void) registerWithUserName:(NSString *)userName
+                  andPassword:(NSString *)password
+                  onCompleted:(JSONModelObjectBlock)block;
+
++ (void) loginWithUserName:(NSString *)userName
+               andPassword:(NSString *)password
+               onCompleted:(JSONModelObjectBlock)block;
+
++ (void) userInfoWithUserName:(NSString *)userName
+                  andPassword:(NSString *)password
+                  onCompleted:(JSONModelObjectBlock)block;
 @end

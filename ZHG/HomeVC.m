@@ -28,11 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [SOAPClient requestFromURL:[SOAPService shared].userService
-                    soapAction:[SOAPAction shared].userLogin
-                        params:@{@"account":@"lihongtest",@"pwd":@"lihong2013"}
-                    completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning

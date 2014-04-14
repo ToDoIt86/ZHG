@@ -7,10 +7,15 @@
 //
 
 #import "JSONHTTPClient.h"
-#import "SOAPService.h"
-#import "SOAPAction.h"
 
-typedef void (^JSONModelObjectBlock)(JSONModel *model, JSONModelError* err);
+#define SOAPService(servicePath)\
+[NSString stringWithFormat:@"http://hyxx.nat123.net/HMWJservices/%@",servicePath]
+
+#define SOAPAction(method)\
+[NSString stringWithFormat:@"http://hmwj.com/%@",method]
+
+
+typedef void (^JSONModelObjectBlock)(id jsonString, JSONModelError* err);
 
 @interface SOAPClient : JSONHTTPClient
 
