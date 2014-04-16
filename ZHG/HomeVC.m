@@ -9,6 +9,7 @@
 #import "HomeVC.h"
 #import "SOAPClient.h"
 #import "FoodShopsListVC.h"
+#import "UserLoginVC.h"
 
 @interface HomeVC ()
 
@@ -39,8 +40,11 @@
 #pragma mark - Action
 - (IBAction)pushFoodShopsListVC:(UIButton *)sender
 {
-    FoodShopsListVC *vc = [[FoodShopsListVC alloc] initWithNibName:@"FoodShopsListVC" bundle:nil];
-    [self.navigationController pushViewController:vc animated:YES];
+    //FoodShopsListVC *vc = [[FoodShopsListVC alloc] initWithNibName:@"FoodShopsListVC" bundle:nil];
+    //[self.navigationController pushViewController:vc animated:YES];
+    
+    UserLoginVC *vc = [[UserLoginVC alloc] initWithNibName:@"UserLoginVC" bundle:nil];
+    [self presentModalViewController:vc animated:YES];
 }
 
 @end

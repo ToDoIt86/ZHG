@@ -15,10 +15,11 @@
 [NSString stringWithFormat:@"http://hmwj.com/%@",method]
 
 
-typedef void (^JSONModelObjectBlock)(id jsonString, JSONModelError* err);
+typedef void (^SOAPRequestCallback)(NSString *jsonString, JSONModelError* err);
+typedef void (^JSONModelObjectBlock)(JSONModel *model, JSONModelError* err);
 
 @interface SOAPClient : JSONHTTPClient
 
-+ (void)requestFromURL:(NSString *)url soapAction:(NSString *)soapAction params:(NSDictionary*)params completion:(JSONModelObjectBlock)completeBlock;
++ (void)requestFromURL:(NSString *)url soapAction:(NSString *)soapAction params:(NSDictionary*)params completion:(SOAPRequestCallback)completeBlock;
 
 @end

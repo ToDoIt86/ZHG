@@ -27,7 +27,7 @@ static dispatch_queue_t soapRequestQueue;
     
 }
 
-+ (void)requestFromURL:(NSString *)url soapAction:(NSString *)soapAction params:(NSDictionary*)params completion:(JSONModelObjectBlock)completeBlock
++ (void)requestFromURL:(NSString *)url soapAction:(NSString *)soapAction params:(NSDictionary*)params completion:(SOAPRequestCallback)completeBlock
 {
     dispatch_async(soapRequestQueue, ^{
         

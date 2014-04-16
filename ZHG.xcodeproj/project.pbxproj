@@ -10,6 +10,14 @@
 		CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */; };
 		CD35AE8918FA1392002E1882 /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35AE8818FA1392002E1882 /* TabBar.m */; };
 		CD35AEA118FAA0DC002E1882 /* WSFoodShops.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35AEA018FAA0DC002E1882 /* WSFoodShops.m */; };
+		CD71790F18FE15AD00B0F400 /* UserLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71790D18FE15AD00B0F400 /* UserLoginVC.m */; };
+		CD71791018FE15AD00B0F400 /* UserLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD71790E18FE15AD00B0F400 /* UserLoginVC.xib */; };
+		CD71791418FE15CA00B0F400 /* UserRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71791218FE15CA00B0F400 /* UserRegisterVC.m */; };
+		CD71791518FE15CA00B0F400 /* UserRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD71791318FE15CA00B0F400 /* UserRegisterVC.xib */; };
+		CD71791918FE168800B0F400 /* UserCenterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71791718FE168800B0F400 /* UserCenterVC.m */; };
+		CD71791A18FE168800B0F400 /* UserCenterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD71791818FE168800B0F400 /* UserCenterVC.xib */; };
+		CD71791E18FE16AF00B0F400 /* UserResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71791C18FE16AF00B0F400 /* UserResetPasswordVC.m */; };
+		CD71791F18FE16AF00B0F400 /* UserResetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD71791D18FE16AF00B0F400 /* UserResetPasswordVC.xib */; };
 		CD8F96B918F77F3100A8F758 /* WSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F96B818F77F3100A8F758 /* WSUser.m */; };
 		CD9C14AC18F7CC6F0043B738 /* FoodShopsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C14AA18F7CC6F0043B738 /* FoodShopsListVC.m */; };
 		CD9C14AD18F7CC6F0043B738 /* FoodShopsListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9C14AB18F7CC6F0043B738 /* FoodShopsListVC.xib */; };
@@ -30,6 +38,9 @@
 		CDB021D918ED9F30003B5A10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021BB18ED9F30003B5A10 /* UIKit.framework */; };
 		CDB021E118ED9F30003B5A10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDB021DF18ED9F30003B5A10 /* InfoPlist.strings */; };
 		CDB021E318ED9F30003B5A10 /* ZHGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB021E218ED9F30003B5A10 /* ZHGTests.m */; };
+		CDC4DF2E18FE2FF90025615A /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DF2D18FE2FF90025615A /* AlertView.m */; };
+		CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DF3318FE69410025615A /* MBProgressHUD.m */; };
+		CDC4DF3818FE69DB0025615A /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DF3718FE69DB0025615A /* HUD.m */; };
 		CDE5F80618F3E28B00335B45 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE5F80518F3E28B00335B45 /* SystemConfiguration.framework */; };
 		CDE5F82318F3E4B200335B45 /* JSONModel+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F80A18F3E4B200335B45 /* JSONModel+CoreData.m */; };
 		CDE5F82418F3E4B200335B45 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F80C18F3E4B200335B45 /* JSONModel.m */; };
@@ -63,6 +74,18 @@
 		CD35AE8818FA1392002E1882 /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
 		CD35AE9F18FAA0DC002E1882 /* WSFoodShops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFoodShops.h; sourceTree = "<group>"; };
 		CD35AEA018FAA0DC002E1882 /* WSFoodShops.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFoodShops.m; sourceTree = "<group>"; };
+		CD71790C18FE15AD00B0F400 /* UserLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginVC.h; sourceTree = "<group>"; };
+		CD71790D18FE15AD00B0F400 /* UserLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLoginVC.m; sourceTree = "<group>"; };
+		CD71790E18FE15AD00B0F400 /* UserLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserLoginVC.xib; sourceTree = "<group>"; };
+		CD71791118FE15CA00B0F400 /* UserRegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegisterVC.h; sourceTree = "<group>"; };
+		CD71791218FE15CA00B0F400 /* UserRegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegisterVC.m; sourceTree = "<group>"; };
+		CD71791318FE15CA00B0F400 /* UserRegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserRegisterVC.xib; sourceTree = "<group>"; };
+		CD71791618FE168800B0F400 /* UserCenterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterVC.h; sourceTree = "<group>"; };
+		CD71791718FE168800B0F400 /* UserCenterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterVC.m; sourceTree = "<group>"; };
+		CD71791818FE168800B0F400 /* UserCenterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCenterVC.xib; sourceTree = "<group>"; };
+		CD71791B18FE16AF00B0F400 /* UserResetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserResetPasswordVC.h; sourceTree = "<group>"; };
+		CD71791C18FE16AF00B0F400 /* UserResetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserResetPasswordVC.m; sourceTree = "<group>"; };
+		CD71791D18FE16AF00B0F400 /* UserResetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserResetPasswordVC.xib; sourceTree = "<group>"; };
 		CD8F96B718F77F3100A8F758 /* WSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUser.h; sourceTree = "<group>"; };
 		CD8F96B818F77F3100A8F758 /* WSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUser.m; sourceTree = "<group>"; };
 		CD9C14A918F7CC6F0043B738 /* FoodShopsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodShopsListVC.h; sourceTree = "<group>"; };
@@ -93,6 +116,12 @@
 		CDB021DE18ED9F30003B5A10 /* ZHGTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZHGTests-Info.plist"; sourceTree = "<group>"; };
 		CDB021E018ED9F30003B5A10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDB021E218ED9F30003B5A10 /* ZHGTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHGTests.m; sourceTree = "<group>"; };
+		CDC4DF2C18FE2FF90025615A /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		CDC4DF2D18FE2FF90025615A /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		CDC4DF3218FE69410025615A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CDC4DF3318FE69410025615A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CDC4DF3618FE69DB0025615A /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
+		CDC4DF3718FE69DB0025615A /* HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUD.m; sourceTree = "<group>"; };
 		CDE5F80518F3E28B00335B45 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CDE5F80918F3E4B200335B45 /* JSONModel+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+CoreData.h"; sourceTree = "<group>"; };
 		CDE5F80A18F3E4B200335B45 /* JSONModel+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+CoreData.m"; sourceTree = "<group>"; };
@@ -150,7 +179,6 @@
 		CD63699F18EEA68000BA5D99 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CDE5F80718F3E4B200335B45 /* JSONModel */,
 				CD9F220B18F44626009C25C4 /* MWSResponse.h */,
 				CD9F220C18F44626009C25C4 /* MWSResponse.m */,
 				CD9F220818F44609009C25C4 /* MUser.h */,
@@ -162,6 +190,7 @@
 		CD6369A018EEA68A00BA5D99 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CD71790B18FE159100B0F400 /* User */,
 				CD9C14A518F7CC140043B738 /* Food */,
 				CD9F21FD18F43F6C009C25C4 /* BaseVC.h */,
 				CD9F21FE18F43F6C009C25C4 /* BaseVC.m */,
@@ -180,8 +209,29 @@
 				CDED974A18FBB2F800E74A0B /* FoodShopsCell.h */,
 				CDED974B18FBB2F800E74A0B /* FoodShopsCell.m */,
 				CDED974C18FBB2F800E74A0B /* FoodShopsCell.xib */,
+				CDC4DF2C18FE2FF90025615A /* AlertView.h */,
+				CDC4DF2D18FE2FF90025615A /* AlertView.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		CD71790B18FE159100B0F400 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CD71790C18FE15AD00B0F400 /* UserLoginVC.h */,
+				CD71790D18FE15AD00B0F400 /* UserLoginVC.m */,
+				CD71790E18FE15AD00B0F400 /* UserLoginVC.xib */,
+				CD71791118FE15CA00B0F400 /* UserRegisterVC.h */,
+				CD71791218FE15CA00B0F400 /* UserRegisterVC.m */,
+				CD71791318FE15CA00B0F400 /* UserRegisterVC.xib */,
+				CD71791B18FE16AF00B0F400 /* UserResetPasswordVC.h */,
+				CD71791C18FE16AF00B0F400 /* UserResetPasswordVC.m */,
+				CD71791D18FE16AF00B0F400 /* UserResetPasswordVC.xib */,
+				CD71791618FE168800B0F400 /* UserCenterVC.h */,
+				CD71791718FE168800B0F400 /* UserCenterVC.m */,
+				CD71791818FE168800B0F400 /* UserCenterVC.xib */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 		CD9238FA18F593A4007E99C4 /* WebService */ = {
@@ -197,11 +247,13 @@
 			name = WebService;
 			sourceTree = "<group>";
 		};
-		CD9C14A118F7B44D0043B738 /* Utils */ = {
+		CD9C14A118F7B44D0043B738 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				CDC4DF3518FE694E0025615A /* HUD */,
+				CDE5F80718F3E4B200335B45 /* JSONModel */,
 			);
-			name = Utils;
+			name = External;
 			sourceTree = "<group>";
 		};
 		CD9C14A518F7CC140043B738 /* Food */ = {
@@ -252,7 +304,7 @@
 				CD6369A018EEA68A00BA5D99 /* Controller */,
 				CD63699F18EEA68000BA5D99 /* Model */,
 				CD9238FA18F593A4007E99C4 /* WebService */,
-				CD9C14A118F7B44D0043B738 /* Utils */,
+				CD9C14A118F7B44D0043B738 /* External */,
 				CDB021C618ED9F30003B5A10 /* AppDelegate.h */,
 				CDB021C718ED9F30003B5A10 /* AppDelegate.m */,
 				CDB021CF18ED9F30003B5A10 /* Images.xcassets */,
@@ -288,6 +340,17 @@
 				CDB021DF18ED9F30003B5A10 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDC4DF3518FE694E0025615A /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				CDC4DF3218FE69410025615A /* MBProgressHUD.h */,
+				CDC4DF3318FE69410025615A /* MBProgressHUD.m */,
+				CDC4DF3618FE69DB0025615A /* HUD.h */,
+				CDC4DF3718FE69DB0025615A /* HUD.m */,
+			);
+			name = HUD;
 			sourceTree = "<group>";
 		};
 		CDE5F80718F3E4B200335B45 /* JSONModel */ = {
@@ -428,11 +491,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD71791518FE15CA00B0F400 /* UserRegisterVC.xib in Resources */,
 				CDB021D018ED9F30003B5A10 /* Images.xcassets in Resources */,
+				CD71791A18FE168800B0F400 /* UserCenterVC.xib in Resources */,
 				CDED974E18FBB2F800E74A0B /* FoodShopsCell.xib in Resources */,
 				CD9F220418F43F81009C25C4 /* HomeVC.xib in Resources */,
+				CD71791F18FE16AF00B0F400 /* UserResetPasswordVC.xib in Resources */,
 				CD9C14AD18F7CC6F0043B738 /* FoodShopsListVC.xib in Resources */,
 				CDB021C218ED9F30003B5A10 /* InfoPlist.strings in Resources */,
+				CD71791018FE15AD00B0F400 /* UserLoginVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,24 +519,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD9F220A18F44609009C25C4 /* MUser.m in Sources */,
+				CDC4DF2E18FE2FF90025615A /* AlertView.m in Sources */,
 				CDE5F82718F3E4B200335B45 /* JSONModelError.m in Sources */,
 				CDE5F82818F3E4B200335B45 /* NSArray+JSONModel.m in Sources */,
 				CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */,
 				CDE5F82618F3E4B200335B45 /* JSONModelClassProperty.m in Sources */,
 				CD9F220318F43F81009C25C4 /* HomeVC.m in Sources */,
 				CDE5F82318F3E4B200335B45 /* JSONModel+CoreData.m in Sources */,
+				CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */,
 				CDE5F82C18F3E4B200335B45 /* JSONKeyMapper.m in Sources */,
 				CDB021C818ED9F30003B5A10 /* AppDelegate.m in Sources */,
 				CD8F96B918F77F3100A8F758 /* WSUser.m in Sources */,
 				CDE5F82518F3E4B200335B45 /* JSONModelArray.m in Sources */,
 				CD9F21FF18F43F6C009C25C4 /* BaseVC.m in Sources */,
 				CD35AE8918FA1392002E1882 /* TabBar.m in Sources */,
+				CDC4DF3818FE69DB0025615A /* HUD.m in Sources */,
 				CDE5F82B18F3E4B200335B45 /* JSONModel+networking.m in Sources */,
 				CD35AEA118FAA0DC002E1882 /* WSFoodShops.m in Sources */,
 				CDED974D18FBB2F800E74A0B /* FoodShopsCell.m in Sources */,
 				CDB021C418ED9F30003B5A10 /* main.m in Sources */,
+				CD71790F18FE15AD00B0F400 /* UserLoginVC.m in Sources */,
+				CD71791918FE168800B0F400 /* UserCenterVC.m in Sources */,
 				CD9C14AC18F7CC6F0043B738 /* FoodShopsListVC.m in Sources */,
 				CDE5F82918F3E4B200335B45 /* JSONAPI.m in Sources */,
+				CD71791418FE15CA00B0F400 /* UserRegisterVC.m in Sources */,
+				CD71791E18FE16AF00B0F400 /* UserResetPasswordVC.m in Sources */,
 				CD9F220D18F44626009C25C4 /* MWSResponse.m in Sources */,
 				CDE5F82D18F3E4B200335B45 /* JSONValueTransformer.m in Sources */,
 				CDE5F82A18F3E4B200335B45 /* JSONHTTPClient.m in Sources */,
@@ -593,6 +667,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHG/ZHG-Prefix.pch";
 				INFOPLIST_FILE = "ZHG/ZHG-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -606,6 +681,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHG/ZHG-Prefix.pch";
 				INFOPLIST_FILE = "ZHG/ZHG-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
