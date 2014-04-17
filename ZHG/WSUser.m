@@ -13,11 +13,13 @@
 
 + (void) registerWithUserName:(NSString *)userName
                   andPassword:(NSString *)password
+                  phoneNumber:(NSString *)phoneNumber
+                     nickname:(NSString *)nickname
                   onCompleted:(JSONModelObjectBlock)block
 {
-    [SOAPClient requestFromURL:SOAPService(@"user/UserService.asmx")
-                    soapAction:SOAPAction(@"register")
-                        params:@{@"account":userName,@"pwd":password}
+    [SOAPClient requestFromURL:SOAPService(@"user/userservice.asmx")
+                    soapAction:SOAPAction(@"Mobileregister")
+                        params:@{@"account":userName,@"pwd":password,@"phone":phoneNumber,@"nickname":nickname}
                     completion:^(id jsonString, JSONModelError *err) {
                         
                         if(block){
@@ -39,6 +41,11 @@
                         
                         if(block){
                             JSONModelError *err = nil;
+                            MWSResponse *response = [[MWSResponse alloc] initWithString:jsonString error:&err];
+                            if(block)
+                            {
+                                block(response,err);
+                            }
                         }
                     }];
 }

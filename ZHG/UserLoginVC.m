@@ -10,6 +10,7 @@
 #import "AlertView.h"
 #import "WSUser.h"
 #import "HUD.h"
+#import "UserRegisterVC.h"
 
 @interface UserLoginVC ()
 
@@ -71,10 +72,15 @@
       }
       else
       {
-          NSString *message = [NSString stringWithFormat:@"登录失败。%@",response.message];
+          NSString *message = [NSString stringWithFormat:@"登录失败，%@",response.message];
           [AlertView showWithMessage:message];
       }
   }];
 }
 
+- (IBAction)pushUserRegisterVC:(id)sender
+{
+    UserRegisterVC *vc = [[UserRegisterVC alloc] initWithNibName:@"UserRegisterVC" bundle:nil];
+    [self presentModalViewController:vc animated:YES];
+}
 @end

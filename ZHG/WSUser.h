@@ -15,6 +15,8 @@
 
 + (void) registerWithUserName:(NSString *)userName
                   andPassword:(NSString *)password
+                  phoneNumber:(NSString *)phoneNumber
+                     nickname:(NSString *)nickname
                   onCompleted:(JSONModelObjectBlock)block;
 
 + (void) loginWithUserName:(NSString *)userName

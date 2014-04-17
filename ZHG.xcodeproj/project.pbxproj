@@ -26,6 +26,10 @@
 		CD9F220418F43F81009C25C4 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9F220218F43F81009C25C4 /* HomeVC.xib */; };
 		CD9F220A18F44609009C25C4 /* MUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F220918F44609009C25C4 /* MUser.m */; };
 		CD9F220D18F44626009C25C4 /* MWSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F220C18F44626009C25C4 /* MWSResponse.m */; };
+		CD9F365F190003A800762332 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F3658190003A800762332 /* TPKeyboardAvoidingCollectionView.m */; };
+		CD9F3660190003A800762332 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F365A190003A800762332 /* TPKeyboardAvoidingScrollView.m */; };
+		CD9F3661190003A800762332 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F365C190003A800762332 /* TPKeyboardAvoidingTableView.m */; };
+		CD9F3662190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F365E190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		CDB021B818ED9F30003B5A10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021B718ED9F30003B5A10 /* Foundation.framework */; };
 		CDB021BA18ED9F30003B5A10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021B918ED9F30003B5A10 /* CoreGraphics.framework */; };
 		CDB021BC18ED9F30003B5A10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021BB18ED9F30003B5A10 /* UIKit.framework */; };
@@ -100,6 +104,14 @@
 		CD9F220918F44609009C25C4 /* MUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUser.m; sourceTree = "<group>"; };
 		CD9F220B18F44626009C25C4 /* MWSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSResponse.h; sourceTree = "<group>"; };
 		CD9F220C18F44626009C25C4 /* MWSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSResponse.m; sourceTree = "<group>"; };
+		CD9F3657190003A800762332 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		CD9F3658190003A800762332 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		CD9F3659190003A800762332 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		CD9F365A190003A800762332 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		CD9F365B190003A800762332 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		CD9F365C190003A800762332 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		CD9F365D190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		CD9F365E190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		CDB021B418ED9F30003B5A10 /* ZHG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB021B718ED9F30003B5A10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDB021B918ED9F30003B5A10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -250,6 +262,7 @@
 		CD9C14A118F7B44D0043B738 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				CD9F3656190003A800762332 /* TPKeyboardAvoiding */,
 				CDC4DF3518FE694E0025615A /* HUD */,
 				CDE5F80718F3E4B200335B45 /* JSONModel */,
 			);
@@ -264,6 +277,21 @@
 				CD9C14AB18F7CC6F0043B738 /* FoodShopsListVC.xib */,
 			);
 			name = Food;
+			sourceTree = "<group>";
+		};
+		CD9F3656190003A800762332 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F3657190003A800762332 /* TPKeyboardAvoidingCollectionView.h */,
+				CD9F3658190003A800762332 /* TPKeyboardAvoidingCollectionView.m */,
+				CD9F3659190003A800762332 /* TPKeyboardAvoidingScrollView.h */,
+				CD9F365A190003A800762332 /* TPKeyboardAvoidingScrollView.m */,
+				CD9F365B190003A800762332 /* TPKeyboardAvoidingTableView.h */,
+				CD9F365C190003A800762332 /* TPKeyboardAvoidingTableView.m */,
+				CD9F365D190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				CD9F365E190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		CDB021AB18ED9F30003B5A10 = {
@@ -521,12 +549,14 @@
 				CD9F220A18F44609009C25C4 /* MUser.m in Sources */,
 				CDC4DF2E18FE2FF90025615A /* AlertView.m in Sources */,
 				CDE5F82718F3E4B200335B45 /* JSONModelError.m in Sources */,
+				CD9F3662190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CDE5F82818F3E4B200335B45 /* NSArray+JSONModel.m in Sources */,
 				CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */,
 				CDE5F82618F3E4B200335B45 /* JSONModelClassProperty.m in Sources */,
 				CD9F220318F43F81009C25C4 /* HomeVC.m in Sources */,
 				CDE5F82318F3E4B200335B45 /* JSONModel+CoreData.m in Sources */,
 				CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */,
+				CD9F3660190003A800762332 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				CDE5F82C18F3E4B200335B45 /* JSONKeyMapper.m in Sources */,
 				CDB021C818ED9F30003B5A10 /* AppDelegate.m in Sources */,
 				CD8F96B918F77F3100A8F758 /* WSUser.m in Sources */,
@@ -544,8 +574,10 @@
 				CDE5F82918F3E4B200335B45 /* JSONAPI.m in Sources */,
 				CD71791418FE15CA00B0F400 /* UserRegisterVC.m in Sources */,
 				CD71791E18FE16AF00B0F400 /* UserResetPasswordVC.m in Sources */,
+				CD9F365F190003A800762332 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				CD9F220D18F44626009C25C4 /* MWSResponse.m in Sources */,
 				CDE5F82D18F3E4B200335B45 /* JSONValueTransformer.m in Sources */,
+				CD9F3661190003A800762332 /* TPKeyboardAvoidingTableView.m in Sources */,
 				CDE5F82A18F3E4B200335B45 /* JSONHTTPClient.m in Sources */,
 				CDE5F82418F3E4B200335B45 /* JSONModel.m in Sources */,
 			);

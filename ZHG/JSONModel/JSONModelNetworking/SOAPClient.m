@@ -104,9 +104,11 @@ static dispatch_queue_t soapRequestQueue;
                 jsonString = [NSString stringWithFormat:@"%@Datas\":%@",component[0],@"\"\"}"];
             }
             
-            if(completeBlock){
-                completeBlock(jsonString, nil);
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if(completeBlock){
+                    completeBlock(jsonString, nil);
+                }
+            });
             
             return;
             
@@ -116,9 +118,11 @@ static dispatch_queue_t soapRequestQueue;
         }
 
         GetJSONFail:
-        if(completeBlock){
-            completeBlock(nil, error);
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(completeBlock){
+                completeBlock(nil, error);
+            }
+        });
     });
 }
 @end
