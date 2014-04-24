@@ -23,7 +23,7 @@
                andPassword:(NSString *)password
                onCompleted:(JSONModelObjectBlock)block;
 
-+ (void) userInfoWithUserName:(NSString *)userName
++ (void) getUserInfoWithUserName:(NSString *)userName
                   andPassword:(NSString *)password
                   onCompleted:(JSONModelObjectBlock)block;
 @end

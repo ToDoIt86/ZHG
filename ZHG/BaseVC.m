@@ -18,9 +18,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
+}
+
+- (void)loadView
+{
+    [super loadView];    
 }
 
 - (void)viewDidLoad
