@@ -10,4 +10,8 @@
 
 @interface SegmentedControl : UIControl
 
+@property (nonatomic, readonly) NSUInteger selectedIndex;
+
+- (id)initWithItems:(NSArray *)items;
+
 @end

@@ -9,17 +9,11 @@
 #import "FoodShopsListVC.h"
 #import "WSFoodShops.h"
 #import "FoodShopsCell.h"
+#import "SegmentedControl.h"
 
 static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
 
 @interface FoodShopsListVC ()
-// TopSegmentedControl, 简称 TCS.
-@property (weak, nonatomic) IBOutlet UIView  *TSCBottomLine;
-@property (weak, nonatomic) IBOutlet UILabel *TSCFirstItemLabel;
-@property (weak, nonatomic) IBOutlet UILabel *TSCSecondItemLabel;
-@property (weak, nonatomic) IBOutlet UIView  *TopSegmentedControl;
-@property (strong, nonatomic) UIColor *TSCSelectedColor,*TSCNormalColor;
-@property (assign, nonatomic) CGFloat TSCAnimationDuration;
 
 @property (weak, nonatomic) IBOutlet UITableView *foodShopListTableView;
 
@@ -31,6 +25,7 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.edgesForExtendedLayout = UIRectEdgeLeft|UIRectEdgeRight;
     }
     return self;
 }
@@ -41,45 +36,19 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.TSCAnimationDuration = 0.15;
-    self.TSCSelectedColor = self.TSCFirstItemLabel.textColor;
-    self.TSCNormalColor   = self.TSCSecondItemLabel.textColor;
-    
-    
     [self.foodShopListTableView registerNib:[UINib nibWithNibName:@"FoodShopsCell" bundle:nil]
                      forCellReuseIdentifier:kFoodShopsCellReusedId];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-#pragma mark - TopSegmentedControl
-
-- (IBAction)selectedTSCFirstItem:(UIButton *)sender
-{
-    self.TSCFirstItemLabel.textColor   = self.TSCSelectedColor;
-    self.TSCSecondItemLabel.textColor = self.TSCNormalColor;
     
-    [UIView animateWithDuration:self.TSCAnimationDuration animations:^{
-        CGFloat leftCenter = self.TopSegmentedControl.bounds.size.width/4;
-        self.TSCBottomLine.center = CGPointMake(leftCenter, self.TSCBottomLine.center.y);
-    }];
+    SegmentedControl *segmentedControl = [[SegmentedControl alloc] initWithItems:@[@"影讯VS",@"小资生活馆",@"休闲娱乐"]];
+    [segmentedControl addTarget:self action:@selector(test:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:segmentedControl];
 }
 
-- (IBAction)selectedTSCSecondItem:(UIButton *)sender
+- (void)test:(SegmentedControl *)s
 {
-    self.TSCFirstItemLabel.textColor   = self.TSCNormalColor;
-    self.TSCSecondItemLabel.textColor = self.TSCSelectedColor;
-    
-    [UIView animateWithDuration:self.TSCAnimationDuration animations:^{
-        CGFloat rightCenter = (self.TopSegmentedControl.bounds.size.width/4)*3;
-        self.TSCBottomLine.center = CGPointMake(rightCenter, self.TSCBottomLine.center.y);
-    }];
+    NSLog(@"Index:%d",s.selectedIndex);
 }
+
 
 #pragma mark - UITableViewDataSource
 

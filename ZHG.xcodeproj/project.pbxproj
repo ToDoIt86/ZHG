@@ -30,8 +30,8 @@
 		CD9F3661190003A800762332 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F365C190003A800762332 /* TPKeyboardAvoidingTableView.m */; };
 		CD9F3662190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F365E190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		CDA0909C1909004100361ECC /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA0909B1909004100361ECC /* Reveal.framework */; };
-		CDA0909E19090BB600361ECC /* cnm.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CDA0909D19090BB600361ECC /* cnm.jpeg */; };
-		CDA090A019090F5F00361ECC /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDA0909F19090F5F00361ECC /* 12.jpg */; };
+		CDAD9B1E190A314100086996 /* ellipseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD9B1D190A314100086996 /* ellipseView.m */; };
+		CDAD9B25190A462800086996 /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD9B24190A462800086996 /* UIColor+RGB.m */; };
 		CDB021B818ED9F30003B5A10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021B718ED9F30003B5A10 /* Foundation.framework */; };
 		CDB021BA18ED9F30003B5A10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021B918ED9F30003B5A10 /* CoreGraphics.framework */; };
 		CDB021BC18ED9F30003B5A10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021BB18ED9F30003B5A10 /* UIKit.framework */; };
@@ -114,8 +114,10 @@
 		CD9F365D190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		CD9F365E190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		CDA0909B1909004100361ECC /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
-		CDA0909D19090BB600361ECC /* cnm.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cnm.jpeg; sourceTree = "<group>"; };
-		CDA0909F19090F5F00361ECC /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
+		CDAD9B1C190A314100086996 /* ellipseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ellipseView.h; sourceTree = "<group>"; };
+		CDAD9B1D190A314100086996 /* ellipseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ellipseView.m; sourceTree = "<group>"; };
+		CDAD9B23190A462800086996 /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGB.h"; sourceTree = "<group>"; };
+		CDAD9B24190A462800086996 /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGB.m"; sourceTree = "<group>"; };
 		CDB021B418ED9F30003B5A10 /* ZHG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB021B718ED9F30003B5A10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDB021B918ED9F30003B5A10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -230,6 +232,8 @@
 				CDED974C18FBB2F800E74A0B /* FoodShopsCell.xib */,
 				CDC4DF2C18FE2FF90025615A /* AlertView.h */,
 				CDC4DF2D18FE2FF90025615A /* AlertView.m */,
+				CDAD9B1C190A314100086996 /* ellipseView.h */,
+				CDAD9B1D190A314100086996 /* ellipseView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -301,6 +305,15 @@
 			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
+		CDAD9B1F190A45FB00086996 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CDAD9B23190A462800086996 /* UIColor+RGB.h */,
+				CDAD9B24190A462800086996 /* UIColor+RGB.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		CDB021AB18ED9F30003B5A10 = {
 			isa = PBXGroup;
 			children = (
@@ -336,13 +349,12 @@
 		CDB021BD18ED9F30003B5A10 /* ZHG */ = {
 			isa = PBXGroup;
 			children = (
-				CDA0909F19090F5F00361ECC /* 12.jpg */,
-				CDA0909D19090BB600361ECC /* cnm.jpeg */,
 				CD6369A118EEA69500BA5D99 /* View */,
 				CD6369A018EEA68A00BA5D99 /* Controller */,
 				CD63699F18EEA68000BA5D99 /* Model */,
 				CD9238FA18F593A4007E99C4 /* WebService */,
 				CD9C14A118F7B44D0043B738 /* External */,
+				CDAD9B1F190A45FB00086996 /* Category */,
 				CDB021C618ED9F30003B5A10 /* AppDelegate.h */,
 				CDB021C718ED9F30003B5A10 /* AppDelegate.m */,
 				CDB021CF18ED9F30003B5A10 /* Images.xcassets */,
@@ -529,7 +541,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA0909E19090BB600361ECC /* cnm.jpeg in Resources */,
 				CD71791518FE15CA00B0F400 /* UserRegisterVC.xib in Resources */,
 				CDB021D018ED9F30003B5A10 /* Images.xcassets in Resources */,
 				CD71791A18FE168800B0F400 /* UserCenterVC.xib in Resources */,
@@ -537,7 +548,6 @@
 				CD9F220418F43F81009C25C4 /* HomeVC.xib in Resources */,
 				CD71791F18FE16AF00B0F400 /* UserResetPasswordVC.xib in Resources */,
 				CD9C14AD18F7CC6F0043B738 /* FoodShopsListVC.xib in Resources */,
-				CDA090A019090F5F00361ECC /* 12.jpg in Resources */,
 				CDB021C218ED9F30003B5A10 /* InfoPlist.strings in Resources */,
 				CD71791018FE15AD00B0F400 /* UserLoginVC.xib in Resources */,
 			);
@@ -565,11 +575,13 @@
 				CDE5F82818F3E4B200335B45 /* NSArray+JSONModel.m in Sources */,
 				CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */,
 				CDE5F82618F3E4B200335B45 /* JSONModelClassProperty.m in Sources */,
+				CDAD9B25190A462800086996 /* UIColor+RGB.m in Sources */,
 				CD9F220318F43F81009C25C4 /* HomeVC.m in Sources */,
 				CDE5F82318F3E4B200335B45 /* JSONModel+CoreData.m in Sources */,
 				CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */,
 				CD9F3660190003A800762332 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				CDE5F82C18F3E4B200335B45 /* JSONKeyMapper.m in Sources */,
+				CDAD9B1E190A314100086996 /* ellipseView.m in Sources */,
 				CDB021C818ED9F30003B5A10 /* AppDelegate.m in Sources */,
 				CD8F96B918F77F3100A8F758 /* WSUser.m in Sources */,
 				CDE5F82518F3E4B200335B45 /* JSONModelArray.m in Sources */,

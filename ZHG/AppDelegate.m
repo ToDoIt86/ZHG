@@ -1,7 +1,7 @@
 //
 //  AppDelegate.m
 //  ZHG
-//
+//  ***_*** 恭喜你接手了一坨...CODES，特别是..UI.. 😁😄😄😄
 //  Created by lihong on 14-4-3.
 //  Copyright (c) 2014年 LiHong(410139419@qq.com). All rights reserved.
 //
@@ -15,7 +15,7 @@
 {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor redColor];
+    self.window.backgroundColor = [UIColor colorWithRed:101.0/0xff green:202.0/0xff blue:217.0/0xff alpha:1.0];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[HomeVC alloc] initWithNibName:@"HomeVC" bundle:nil]];
     [self.window makeKeyAndVisible];
     
