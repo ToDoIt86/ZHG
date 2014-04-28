@@ -8,6 +8,6 @@
 
 #import "BaseVC.h"
 
-@interface FoodShopsListVC : BaseVC <UITableViewDataSource>
+@interface FoodShopsListVC : BaseVC 
 
 @end

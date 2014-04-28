@@ -13,5 +13,7 @@
 @property (nonatomic, readonly) NSUInteger selectedIndex;
 
 - (id)initWithItems:(NSArray *)items;
-
+- (void)setSCFrame:(CGRect)frame;
+- (void)hideIndicatorView:(BOOL)yesOrNo;
+- (void)setItemTitle:(NSString *)title for:(NSUInteger)itemIndex;
 @end

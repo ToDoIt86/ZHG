@@ -30,7 +30,6 @@
 		CD9F3661190003A800762332 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F365C190003A800762332 /* TPKeyboardAvoidingTableView.m */; };
 		CD9F3662190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F365E190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		CDA0909C1909004100361ECC /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA0909B1909004100361ECC /* Reveal.framework */; };
-		CDAD9B1E190A314100086996 /* ellipseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD9B1D190A314100086996 /* ellipseView.m */; };
 		CDAD9B25190A462800086996 /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD9B24190A462800086996 /* UIColor+RGB.m */; };
 		CDB021B818ED9F30003B5A10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021B718ED9F30003B5A10 /* Foundation.framework */; };
 		CDB021BA18ED9F30003B5A10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021B918ED9F30003B5A10 /* CoreGraphics.framework */; };
@@ -114,8 +113,6 @@
 		CD9F365D190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		CD9F365E190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		CDA0909B1909004100361ECC /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
-		CDAD9B1C190A314100086996 /* ellipseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ellipseView.h; sourceTree = "<group>"; };
-		CDAD9B1D190A314100086996 /* ellipseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ellipseView.m; sourceTree = "<group>"; };
 		CDAD9B23190A462800086996 /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGB.h"; sourceTree = "<group>"; };
 		CDAD9B24190A462800086996 /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGB.m"; sourceTree = "<group>"; };
 		CDB021B418ED9F30003B5A10 /* ZHG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHG.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,13 +224,11 @@
 			children = (
 				CDED974A18FBB2F800E74A0B /* FoodShopsCell.h */,
 				CDED974B18FBB2F800E74A0B /* FoodShopsCell.m */,
+				CDED974C18FBB2F800E74A0B /* FoodShopsCell.xib */,
 				CDB3E9D21900C35000663C03 /* SegmentedControl.h */,
 				CDB3E9D31900C35000663C03 /* SegmentedControl.m */,
-				CDED974C18FBB2F800E74A0B /* FoodShopsCell.xib */,
 				CDC4DF2C18FE2FF90025615A /* AlertView.h */,
 				CDC4DF2D18FE2FF90025615A /* AlertView.m */,
-				CDAD9B1C190A314100086996 /* ellipseView.h */,
-				CDAD9B1D190A314100086996 /* ellipseView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -581,7 +576,6 @@
 				CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */,
 				CD9F3660190003A800762332 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				CDE5F82C18F3E4B200335B45 /* JSONKeyMapper.m in Sources */,
-				CDAD9B1E190A314100086996 /* ellipseView.m in Sources */,
 				CDB021C818ED9F30003B5A10 /* AppDelegate.m in Sources */,
 				CD8F96B918F77F3100A8F758 /* WSUser.m in Sources */,
 				CDE5F82518F3E4B200335B45 /* JSONModelArray.m in Sources */,
@@ -727,7 +721,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHG/ZHG-Prefix.pch";
 				INFOPLIST_FILE = "ZHG/ZHG-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",
@@ -750,7 +744,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHG/ZHG-Prefix.pch";
 				INFOPLIST_FILE = "ZHG/ZHG-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

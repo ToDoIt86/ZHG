@@ -11,5 +11,6 @@
 typedef unsigned char ColorType;
 
 @interface UIColor (RGB)
++ (UIColor *)r:(ColorType)r g:(ColorType)g b:(ColorType)b a:(CGFloat)a;
 + (UIColor *)r:(ColorType)r g:(ColorType)g b:(ColorType)b;
 @end
