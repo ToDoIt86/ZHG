@@ -8,20 +8,41 @@
 
 #import "AppDelegate.h"
 #import "HomeVC.h"
+#import "WSProductCategory.h"
+#import "WSFoodShops.h"
+#import "UIColor+RGB.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    UINavigationController *navigaationController =
+    [[UINavigationController alloc] initWithRootViewController:[[HomeVC alloc] initWithNibName:@"HomeVC" bundle:nil]];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor colorWithRed:101.0/0xff green:202.0/0xff blue:217.0/0xff alpha:1.0];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[HomeVC alloc] initWithNibName:@"HomeVC" bundle:nil]];
+    self.window.rootViewController = navigaationController;
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigation_bar_background"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithWhite:1 alpha:1], NSForegroundColorAttributeName,[UIFont systemFontOfSize:18], NSFontAttributeName,
+                                                            nil]];
+
     [self.window makeKeyAndVisible];
+
+    for(UIView *v in navigaationController.navigationBar.subviews)
+    {
+        if([NSStringFromClass([v class]) isEqualToString:@"_UINavigationBarBackground"])
+        {
+            [v setFrame:CGRectMake(0, 0, 320,44)];
+        }
+    }
     
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

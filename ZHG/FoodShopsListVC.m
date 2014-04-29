@@ -11,7 +11,7 @@
 #import "FoodShopsCell.h"
 #import "SegmentedControl.h"
 #import "UIColor+RGB.h"
-#import <QuartzCore/QuartzCore.h>
+#import "FoodShopDetailVC.h"
 
 static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
 
@@ -30,6 +30,7 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.title = @"美食妙饮";
         self.edgesForExtendedLayout = UIRectEdgeLeft|UIRectEdgeRight;
     }
     return self;
@@ -46,15 +47,19 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
     SegmentedControl *firstSegmentedControl = [[SegmentedControl alloc] initWithItems:@[@"探店淘美食",@"人气美食"]];
     [firstSegmentedControl addTarget:self action:@selector(didSelectedSegmentedControl:) forControlEvents:UIControlEventValueChanged];
     [firstSegmentedControl setSCFrame:CGRectMake(0, 0, 320, 40)];
+    [firstSegmentedControl removeAllIndicator];
     [self.view addSubview:firstSegmentedControl];
     
     SegmentedControl *secondSegmentedControl = [[SegmentedControl alloc] initWithItems:@[@"排序",@"附近",@"筛选"]];
     [secondSegmentedControl addTarget:self action:@selector(didSelectedSecondSegmentedControl:) forControlEvents:UIControlEventValueChanged];
     CGRect newRect = firstSegmentedControl.frame;
     newRect.origin.y += newRect.size.height;
-    newRect.size.height /= 2;
+    newRect.size.height *= 0.6;
     [secondSegmentedControl setSCFrame:newRect];
     [secondSegmentedControl hideIndicatorView:YES];
+    [secondSegmentedControl setItemTitleFont:[UIFont systemFontOfSize:15]];
+    [secondSegmentedControl setItemTitleColor:[UIColor blackColor]];
+    //[secondSegmentedControl removeIndicatorAtIndex:0];
     [self.view addSubview:secondSegmentedControl];
     
     self.dropView1Items = @[@"离我最近",@"销量最好"];
@@ -64,7 +69,7 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
     
     newRect.origin.y+=newRect.size.height;
     newRect.size.width = newRect.size.width/3;
-    newRect.size.height = rowHeight *self.dropView1Items.count + 10;
+    newRect.size.height = rowHeight *self.dropView1Items.count + 30;
     self.dropView1 = [[UITableView alloc] initWithFrame:newRect];
     self.dropView1.rowHeight = rowHeight;
     self.dropView1.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -108,7 +113,7 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnMaskView)];
     self.maskView = [[UIView alloc] initWithFrame:self.view.bounds];
-    self.maskView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.1];
+    self.maskView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.4];
     self.maskView.gestureRecognizers = @[tap];
     self.maskView.hidden = YES;
     [self.view insertSubview:self.maskView aboveSubview:self.foodShopListTableView];
@@ -179,10 +184,13 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DV1CID"];
             cell.backgroundColor = [UIColor clearColor];
             cell.textLabel.textAlignment = NSTextAlignmentCenter;
+            cell.textLabel.font = [UIFont systemFontOfSize:15];
             cell.selectedBackgroundView = self.selectedCellBackgroundView1;
         }
         
         cell.textLabel.text = self.dropView1Items[indexPath.row];
+        
+        if(indexPath.row == 0) cell.selected = YES;
         
         return cell;
     }
@@ -194,6 +202,7 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
         {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DV2CID"];
             cell.textLabel.textAlignment = NSTextAlignmentCenter;
+            cell.textLabel.font = [UIFont systemFontOfSize:15];
             cell.backgroundColor = [UIColor clearColor];
             cell.selectedBackgroundView = self.selectedCellBackgroundView2;
         }
@@ -202,6 +211,8 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
         
         cell.textLabel.text = self.dropView2Items[indexPath.row];
         
+        if(indexPath.row == 0) cell.selected = YES;
+
         return cell;
     }
     
@@ -213,11 +224,14 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DV3CID"];
             cell.textLabel.textAlignment = NSTextAlignmentCenter;
             cell.backgroundColor = [UIColor clearColor];
+            cell.textLabel.font = [UIFont systemFontOfSize:15];
             cell.selectedBackgroundView = self.selectedCellBackgroundView1;
         }
         
         cell.textLabel.text = self.dropView3Items[indexPath.row];
         
+        if(indexPath.row == 0) cell.selected = YES;
+
         return cell;
     }
     
@@ -228,6 +242,9 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
 {
     if(tableView == self.foodShopListTableView)
     {
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        FoodShopDetailVC *foodShopDetailVC = [[FoodShopDetailVC alloc] initWithNibName:@"FoodShopDetailVC" bundle:nil];
+        [self.navigationController pushViewController:foodShopDetailVC animated:YES];
         return;
     }
     

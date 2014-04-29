@@ -7,7 +7,9 @@
 //
 
 #import "SOAPClient.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface WSFoodShops : SOAPClient
 
++ (void)getNearGroupWithpageSize:(NSUInteger)pageSize pageIndex:(NSUInteger)pageIndex coordinate:(CLLocationCoordinate2D)coordinate onCompleted:(JSONModelObjectBlock)block;
 @end

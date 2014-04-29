@@ -9,7 +9,7 @@
 #import "JSONHTTPClient.h"
 
 #define SOAPService(servicePath)\
-[NSString stringWithFormat:@"http://hyxx.nat123.net/HMWJservices/%@",servicePath]
+[NSString stringWithFormat:@"http://222.87.129.196/Service/%@",servicePath]
 
 #define SOAPAction(method)\
 [NSString stringWithFormat:@"http://hmwj.com/%@",method]

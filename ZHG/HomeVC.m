@@ -10,8 +10,16 @@
 #import "SOAPClient.h"
 #import "FoodShopsListVC.h"
 #import "UserLoginVC.h"
+#import "UIScrollView+ContentSize.h"
 
 @interface HomeVC ()
+@property (nonatomic, strong) UIImageView *logImageView;
+@property (nonatomic, strong) UIButton *searchButton;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *adScrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *adPageControl;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *menuScrollView;
 
 @end
 
@@ -21,7 +29,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+       
     }
     return self;
 }
@@ -29,8 +37,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.logImageView = [[UIImageView alloc] initWithFrame:CGRectMake(-5, 0, 100, 44)];
+    [self.logImageView setImage:[UIImage imageNamed:@"logo"]];
+    
+    self.searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.searchButton.frame = CGRectMake(320-44, 0, 44, 44);
+    [self.searchButton setImage:[UIImage imageNamed:@"home_search_button"] forState:UIControlStateNormal];
+    
+    [self insertAdContent];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar addSubview:self.logImageView];
+    [self.navigationController.navigationBar addSubview:self.searchButton];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.logImageView removeFromSuperview];
+    [self.searchButton removeFromSuperview];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -47,4 +77,28 @@
    // [self presentModalViewController:vc animated:YES];
 }
 
+
+#pragma mark － Advertising
+
+- (void)insertAdContent
+{
+    self.adPageControl.numberOfPages = 4;
+    CGRect newRect = self.adScrollView.bounds;
+    for(int i = 0; i < 4; i++)
+    {
+        newRect.origin.x = i*newRect.size.width;
+        UIImageView *iamgeView = [[UIImageView alloc] initWithFrame:newRect];
+        iamgeView.image = [UIImage imageNamed:[NSString stringWithFormat:@"ad%d.jpg",i]];
+        [self.adScrollView addSubview:iamgeView];
+    }
+    
+    [self.adScrollView calculateAndSetContentSize];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+    NSInteger pageIndex = floorf( scrollView.contentOffset.x/scrollView.bounds.size.width);
+    self.adPageControl.currentPage = pageIndex;
+}
 @end
