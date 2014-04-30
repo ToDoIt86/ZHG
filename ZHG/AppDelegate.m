@@ -11,11 +11,14 @@
 #import "WSProductCategory.h"
 #import "WSFoodShops.h"
 #import "UIColor+RGB.h"
+#import "LHLocationManager.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [LHLocationManager sharedInstance];
     
     UINavigationController *navigaationController =
     [[UINavigationController alloc] initWithRootViewController:[[HomeVC alloc] initWithNibName:@"HomeVC" bundle:nil]];

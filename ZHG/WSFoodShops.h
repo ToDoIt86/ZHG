@@ -11,5 +11,38 @@
 
 @interface WSFoodShops : SOAPClient
 
-+ (void)getNearGroupWithpageSize:(NSUInteger)pageSize pageIndex:(NSUInteger)pageIndex coordinate:(CLLocationCoordinate2D)coordinate onCompleted:(JSONModelObjectBlock)block;
++ (void)getNearGroupByClassid:(NSUInteger)pageSize
+                    pageIndex:(NSUInteger)pageIndex
+                   coordinate:(CLLocationCoordinate2D)coordinate
+                  onCompleted:(JSONModelObjectBlock)block;
+
++ (void)getGroupByClassid:(NSUInteger)pageSize
+                pageIndex:(NSUInteger)pageIndex
+               coordinate:(CLLocationCoordinate2D)coordinate
+                    order:(NSString *)order
+              onCompleted:(JSONModelObjectBlock)block;
+
++ (void)getGroupByAreaId:(NSString *)areaId
+                pageSize:(NSUInteger)pageSize
+               pageIndex:(NSUInteger)pageIndex
+              coordinate:(CLLocationCoordinate2D)coordinate
+                   order:(NSString *)order
+             onCompleted:(JSONModelObjectBlock)block;
+
++ (void)getNearGroupByDistance:(NSUInteger)pageSize
+                     pageIndex:(NSUInteger)pageIndex
+                    coordinate:(CLLocationCoordinate2D)coordinate
+                         distance:(CGFloat)distance
+                   onCompleted:(JSONModelObjectBlock)block;
+
++ (void)getGroupBySales:(NSUInteger)pageSize
+              pageIndex:(NSUInteger)pageIndex
+             coordinate:(CLLocationCoordinate2D)coordinate
+            onCompleted:(JSONModelObjectBlock)block;
+
++ (void)getGroupByDiscount:(NSUInteger)pageSize
+                 pageIndex:(NSUInteger)pageIndex
+                coordinate:(CLLocationCoordinate2D)coordinate
+               onCompleted:(JSONModelObjectBlock)block;
+
 @end

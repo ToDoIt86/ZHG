@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */; };
 		CD35AEA118FAA0DC002E1882 /* WSFoodShops.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35AEA018FAA0DC002E1882 /* WSFoodShops.m */; };
+		CD4550B01911311900224E77 /* LHLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4550AF1911311900224E77 /* LHLocationManager.m */; };
+		CD4550B2191131BC00224E77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD4550B1191131BC00224E77 /* CoreLocation.framework */; };
 		CD71790F18FE15AD00B0F400 /* UserLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71790D18FE15AD00B0F400 /* UserLoginVC.m */; };
 		CD71791018FE15AD00B0F400 /* UserLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD71790E18FE15AD00B0F400 /* UserLoginVC.xib */; };
 		CD71791418FE15CA00B0F400 /* UserRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71791218FE15CA00B0F400 /* UserRegisterVC.m */; };
@@ -90,6 +92,9 @@
 		CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOAPClient.m; path = JSONModel/JSONModelNetworking/SOAPClient.m; sourceTree = "<group>"; };
 		CD35AE9F18FAA0DC002E1882 /* WSFoodShops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFoodShops.h; sourceTree = "<group>"; };
 		CD35AEA018FAA0DC002E1882 /* WSFoodShops.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFoodShops.m; sourceTree = "<group>"; };
+		CD4550AE1911311900224E77 /* LHLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLocationManager.h; sourceTree = "<group>"; };
+		CD4550AF1911311900224E77 /* LHLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLocationManager.m; sourceTree = "<group>"; };
+		CD4550B1191131BC00224E77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CD71790C18FE15AD00B0F400 /* UserLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginVC.h; sourceTree = "<group>"; };
 		CD71790D18FE15AD00B0F400 /* UserLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLoginVC.m; sourceTree = "<group>"; };
 		CD71790E18FE15AD00B0F400 /* UserLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserLoginVC.xib; sourceTree = "<group>"; };
@@ -201,6 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4550B2191131BC00224E77 /* CoreLocation.framework in Frameworks */,
 				CDE5F80618F3E28B00335B45 /* SystemConfiguration.framework in Frameworks */,
 				CDB021BA18ED9F30003B5A10 /* CoreGraphics.framework in Frameworks */,
 				CDA0909C1909004100361ECC /* Reveal.framework in Frameworks */,
@@ -339,6 +345,8 @@
 		CDAD9B1F190A45FB00086996 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				CD4550AE1911311900224E77 /* LHLocationManager.h */,
+				CD4550AF1911311900224E77 /* LHLocationManager.m */,
 				CDAD9B23190A462800086996 /* UIColor+RGB.h */,
 				CDAD9B24190A462800086996 /* UIColor+RGB.m */,
 				CDD6FE84190F953C00BDF78A /* UIScrollView+ContentSize.h */,
@@ -369,6 +377,7 @@
 		CDB021B618ED9F30003B5A10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD4550B1191131BC00224E77 /* CoreLocation.framework */,
 				CDA0909B1909004100361ECC /* Reveal.framework */,
 				CDE5F80518F3E28B00335B45 /* SystemConfiguration.framework */,
 				CDB021B718ED9F30003B5A10 /* Foundation.framework */,
@@ -637,6 +646,7 @@
 				CDE5F82B18F3E4B200335B45 /* JSONModel+networking.m in Sources */,
 				CD35AEA118FAA0DC002E1882 /* WSFoodShops.m in Sources */,
 				CDED974D18FBB2F800E74A0B /* FoodShopsCell.m in Sources */,
+				CD4550B01911311900224E77 /* LHLocationManager.m in Sources */,
 				CDB021C418ED9F30003B5A10 /* main.m in Sources */,
 				CD71790F18FE15AD00B0F400 /* UserLoginVC.m in Sources */,
 				CDB3E9D41900C35000663C03 /* SegmentedControl.m in Sources */,
