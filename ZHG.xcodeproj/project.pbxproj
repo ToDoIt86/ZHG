@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */; };
-		CD35AEA118FAA0DC002E1882 /* WSFoodShops.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35AEA018FAA0DC002E1882 /* WSFoodShops.m */; };
+		CD35AEA118FAA0DC002E1882 /* WSGroupService.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35AEA018FAA0DC002E1882 /* WSGroupService.m */; };
 		CD4550B01911311900224E77 /* LHLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4550AF1911311900224E77 /* LHLocationManager.m */; };
 		CD4550B2191131BC00224E77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD4550B1191131BC00224E77 /* CoreLocation.framework */; };
 		CD71790F18FE15AD00B0F400 /* UserLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71790D18FE15AD00B0F400 /* UserLoginVC.m */; };
@@ -32,6 +32,7 @@
 		CD9F3661190003A800762332 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F365C190003A800762332 /* TPKeyboardAvoidingTableView.m */; };
 		CD9F3662190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F365E190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		CDA0909C1909004100361ECC /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA0909B1909004100361ECC /* Reveal.framework */; };
+		CDA154941911C8E500DF0733 /* WSServiceItemService.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA154931911C8E500DF0733 /* WSServiceItemService.m */; };
 		CDAD9B25190A462800086996 /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAD9B24190A462800086996 /* UIColor+RGB.m */; };
 		CDB021B818ED9F30003B5A10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021B718ED9F30003B5A10 /* Foundation.framework */; };
 		CDB021BA18ED9F30003B5A10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021B918ED9F30003B5A10 /* CoreGraphics.framework */; };
@@ -90,8 +91,8 @@
 /* Begin PBXFileReference section */
 		CD2C6BE018F6C92A0004ABD5 /* SOAPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOAPClient.h; path = JSONModel/JSONModelNetworking/SOAPClient.h; sourceTree = "<group>"; };
 		CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOAPClient.m; path = JSONModel/JSONModelNetworking/SOAPClient.m; sourceTree = "<group>"; };
-		CD35AE9F18FAA0DC002E1882 /* WSFoodShops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFoodShops.h; sourceTree = "<group>"; };
-		CD35AEA018FAA0DC002E1882 /* WSFoodShops.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFoodShops.m; sourceTree = "<group>"; };
+		CD35AE9F18FAA0DC002E1882 /* WSGroupService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGroupService.h; sourceTree = "<group>"; };
+		CD35AEA018FAA0DC002E1882 /* WSGroupService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGroupService.m; sourceTree = "<group>"; };
 		CD4550AE1911311900224E77 /* LHLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLocationManager.h; sourceTree = "<group>"; };
 		CD4550AF1911311900224E77 /* LHLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLocationManager.m; sourceTree = "<group>"; };
 		CD4550B1191131BC00224E77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -130,6 +131,8 @@
 		CD9F365D190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		CD9F365E190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		CDA0909B1909004100361ECC /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		CDA154921911C8E500DF0733 /* WSServiceItemService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSServiceItemService.h; sourceTree = "<group>"; };
+		CDA154931911C8E500DF0733 /* WSServiceItemService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSServiceItemService.m; sourceTree = "<group>"; };
 		CDAD9B23190A462800086996 /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGB.h"; sourceTree = "<group>"; };
 		CDAD9B24190A462800086996 /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGB.m"; sourceTree = "<group>"; };
 		CDB021B418ED9F30003B5A10 /* TEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEST.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,8 +299,10 @@
 				CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */,
 				CD8F96B718F77F3100A8F758 /* WSUser.h */,
 				CD8F96B818F77F3100A8F758 /* WSUser.m */,
-				CD35AE9F18FAA0DC002E1882 /* WSFoodShops.h */,
-				CD35AEA018FAA0DC002E1882 /* WSFoodShops.m */,
+				CD35AE9F18FAA0DC002E1882 /* WSGroupService.h */,
+				CD35AEA018FAA0DC002E1882 /* WSGroupService.m */,
+				CDA154921911C8E500DF0733 /* WSServiceItemService.h */,
+				CDA154931911C8E500DF0733 /* WSServiceItemService.m */,
 				CDECA6AF190E96A6001A5B3A /* WSProductCategory.h */,
 				CDECA6B0190E96A6001A5B3A /* WSProductCategory.m */,
 			);
@@ -644,7 +649,7 @@
 				CD9F21FF18F43F6C009C25C4 /* BaseVC.m in Sources */,
 				CDC4DF3818FE69DB0025615A /* HUD.m in Sources */,
 				CDE5F82B18F3E4B200335B45 /* JSONModel+networking.m in Sources */,
-				CD35AEA118FAA0DC002E1882 /* WSFoodShops.m in Sources */,
+				CD35AEA118FAA0DC002E1882 /* WSGroupService.m in Sources */,
 				CDED974D18FBB2F800E74A0B /* FoodShopsCell.m in Sources */,
 				CD4550B01911311900224E77 /* LHLocationManager.m in Sources */,
 				CDB021C418ED9F30003B5A10 /* main.m in Sources */,
@@ -652,6 +657,7 @@
 				CDB3E9D41900C35000663C03 /* SegmentedControl.m in Sources */,
 				CD71791918FE168800B0F400 /* UserCenterVC.m in Sources */,
 				CD9C14AC18F7CC6F0043B738 /* FoodShopsListVC.m in Sources */,
+				CDA154941911C8E500DF0733 /* WSServiceItemService.m in Sources */,
 				CDE5F82918F3E4B200335B45 /* JSONAPI.m in Sources */,
 				CDECA6B1190E96A6001A5B3A /* WSProductCategory.m in Sources */,
 				CD71791418FE15CA00B0F400 /* UserRegisterVC.m in Sources */,

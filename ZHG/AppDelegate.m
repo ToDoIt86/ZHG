@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "HomeVC.h"
 #import "WSProductCategory.h"
-#import "WSFoodShops.h"
 #import "UIColor+RGB.h"
 #import "LHLocationManager.h"
 

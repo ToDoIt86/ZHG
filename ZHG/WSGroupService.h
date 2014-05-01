@@ -9,7 +9,8 @@
 #import "SOAPClient.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface WSFoodShops : SOAPClient
+// 探商淘美食服务接口
+@interface WSGroupService : SOAPClient
 
 + (void)getNearGroupByClassid:(NSUInteger)pageSize
                     pageIndex:(NSUInteger)pageIndex

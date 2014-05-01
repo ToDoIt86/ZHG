@@ -7,12 +7,12 @@
 //
 
 #import "FoodShopsListVC.h"
-#import "WSFoodShops.h"
 #import "FoodShopsCell.h"
 #import "SegmentedControl.h"
 #import "UIColor+RGB.h"
 #import "FoodShopDetailVC.h"
-#import "WSFoodShops.h"
+#import "WSGroupService.h"
+#import "WSServiceItemService.h"
 #import "LHLocationManager.h"
 
 static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
@@ -120,16 +120,7 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
     self.maskView.hidden = YES;
     [self.view insertSubview:self.maskView aboveSubview:self.foodShopListTableView];
     
-
-    [WSFoodShops getGroupByClassid:20 pageIndex:0 coordinate:[LHLocationManager sharedInstance].coordinate order:@"全贵阳" onCompleted:NULL];
-    
-    [WSFoodShops getGroupByAreaId:@"全贵阳" pageSize:20 pageIndex:0 coordinate:[LHLocationManager sharedInstance].coordinate order:@"全贵阳" onCompleted:NULL];
-    
-    [WSFoodShops getGroupByDiscount:20 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate  onCompleted:NULL];
-    
-    [WSFoodShops getGroupBySales:20 pageIndex:0 coordinate:[LHLocationManager sharedInstance].coordinate  onCompleted:NULL];
-    
-    [WSFoodShops getNearGroupByDistance:20 pageIndex:0 coordinate:[LHLocationManager sharedInstance].coordinate  distance:100 onCompleted:NULL];
+    [WSServiceItemService indexTopis:100 onCompleted:NULL];
 }
 
 #pragma mark - Action

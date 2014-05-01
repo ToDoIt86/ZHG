@@ -6,11 +6,11 @@
 //  Copyright (c) 2014年 LiHong(410139419@qq.com). All rights reserved.
 //
 
-#import "WSFoodShops.h"
+#import "WSGroupService.h"
 
 static NSUInteger classId = 2;
 
-@implementation WSFoodShops
+@implementation WSGroupService
 
 + (void)getNearGroupByClassid:(NSUInteger)pageSize pageIndex:(NSUInteger)pageIndex coordinate:(CLLocationCoordinate2D)coordinate onCompleted:(JSONModelObjectBlock)block
 {
