@@ -14,6 +14,7 @@
 #import "WSGroupService.h"
 #import "WSServiceItemService.h"
 #import "LHLocationManager.h"
+#import "FoodDetailVC.h"
 
 static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
 
@@ -24,6 +25,7 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
 @property (strong, nonatomic) UIView *selectedCellBackgroundView1;
 @property (strong, nonatomic) UIImageView *selectedCellBackgroundView2;
 @property (strong, nonatomic) UIView *maskView;
+@property (assign, nonatomic) NSInteger firstSegmentedControlSelectedIndex;
 @end
 
 @implementation FoodShopsListVC
@@ -126,7 +128,7 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
 #pragma mark - Action
 - (void)didSelectedSegmentedControl:(SegmentedControl *)segmentedControl
 {
-    
+    self.firstSegmentedControlSelectedIndex = segmentedControl.selectedIndex;
 }
 
 - (void)didSelectedSecondSegmentedControl:(SegmentedControl *)segmentedControl
@@ -247,8 +249,17 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
     if(tableView == self.foodShopListTableView)
     {
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
-        FoodShopDetailVC *foodShopDetailVC = [[FoodShopDetailVC alloc] initWithNibName:@"FoodShopDetailVC" bundle:nil];
-        [self.navigationController pushViewController:foodShopDetailVC animated:YES];
+        UIViewController *controller = nil;
+        if(self.firstSegmentedControlSelectedIndex == 0)
+        {
+            controller = [[FoodShopDetailVC alloc] initWithNibName:@"FoodShopDetailVC" bundle:nil];
+        }
+        else
+        {
+            controller = [[FoodDetailVC alloc] initWithNibName:@"FoodDetailVC" bundle:nil];
+        }
+        
+        [self.navigationController pushViewController:controller animated:YES];
         return;
     }
     

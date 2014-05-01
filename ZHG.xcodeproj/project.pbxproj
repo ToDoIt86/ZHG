@@ -46,6 +46,8 @@
 		CDB021D918ED9F30003B5A10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB021BB18ED9F30003B5A10 /* UIKit.framework */; };
 		CDB021E118ED9F30003B5A10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDB021DF18ED9F30003B5A10 /* InfoPlist.strings */; };
 		CDB021E318ED9F30003B5A10 /* ZHGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB021E218ED9F30003B5A10 /* ZHGTests.m */; };
+		CDB331CF1911DF3F009CCF5B /* FoodDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB331CD1911DF3F009CCF5B /* FoodDetailVC.m */; };
+		CDB331D01911DF3F009CCF5B /* FoodDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB331CE1911DF3F009CCF5B /* FoodDetailVC.xib */; };
 		CDB3E9D41900C35000663C03 /* SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3E9D31900C35000663C03 /* SegmentedControl.m */; };
 		CDC4DF2E18FE2FF90025615A /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DF2D18FE2FF90025615A /* AlertView.m */; };
 		CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DF3318FE69410025615A /* MBProgressHUD.m */; };
@@ -151,6 +153,9 @@
 		CDB021DE18ED9F30003B5A10 /* ZHGTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZHGTests-Info.plist"; sourceTree = "<group>"; };
 		CDB021E018ED9F30003B5A10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDB021E218ED9F30003B5A10 /* ZHGTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHGTests.m; sourceTree = "<group>"; };
+		CDB331CC1911DF3F009CCF5B /* FoodDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodDetailVC.h; sourceTree = "<group>"; };
+		CDB331CD1911DF3F009CCF5B /* FoodDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDetailVC.m; sourceTree = "<group>"; };
+		CDB331CE1911DF3F009CCF5B /* FoodDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodDetailVC.xib; sourceTree = "<group>"; };
 		CDB3E9D21900C35000663C03 /* SegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedControl.h; sourceTree = "<group>"; };
 		CDB3E9D31900C35000663C03 /* SegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedControl.m; sourceTree = "<group>"; };
 		CDC4DF2C18FE2FF90025615A /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
@@ -328,6 +333,9 @@
 				CDD6FE77190F6AD600BDF78A /* FoodShopDetailVC.h */,
 				CDD6FE78190F6AD600BDF78A /* FoodShopDetailVC.m */,
 				CDD6FE79190F6AD600BDF78A /* FoodShopDetailVC.xib */,
+				CDB331CC1911DF3F009CCF5B /* FoodDetailVC.h */,
+				CDB331CD1911DF3F009CCF5B /* FoodDetailVC.m */,
+				CDB331CE1911DF3F009CCF5B /* FoodDetailVC.xib */,
 			);
 			name = Food;
 			sourceTree = "<group>";
@@ -607,6 +615,7 @@
 				CD9F220418F43F81009C25C4 /* HomeVC.xib in Resources */,
 				CDD6FE8F190F9FAA00BDF78A /* cell_icon2.jpg in Resources */,
 				CD71791F18FE16AF00B0F400 /* UserResetPasswordVC.xib in Resources */,
+				CDB331D01911DF3F009CCF5B /* FoodDetailVC.xib in Resources */,
 				CD9C14AD18F7CC6F0043B738 /* FoodShopsListVC.xib in Resources */,
 				CDD6FE7B190F6AD600BDF78A /* FoodShopDetailVC.xib in Resources */,
 				CDB021C218ED9F30003B5A10 /* InfoPlist.strings in Resources */,
@@ -642,6 +651,7 @@
 				CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */,
 				CD9F3660190003A800762332 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				CDE5F82C18F3E4B200335B45 /* JSONKeyMapper.m in Sources */,
+				CDB331CF1911DF3F009CCF5B /* FoodDetailVC.m in Sources */,
 				CDB021C818ED9F30003B5A10 /* AppDelegate.m in Sources */,
 				CD8F96B918F77F3100A8F758 /* WSUser.m in Sources */,
 				CDD6FE8A190F9C0500BDF78A /* SalesPromotionCell.m in Sources */,
