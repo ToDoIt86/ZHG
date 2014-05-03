@@ -122,7 +122,7 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
     self.maskView.hidden = YES;
     [self.view insertSubview:self.maskView aboveSubview:self.foodShopListTableView];
     
-    [WSServiceItemService indexTopis:100 onCompleted:NULL];
+    [WSGroupService getGroupByClassid:100 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate order:@"areaid" onCompleted:NULL];
 }
 
 #pragma mark - Action

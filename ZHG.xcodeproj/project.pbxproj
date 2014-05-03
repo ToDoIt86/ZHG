@@ -20,6 +20,11 @@
 		CD71791E18FE16AF00B0F400 /* UserResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71791C18FE16AF00B0F400 /* UserResetPasswordVC.m */; };
 		CD71791F18FE16AF00B0F400 /* UserResetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD71791D18FE16AF00B0F400 /* UserResetPasswordVC.xib */; };
 		CD8F96B918F77F3100A8F758 /* WSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8F96B818F77F3100A8F758 /* WSUser.m */; };
+		CD944E3119147BD200BAE409 /* FoodShop.m in Sources */ = {isa = PBXBuildFile; fileRef = CD944E3019147BD200BAE409 /* FoodShop.m */; };
+		CD944E3419147F0400BAE409 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = CD944E3319147F0400BAE409 /* Product.m */; };
+		CD944E371914810E00BAE409 /* ProductDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = CD944E361914810E00BAE409 /* ProductDetail.m */; };
+		CD944E3A1914839900BAE409 /* ProductTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD944E391914839900BAE409 /* ProductTemplate.m */; };
+		CD944E3D1914842100BAE409 /* ProductStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = CD944E3C1914842100BAE409 /* ProductStyle.m */; };
 		CD9C14AC18F7CC6F0043B738 /* FoodShopsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C14AA18F7CC6F0043B738 /* FoodShopsListVC.m */; };
 		CD9C14AD18F7CC6F0043B738 /* FoodShopsListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9C14AB18F7CC6F0043B738 /* FoodShopsListVC.xib */; };
 		CD9F21FF18F43F6C009C25C4 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F21FE18F43F6C009C25C4 /* BaseVC.m */; };
@@ -112,6 +117,16 @@
 		CD71791D18FE16AF00B0F400 /* UserResetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserResetPasswordVC.xib; sourceTree = "<group>"; };
 		CD8F96B718F77F3100A8F758 /* WSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSUser.h; sourceTree = "<group>"; };
 		CD8F96B818F77F3100A8F758 /* WSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSUser.m; sourceTree = "<group>"; };
+		CD944E2F19147BD200BAE409 /* FoodShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodShop.h; sourceTree = "<group>"; };
+		CD944E3019147BD200BAE409 /* FoodShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodShop.m; sourceTree = "<group>"; };
+		CD944E3219147F0400BAE409 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		CD944E3319147F0400BAE409 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		CD944E351914810E00BAE409 /* ProductDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetail.h; sourceTree = "<group>"; };
+		CD944E361914810E00BAE409 /* ProductDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetail.m; sourceTree = "<group>"; };
+		CD944E381914839900BAE409 /* ProductTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTemplate.h; sourceTree = "<group>"; };
+		CD944E391914839900BAE409 /* ProductTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTemplate.m; sourceTree = "<group>"; };
+		CD944E3B1914842100BAE409 /* ProductStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductStyle.h; sourceTree = "<group>"; };
+		CD944E3C1914842100BAE409 /* ProductStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductStyle.m; sourceTree = "<group>"; };
 		CD9C14A918F7CC6F0043B738 /* FoodShopsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodShopsListVC.h; sourceTree = "<group>"; };
 		CD9C14AA18F7CC6F0043B738 /* FoodShopsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodShopsListVC.m; sourceTree = "<group>"; };
 		CD9C14AB18F7CC6F0043B738 /* FoodShopsListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodShopsListVC.xib; sourceTree = "<group>"; };
@@ -243,6 +258,16 @@
 				CD9F220C18F44626009C25C4 /* MWSResponse.m */,
 				CD9F220818F44609009C25C4 /* MUser.h */,
 				CD9F220918F44609009C25C4 /* MUser.m */,
+				CD944E2F19147BD200BAE409 /* FoodShop.h */,
+				CD944E3019147BD200BAE409 /* FoodShop.m */,
+				CD944E3219147F0400BAE409 /* Product.h */,
+				CD944E3319147F0400BAE409 /* Product.m */,
+				CD944E351914810E00BAE409 /* ProductDetail.h */,
+				CD944E361914810E00BAE409 /* ProductDetail.m */,
+				CD944E381914839900BAE409 /* ProductTemplate.h */,
+				CD944E391914839900BAE409 /* ProductTemplate.m */,
+				CD944E3B1914842100BAE409 /* ProductStyle.h */,
+				CD944E3C1914842100BAE409 /* ProductStyle.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -651,6 +676,9 @@
 				CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */,
 				CD9F3660190003A800762332 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				CDE5F82C18F3E4B200335B45 /* JSONKeyMapper.m in Sources */,
+				CD944E371914810E00BAE409 /* ProductDetail.m in Sources */,
+				CD944E3419147F0400BAE409 /* Product.m in Sources */,
+				CD944E3A1914839900BAE409 /* ProductTemplate.m in Sources */,
 				CDB331CF1911DF3F009CCF5B /* FoodDetailVC.m in Sources */,
 				CDB021C818ED9F30003B5A10 /* AppDelegate.m in Sources */,
 				CD8F96B918F77F3100A8F758 /* WSUser.m in Sources */,
@@ -667,7 +695,9 @@
 				CDB3E9D41900C35000663C03 /* SegmentedControl.m in Sources */,
 				CD71791918FE168800B0F400 /* UserCenterVC.m in Sources */,
 				CD9C14AC18F7CC6F0043B738 /* FoodShopsListVC.m in Sources */,
+				CD944E3D1914842100BAE409 /* ProductStyle.m in Sources */,
 				CDA154941911C8E500DF0733 /* WSServiceItemService.m in Sources */,
+				CD944E3119147BD200BAE409 /* FoodShop.m in Sources */,
 				CDE5F82918F3E4B200335B45 /* JSONAPI.m in Sources */,
 				CDECA6B1190E96A6001A5B3A /* WSProductCategory.m in Sources */,
 				CD71791418FE15CA00B0F400 /* UserRegisterVC.m in Sources */,

@@ -34,7 +34,7 @@ static NSUInteger classId = 2;
                           @"Longitude":@(coordinate.longitude),
                           @"order"    :order};
     
-    [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupByClassid ") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
+    [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupByClassid") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
         NSLog(@"%@",jsonString);
     }];
 }
@@ -48,7 +48,7 @@ static NSUInteger classId = 2;
                           @"Longitude":@(coordinate.longitude),
                           @"order"    :order};
     
-    [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupByAreaId ") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
+    [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupByAreaId") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
         NSLog(@"%@",jsonString);
     }];
 }
@@ -66,7 +66,7 @@ static NSUInteger classId = 2;
                           @"Longitude":@(coordinate.longitude),
                           @"Distance" :@(distance)};
     
-    [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetNearGroupByDistance ") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
+    [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetNearGroupByDistance") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
         NSLog(@"%@",jsonString);
     }];
 }
@@ -83,7 +83,7 @@ static NSUInteger classId = 2;
                           @"Longitude":@(coordinate.longitude)
                          };
     
-    [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupBySales ") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
+    [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupBySales") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
         NSLog(@"%@",jsonString);
     }];
 }
@@ -100,7 +100,7 @@ static NSUInteger classId = 2;
                           @"Longitude":@(coordinate.longitude)
                           };
     
-    [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupByDiscount ") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
+    [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupByDiscount") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
         NSLog(@"%@",jsonString);
     }];
 }
