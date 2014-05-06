@@ -20,6 +20,7 @@
 #import "AlertView.h"
 #import "UIImageView+WebCache.h"
 #import "FoodCell.h"
+#import "Product.h"
 
 @interface FoodShopsListVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *foodShopListTableView;
@@ -30,6 +31,7 @@
 @property (strong, nonatomic) UIView *maskView;
 @property (assign, nonatomic) NSInteger firstSegmentedControlSelectedIndex;
 @property (strong, nonatomic) FoodShopResponse *foodShopDataModel;
+@property (strong, nonatomic) ProductResponse *productDataModel;
 @end
 
 @implementation FoodShopsListVC
@@ -142,9 +144,10 @@
 {
     self.firstSegmentedControlSelectedIndex = segmentedControl.selectedIndex;
     
+    [HUD showHUDInView:self.view title:@"玩命加载中.."];
+
     if(segmentedControl.selectedIndex == 0)
     {
-        [HUD showHUDInView:self.view title:@"玩命加载中.."];
 
         [WSGroupService getGroupByClassid:100
                                 pageIndex:1
@@ -152,14 +155,32 @@
                                     order:@"groupid"
           onCompleted:^(JSONModel *model, JSONModelError* err){
               [HUD hideHUDForView:self.view];
+              
+              if(err || model == nil)
+              {
+                  [AlertView showWithMessage:@"获取数据失败"];
+                  return;
+              }
+              
               self.foodShopDataModel = (FoodShopResponse *)model;
               [self.foodShopListTableView reloadData];
           }];
     }
     else
     {
-      [WSServiceItemService getItemByCId:20 pageIndex:1 onCompleted:^(JSONModel *model, JSONModelError *err) {
-          
+      [WSServiceItemService getItemByCId:20
+                               pageIndex:1
+                             onCompleted:^(JSONModel *model, JSONModelError *err) {
+                                 
+          [HUD hideHUDForView:self.view];
+          if(err || model == nil)
+          {
+              [AlertView showWithMessage:@"获取数据失败"];
+              return;
+          }
+                           
+           self.productDataModel = (ProductResponse *)model;
+          [self.foodShopListTableView reloadData];
       }];
     }
 }
@@ -204,6 +225,7 @@
     if(tableView == self.dropView3) return self.dropView3Items.count;
     
     if(self.firstSegmentedControlSelectedIndex == 0) return self.foodShopDataModel.Datas.count;
+    if(self.firstSegmentedControlSelectedIndex == 1) return self.productDataModel.Datas.count;
     
     return 0;
 }
@@ -235,6 +257,7 @@
             
             return shopCell;
         }
+        
         else if(self.firstSegmentedControlSelectedIndex == 1)
         {
             FoodCell *foodCell = [tableView dequeueReusableCellWithIdentifier:@"FoodCell"];
@@ -243,6 +266,10 @@
                 UINib *nib = [UINib nibWithNibName:@"FoodCell" bundle:nil];
                 foodCell = [[nib instantiateWithOwner:nil options:nil] objectAtIndex:0];
             }
+            
+            Product *productEntity = self.productDataModel.Datas[indexPath.row];
+            foodCell.nameLabel.text = productEntity.Serviceitem;
+            
             return foodCell;
         }
         

@@ -11,3 +11,6 @@
 @implementation Product
 
 @end
+
+@implementation ProductResponse
+@end

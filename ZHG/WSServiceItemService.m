@@ -7,6 +7,7 @@
 //
 
 #import "WSServiceItemService.h"
+#import "Product.h"
 
 static NSUInteger classId = 2;
 
@@ -31,7 +32,8 @@ static NSUInteger classId = 2;
                           @"pageindex":@(pageIndex)};
     
     [SOAPClient requestFromURL:SOAPService(@"Ecommerce/ServiceItemService.asmx") soapAction:SOAPAction(@"GetItemByCId") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        NSLog(@"%@",jsonString);
+        ProductResponse *product = [[ProductResponse alloc] initWithString:jsonString error:nil];
+        block(product, err);
     }];
 }
 

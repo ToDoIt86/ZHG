@@ -7,10 +7,11 @@
 //
 
 #import "JSONModel.h"
+#import "MWSResponse.h"
 
 // IndexTopis,GetItemByCId,GetItemByKey接口返回的数据模型
 @interface Product : JSONModel
-@property (nonatomic, strong) NSString
+@property (nonatomic, strong) NSString<Optional>
 *Serviceitemid,
 *Itemsn,
 *Groupsn,
@@ -39,4 +40,11 @@
 *Sales,
 *click;
 
+@end
+
+@protocol Product
+@end
+
+@interface ProductResponse: MWSResponse
+@property (nonatomic, strong) NSArray<Product> *Datas;
 @end
