@@ -11,3 +11,7 @@
 @implementation FoodShop
 
 @end
+
+@implementation FoodShopResponse
+
+@end

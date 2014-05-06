@@ -57,13 +57,11 @@
     }
     
     [self.view endEditing:YES];
-    [HUD showHUDAddedTo:self.view animated:YES];
     
     [WSUser loginWithUserName:self.userPasswordTF.text
                   andPassword:self.userPasswordTF.text
                   onCompleted:^(JSONModel *model, JSONModelError* err){
                       
-      [HUD hideAllHUDsForView:self.view animated:YES];
       
       MWSResponse *response = (MWSResponse *)model;
       if(response.success)

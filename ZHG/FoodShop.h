@@ -7,10 +7,11 @@
 //
 
 #import "JSONModel.h"
+#import "MWSResponse.h"
 
 // 
 @interface FoodShop : JSONModel
-@property (nonatomic, strong) NSString
+@property (nonatomic, strong) NSString<Optional>
 *Columnid,
 *Groupsn,
 *Groupname,
@@ -46,5 +47,11 @@
 *Share,
 *Wireless,
 *Parking;
+@end
 
+@protocol FoodShop
+@end
+
+@interface FoodShopResponse: MWSResponse
+@property (nonatomic, strong) NSArray<FoodShop> *Datas;
 @end

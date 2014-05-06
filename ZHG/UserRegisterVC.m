@@ -79,7 +79,6 @@
         return;
     }
     
-    [HUD showHUDAddedTo:self.view animated:YES];
     
     [WSUser registerWithUserName:self.phoneNumberTextField.text
                      andPassword:self.passwordTextField.text
@@ -87,7 +86,6 @@
                         nickname:self.nicknameTextField.text
                      onCompleted:^(JSONModel *model, JSONModelError *err) {
            
-                         [HUD hideHUDForView:self.view animated:YES];
                          
                          MWSResponse *response = (MWSResponse *)model;
                          if(response.success == NO)

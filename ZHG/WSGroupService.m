@@ -7,10 +7,20 @@
 //
 
 #import "WSGroupService.h"
+#import "FoodShop.h"
+#import "MWSResponse.h"
 
 static NSUInteger classId = 2;
 
 @implementation WSGroupService
+
++ (void)getAllGroupOnCompleted:(JSONModelObjectBlock)block
+{
+    [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"getAllGroup") params:nil completion:^(NSString *jsonString, JSONModelError *err) {
+        MWSResponse *response = [[MWSResponse alloc] initWithString:jsonString error:nil];
+        block(response,err);
+    }];
+}
 
 + (void)getNearGroupByClassid:(NSUInteger)pageSize pageIndex:(NSUInteger)pageIndex coordinate:(CLLocationCoordinate2D)coordinate onCompleted:(JSONModelObjectBlock)block
 {
@@ -21,7 +31,8 @@ static NSUInteger classId = 2;
                           @"Longitude":@(coordinate.longitude)};
     
     [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetNearGroupByClassid") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        NSLog(@"%@",jsonString);
+        FoodShopResponse *response = [[FoodShopResponse alloc] initWithString:jsonString error:nil];
+        block(response,err);
     }];
 }
 
@@ -35,7 +46,8 @@ static NSUInteger classId = 2;
                           @"order"    :order};
     
     [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupByClassid") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        NSLog(@"%@",jsonString);
+        FoodShopResponse *response = [[FoodShopResponse alloc] initWithString:jsonString error:nil];
+        block(response,err);
     }];
 }
 
@@ -49,7 +61,8 @@ static NSUInteger classId = 2;
                           @"order"    :order};
     
     [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupByAreaId") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        NSLog(@"%@",jsonString);
+        FoodShopResponse *response = [[FoodShopResponse alloc] initWithString:jsonString error:nil];
+        block(response,err);
     }];
 }
 
@@ -67,7 +80,8 @@ static NSUInteger classId = 2;
                           @"Distance" :@(distance)};
     
     [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetNearGroupByDistance") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        NSLog(@"%@",jsonString);
+        FoodShopResponse *response = [[FoodShopResponse alloc] initWithString:jsonString error:nil];
+        block(response,err);
     }];
 }
 
@@ -84,7 +98,8 @@ static NSUInteger classId = 2;
                          };
     
     [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupBySales") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        NSLog(@"%@",jsonString);
+        FoodShopResponse *response = [[FoodShopResponse alloc] initWithString:jsonString error:nil];
+        block(response,err);
     }];
 }
 
@@ -101,7 +116,8 @@ static NSUInteger classId = 2;
                           };
     
     [SOAPClient requestFromURL:SOAPService(@"basic/GroupService.asmx") soapAction:SOAPAction(@"GetGroupByDiscount") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        NSLog(@"%@",jsonString);
+        FoodShopResponse *response = [[FoodShopResponse alloc] initWithString:jsonString error:nil];
+        block(response,err);
     }];
 }
 @end

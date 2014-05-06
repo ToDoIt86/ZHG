@@ -68,7 +68,8 @@ static dispatch_queue_t soapRequestQueue;
             error = [JSONModelError errorBadResponse];
         }
     
-        if(responseData && error == nil){
+        if(responseData && error == nil)
+        {
             
             NSString *xmlString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
             NSString *jsonString = nil;
@@ -86,22 +87,17 @@ static dispatch_queue_t soapRequestQueue;
             
             separator = [NSString stringWithFormat:@"</%@Result>",soapMethod];
             xmlString = [component lastObject];
-            component = [xmlString componentsSeparatedByString:@"<"];
+            component = [xmlString componentsSeparatedByString:separator];
             if(component.count == 0){
                 SOAPClientLog(@"从xml字符串中查找json字符串时出错(2)", url, soapAction);
                 goto GetJSONFail;
             }
             
             jsonString = [component firstObject];
-            
-            /* 如果Datas字段的值为null,将null替换为空字符串""。
-               例如将{"Success":flase,"Message":"登录失败","Datas":null} 替换为
-               {"Success":flase,"Message":"登录失败","Datas":""}。
-             */
             component = [jsonString componentsSeparatedByString:@"Datas"];
             NSString *datas = [component objectAtIndex:1];
             if([datas isEqualToString:@"\":null}"]){
-                jsonString = [NSString stringWithFormat:@"%@Datas\":%@",component[0],@"\"\"}"];
+                jsonString = [NSString stringWithFormat:@"%@Datas\":%@",component[0],@"[]}"];
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{

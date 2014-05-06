@@ -8,5 +8,7 @@
 
 #import "MBProgressHUD.h"
 
-@interface HUD : MBProgressHUD
+@interface HUD : NSObject  
++ (void)showHUDInView:(UIView *)view title:(NSString *)title;
++ (void)hideHUDForView:(UIView *)view;
 @end

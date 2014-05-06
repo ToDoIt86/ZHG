@@ -15,8 +15,11 @@
 #import "WSServiceItemService.h"
 #import "LHLocationManager.h"
 #import "FoodDetailVC.h"
-
-static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
+#import "HUD.h"
+#import "FoodShop.h"
+#import "AlertView.h"
+#import "UIImageView+WebCache.h"
+#import "FoodCell.h"
 
 @interface FoodShopsListVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *foodShopListTableView;
@@ -26,6 +29,7 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
 @property (strong, nonatomic) UIImageView *selectedCellBackgroundView2;
 @property (strong, nonatomic) UIView *maskView;
 @property (assign, nonatomic) NSInteger firstSegmentedControlSelectedIndex;
+@property (strong, nonatomic) FoodShopResponse *foodShopDataModel;
 @end
 
 @implementation FoodShopsListVC
@@ -45,9 +49,7 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
     [super viewDidLoad];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self.foodShopListTableView registerNib:[UINib nibWithNibName:@"FoodShopsCell" bundle:nil]
-                     forCellReuseIdentifier:kFoodShopsCellReusedId];
-    
+  
     SegmentedControl *firstSegmentedControl = [[SegmentedControl alloc] initWithItems:@[@"探店淘美食",@"人气美食"]];
     [firstSegmentedControl addTarget:self action:@selector(didSelectedSegmentedControl:) forControlEvents:UIControlEventValueChanged];
     [firstSegmentedControl setSCFrame:CGRectMake(0, 0, 320, 40)];
@@ -122,13 +124,44 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
     self.maskView.hidden = YES;
     [self.view insertSubview:self.maskView aboveSubview:self.foodShopListTableView];
     
-    [WSGroupService getGroupByClassid:100 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate order:@"areaid" onCompleted:NULL];
+    [HUD showHUDInView:self.view title:@"玩命加载中.."];
+    
+    [WSGroupService getGroupByClassid:100
+                            pageIndex:1
+                           coordinate:[LHLocationManager sharedInstance].coordinate
+                                order:@"groupid"
+                          onCompleted:^(JSONModel *model, JSONModelError* err){
+        [HUD hideHUDForView:self.view];
+        self.foodShopDataModel = (FoodShopResponse *)model;
+        [self.foodShopListTableView reloadData];
+    }];
 }
 
 #pragma mark - Action
 - (void)didSelectedSegmentedControl:(SegmentedControl *)segmentedControl
 {
     self.firstSegmentedControlSelectedIndex = segmentedControl.selectedIndex;
+    
+    if(segmentedControl.selectedIndex == 0)
+    {
+        [HUD showHUDInView:self.view title:@"玩命加载中.."];
+
+        [WSGroupService getGroupByClassid:100
+                                pageIndex:1
+                               coordinate:[LHLocationManager sharedInstance].coordinate
+                                    order:@"groupid"
+          onCompleted:^(JSONModel *model, JSONModelError* err){
+              [HUD hideHUDForView:self.view];
+              self.foodShopDataModel = (FoodShopResponse *)model;
+              [self.foodShopListTableView reloadData];
+          }];
+    }
+    else
+    {
+      [WSServiceItemService getItemByCId:20 pageIndex:1 onCompleted:^(JSONModel *model, JSONModelError *err) {
+          
+      }];
+    }
 }
 
 - (void)didSelectedSecondSegmentedControl:(SegmentedControl *)segmentedControl
@@ -169,7 +202,10 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
     if(tableView == self.dropView1) return self.dropView1Items.count;
     if(tableView == self.dropView2) return self.dropView2Items.count;
     if(tableView == self.dropView3) return self.dropView3Items.count;
-    return 10;
+    
+    if(self.firstSegmentedControlSelectedIndex == 0) return self.foodShopDataModel.Datas.count;
+    
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -178,8 +214,39 @@ static NSString *const kFoodShopsCellReusedId = @"FoodShopsCell";
     
     if(tableView == self.foodShopListTableView)
     {
-        cell = [tableView dequeueReusableCellWithIdentifier:kFoodShopsCellReusedId];
-        return cell;
+        if(self.firstSegmentedControlSelectedIndex == 0)
+        {
+            FoodShopsCell *shopCell = [tableView dequeueReusableCellWithIdentifier:@"FoodShopsCell"];
+            if(shopCell == nil)
+            {
+                UINib *nib = [UINib nibWithNibName:@"FoodShopsCell" bundle:nil];
+                shopCell = [[nib instantiateWithOwner:nil options:nil] objectAtIndex:0];
+            }
+            
+            FoodShop *shopEntity = self.foodShopDataModel.Datas[indexPath.row];
+            shopCell.nameLabel.text = shopEntity.Groupname;
+            shopCell.wifiIconImageView.hidden = !shopEntity.Wireless.boolValue;
+            shopCell.parkingIconImageView.hidden = !shopEntity.Parking.boolValue;
+            shopCell.numberOfCollectionLabel.hidden = !shopEntity.Collection.boolValue;
+            shopCell.addressLabel.text = shopEntity.Address;
+            shopCell.numberOfCollectionLabel.text =
+            [NSString stringWithFormat:@"%d人已收藏",shopEntity.Collection.intValue];
+            [shopCell.previewImageView setImageWithURL:[NSURL URLWithString:shopEntity.Groupico] placeholderImage:[UIImage imageNamed:@"ad0.jpg"]];
+            
+            return shopCell;
+        }
+        else if(self.firstSegmentedControlSelectedIndex == 1)
+        {
+            FoodCell *foodCell = [tableView dequeueReusableCellWithIdentifier:@"FoodCell"];
+            if(foodCell == nil)
+            {
+                UINib *nib = [UINib nibWithNibName:@"FoodCell" bundle:nil];
+                foodCell = [[nib instantiateWithOwner:nil options:nil] objectAtIndex:0];
+            }
+            return foodCell;
+        }
+        
+        return nil;
     }
     
     if(tableView == self.dropView1)

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FoodShopsCell : UITableViewCell
+@interface FoodCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *previewImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfBuyerLabel;

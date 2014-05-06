@@ -10,22 +10,15 @@
 
 @implementation HUD
 
-- (id)initWithFrame:(CGRect)frame
+
++ (void)showHUDInView:(UIView *)view title:(NSString *)title
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.labelText = title;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
++ (void)hideHUDForView:(UIView *)view
 {
-    // Drawing code
+    [MBProgressHUD hideHUDForView:view animated:YES];
 }
-*/
-
 @end

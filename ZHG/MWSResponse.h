@@ -12,5 +12,5 @@
 
 @property (nonatomic, assign) BOOL success;
 @property (nonatomic, strong) NSString *message;
-
+//@property (nonatomic, strong) NSArray *datas;
 @end

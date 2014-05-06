@@ -12,6 +12,8 @@
 // 探商淘美食服务接口
 @interface WSGroupService : SOAPClient
 
++ (void)getAllGroupOnCompleted:(JSONModelObjectBlock)block;
+
 + (void)getNearGroupByClassid:(NSUInteger)pageSize
                     pageIndex:(NSUInteger)pageIndex
                    coordinate:(CLLocationCoordinate2D)coordinate
