@@ -21,6 +21,7 @@
 #import "UIImageView+WebCache.h"
 #import "FoodCell.h"
 #import "Product.h"
+#import "SVPullToRefresh.h"
 
 @interface FoodShopsListVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *foodShopListTableView;
@@ -126,63 +127,19 @@
     self.maskView.hidden = YES;
     [self.view insertSubview:self.maskView aboveSubview:self.foodShopListTableView];
     
-    [HUD showHUDInView:self.view title:@"玩命加载中.."];
-    
-    [WSGroupService getGroupByClassid:100
-                            pageIndex:1
-                           coordinate:[LHLocationManager sharedInstance].coordinate
-                                order:@"groupid"
-                          onCompleted:^(JSONModel *model, JSONModelError* err){
-        [HUD hideHUDForView:self.view];
-        self.foodShopDataModel = (FoodShopResponse *)model;
-        [self.foodShopListTableView reloadData];
-    }];
+    [self.foodShopListTableView addPullToRefreshWithActionHandler:^{
+        _firstSegmentedControlSelectedIndex == 0 ? [self refreshFoodShopsList] : [self refreshFoodList];
+    } position:SVPullToRefreshPositionTop];
+    [self.foodShopListTableView triggerPullToRefresh];
 }
 
 #pragma mark - Action
 - (void)didSelectedSegmentedControl:(SegmentedControl *)segmentedControl
 {
     self.firstSegmentedControlSelectedIndex = segmentedControl.selectedIndex;
-    
-    [HUD showHUDInView:self.view title:@"玩命加载中.."];
 
-    if(segmentedControl.selectedIndex == 0)
-    {
-
-        [WSGroupService getGroupByClassid:100
-                                pageIndex:1
-                               coordinate:[LHLocationManager sharedInstance].coordinate
-                                    order:@"groupid"
-          onCompleted:^(JSONModel *model, JSONModelError* err){
-              [HUD hideHUDForView:self.view];
-              
-              if(err || model == nil)
-              {
-                  [AlertView showWithMessage:@"获取数据失败"];
-                  return;
-              }
-              
-              self.foodShopDataModel = (FoodShopResponse *)model;
-              [self.foodShopListTableView reloadData];
-          }];
-    }
-    else
-    {
-      [WSServiceItemService getItemByCId:20
-                               pageIndex:1
-                             onCompleted:^(JSONModel *model, JSONModelError *err) {
-                                 
-          [HUD hideHUDForView:self.view];
-          if(err || model == nil)
-          {
-              [AlertView showWithMessage:@"获取数据失败"];
-              return;
-          }
-                           
-           self.productDataModel = (ProductResponse *)model;
-          [self.foodShopListTableView reloadData];
-      }];
-    }
+    if(segmentedControl.selectedIndex == 0) [self refreshFoodShopsList];
+    else [self refreshFoodList];
 }
 
 - (void)didSelectedSecondSegmentedControl:(SegmentedControl *)segmentedControl
@@ -214,6 +171,36 @@
     self.dropView1.hidden = YES;
     self.dropView3.hidden = YES;
     self.maskView.hidden  = YES;
+}
+
+#pragma mark - Refresh data
+
+- (void)refreshFoodShopsList
+{
+    [HUD showHUDInView:self.view title:@"玩命加载中.."];
+    [WSGroupService getGroupByClassid:100 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate order:@"groupid" onCompleted:^(JSONModel *model, JSONModelError* err){
+        [HUD hideHUDForView:self.view];
+        [self.foodShopListTableView.pullToRefreshView stopAnimating];
+
+        self.foodShopDataModel  = (FoodShopResponse *)model;
+        if(err || model == nil) [AlertView showWithMessage:@"加载数据失败"];
+        else if(self.foodShopDataModel.success == NO) [AlertView showWithMessage:self.foodShopDataModel.message];
+        else [self.foodShopListTableView reloadData];
+    }];
+}
+
+- (void)refreshFoodList
+{
+    [HUD showHUDInView:self.view title:@"玩命加载中.."];
+    [WSServiceItemService getItemByCId:20 pageIndex:1 onCompleted:^(JSONModel *model, JSONModelError *err) {
+        [HUD hideHUDForView:self.view];
+        [self.foodShopListTableView.pullToRefreshView stopAnimating];
+
+        self.productDataModel = (ProductResponse *)model;
+        if(err || model == nil) [AlertView showWithMessage:@"获取数据失败"];
+        else if(self.productDataModel.success == NO) [AlertView showWithMessage:self.productDataModel.message];
+        else [self.foodShopListTableView reloadData];
+    }];
 }
 
 #pragma mark - UITableViewDataSource
@@ -269,6 +256,9 @@
             
             Product *productEntity = self.productDataModel.Datas[indexPath.row];
             foodCell.nameLabel.text = productEntity.Serviceitem;
+            if([productEntity.Itemsn isEqualToString:@"ff96b7c0-21c0-4407-a6e5-629665c645ec"])
+                NSLog(@"Name: %@", productEntity.Serviceitem);
+            //foodCell.addressLabel.text = productEntity.Address;
             
             return foodCell;
         }
@@ -350,7 +340,8 @@
         }
         else
         {
-            controller = [[FoodDetailVC alloc] initWithNibName:@"FoodDetailVC" bundle:nil];
+            Product *product = self.productDataModel.Datas[indexPath.row];
+            controller = [[FoodDetailVC alloc] initWithNibName:@"FoodDetailVC" productNumber:product.Itemsn];
         }
         
         [self.navigationController pushViewController:controller animated:YES];

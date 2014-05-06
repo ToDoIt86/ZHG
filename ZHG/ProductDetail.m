@@ -9,5 +9,7 @@
 #import "ProductDetail.h"
 
 @implementation ProductDetail
+@end
 
+@implementation ProductDetailResponse
 @end

@@ -9,27 +9,46 @@
 #import "FoodDetailVC.h"
 #import "UIScrollView+ContentSize.h"
 #import "SalesPromotionCell.h"
+#import "HUD.h"
+#import "WSServiceItemService.h"
+#import "ProductDetail.h"
+#import "AlertView.h"
 
-@interface FoodDetailVC ()<UIScrollViewDelegate,UITableViewDataSource>
+
+@interface FoodDetailVC ()<UIScrollViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *topLevelScrollView;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *adScrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *adPageControl;
 @property (weak, nonatomic) IBOutlet UITableView *salesPromotionTableView;
+
+@property (weak, nonatomic) IBOutlet UILabel *numberOfCollectionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *discountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *discountLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UITextView *introductionTextView;
+
+
+@property (nonatomic, strong) NSString *productNumber;
 @end
 
 @implementation FoodDetailVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil productNumber:(NSString *)number
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self)
     {
         self.title = @"商品详情";
+        self.productNumber = number;
         self.edgesForExtendedLayout = UIRectEdgeLeft|UIRectEdgeRight;
     }
     return self;
 }
+
 
 - (void)viewDidLoad
 {
@@ -40,13 +59,37 @@
     
     [self insertAdContent];
     [self.topLevelScrollView calculateAndSetContentSize];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [HUD showHUDInView:self.view title:@"玩命加载中..."];
+    /*[WSServiceItemService getItemBasicProperty:self.productNumber usersn:@"NULL" groupsn:@"NULL" onCompleted:^(JSONModel *model, JSONModelError *err) {
+        [HUD hideHUDForView:self.view];
+        
+        ProductDetailResponse *response = (ProductDetailResponse *)model;
+        if(err || model == nil) [AlertView showWithMessage:@"获取数据失败"];
+        else if(response.success == NO) [AlertView showWithMessage:response.message];
+        else
+        {
+            self.productNameLabel.text = response.Datas.Serviceitem;
+            self.numberOfCollectionLabel.text = response.Datas.Collection;
+        }
+    }];*/
+    
+    [WSServiceItemService getItem:self.productNumber onCompleted:^(JSONModel *model, JSONModelError *err) {
+        [HUD hideHUDForView:self.view];
+        
+        ProductDetailResponse *response = (ProductDetailResponse *)model;
+        if(err || model == nil) [AlertView showWithMessage:@"获取数据失败"];
+        else if(response.success == NO) [AlertView showWithMessage:response.message];
+        else
+        {
+            self.productNameLabel.text = response.Datas.Serviceitem;
+            self.numberOfCollectionLabel.text = response.Datas.Collection;
+            //self.addressLabel.text = response.Datas.Address;
+           // self.phoneLabel.text = response.Datas.Telephone;
+           // self.introductionTextView.text  = response.Datas.Itemintro;
+            [self.webView loadHTMLString:response.Datas.Itemcontent baseURL:nil];
+        }
+    }];
 }
 
 #pragma mark － Advertising
@@ -84,4 +127,14 @@
     SalesPromotionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SalesPromotionCell"];
     return cell;
 }
+
+#pragma mark - UIWebViewDelegate
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    CGRect newRect = webView.frame;
+    newRect.size = webView.scrollView.contentSize;
+    webView.frame = newRect;
+    [self.topLevelScrollView calculateAndSetContentSize];
+}
+
 @end

@@ -8,10 +8,38 @@
 
 #import "JSONModel.h"
 #import "Product.h"
+#import "MWSResponse.h"
 
 //GetItem,GetItemBasicProperty,GetClassItem,GetRecommend,GetActivities_info接口返回的数据模型
-@interface ProductDetail : Product
-@property(nonatomic, strong) NSString
+@interface ProductDetail : JSONModel
+@property(nonatomic, strong) NSString<Optional>
+*Serviceitemid,
+*Itemsn,
+*Groupsn,
+*Userid,
+*Classid,
+*Serviceitem,
+*Itemimage,
+*Itemintro,
+*Itemcontent,
+*Activities_info,
+*Standardprice,
+*Discountprice,
+*Discount,
+*Times,
+*Iscommon,
+*Isused,
+*Remark,
+*Areacode,
+*Groupname,
+*Address,
+*Telephone,
+*Longitude,
+*Latitude,
+*Collection,
+*Share,
+*Sales,
+*click,
 *Recommend,
 *Indiscount,
 *Filmarea,
@@ -21,4 +49,8 @@
 *Releasetime,
 *Filmtime,
 *Purchasenotes;
+@end
+
+@interface ProductDetailResponse : MWSResponse
+@property (nonatomic, strong) ProductDetail *Datas;
 @end

@@ -9,8 +9,16 @@
             <connections>
                 <outlet property="adPageControl" destination="vJ4-CD-YpO" id="ikV-x2-YuC"/>
                 <outlet property="adScrollView" destination="oPP-K2-za1" id="xxy-gF-THJ"/>
+                <outlet property="addressLabel" destination="pH7-HH-Rps" id="Ys7-g4-J3H"/>
+                <outlet property="discountLabel" destination="hx1-nK-lqM" id="wWt-eE-UAD"/>
+                <outlet property="discountLabel2" destination="if4-w4-EZ5" id="HYw-C8-rUr"/>
+                <outlet property="introductionTextView" destination="QoX-wK-YQi" id="Mz4-R6-xt7"/>
+                <outlet property="numberOfCollectionLabel" destination="cqi-as-JvE" id="OKv-wR-kbs"/>
+                <outlet property="phoneLabel" destination="rDB-xU-z0c" id="7ma-nU-hQ7"/>
+                <outlet property="productNameLabel" destination="EX3-x0-zQx" id="uqb-QK-64a"/>
                 <outlet property="topLevelScrollView" destination="fxX-Fo-DRi" id="7em-gq-OTh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="0FL-Ua-8sk" id="ryj-Cf-G6c"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -77,7 +85,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" id="9J3-Xs-bNT">
-                                    <rect key="frame" x="218" y="8.9999996456138174" width="1" height="106"/>
+                                    <rect key="frame" x="218" y="8.9999996270198181" width="1" height="106"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
@@ -149,7 +157,7 @@
                                     </state>
                                 </button>
                                 <view contentMode="scaleToFill" id="VRL-LN-s1t">
-                                    <rect key="frame" x="269" y="82" width="1" height="20.000000407782895"/>
+                                    <rect key="frame" x="269" y="82" width="1" height="20.000000407782998"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
@@ -269,6 +277,9 @@
                             <rect key="frame" x="0.0" y="601" width="320" height="203"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="gXJ-3U-KQA"/>
+                            </connections>
                         </webView>
                     </subviews>
                 </scrollView>

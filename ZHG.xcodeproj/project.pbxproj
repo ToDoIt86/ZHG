@@ -85,6 +85,9 @@
 		CDD6FE8B190F9C0500BDF78A /* SalesPromotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD6FE89190F9C0500BDF78A /* SalesPromotionCell.xib */; };
 		CDD6FE8D190F9F6500BDF78A /* cell_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDD6FE8C190F9F6500BDF78A /* cell_icon.jpg */; };
 		CDD6FE8F190F9FAA00BDF78A /* cell_icon2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDD6FE8E190F9FAA00BDF78A /* cell_icon2.jpg */; };
+		CDDBB3AF1918C501002E6C67 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDBB3AC1918C501002E6C67 /* UIScrollView+SVInfiniteScrolling.m */; };
+		CDDBB3B01918C501002E6C67 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDBB3AE1918C501002E6C67 /* UIScrollView+SVPullToRefresh.m */; };
+		CDDBB3B31918CE23002E6C67 /* UIView+ContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDBB3B21918CE23002E6C67 /* UIView+ContentSize.m */; };
 		CDE5F80618F3E28B00335B45 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE5F80518F3E28B00335B45 /* SystemConfiguration.framework */; };
 		CDE5F82318F3E4B200335B45 /* JSONModel+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F80A18F3E4B200335B45 /* JSONModel+CoreData.m */; };
 		CDE5F82418F3E4B200335B45 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F80C18F3E4B200335B45 /* JSONModel.m */; };
@@ -244,6 +247,13 @@
 		CDD6FE89190F9C0500BDF78A /* SalesPromotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SalesPromotionCell.xib; sourceTree = "<group>"; };
 		CDD6FE8C190F9F6500BDF78A /* cell_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cell_icon.jpg; sourceTree = "<group>"; };
 		CDD6FE8E190F9FAA00BDF78A /* cell_icon2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cell_icon2.jpg; sourceTree = "<group>"; };
+		CDDBB3AA1918C501002E6C67 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		CDDBB3AB1918C501002E6C67 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		CDDBB3AC1918C501002E6C67 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		CDDBB3AD1918C501002E6C67 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		CDDBB3AE1918C501002E6C67 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		CDDBB3B11918CE23002E6C67 /* UIView+ContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ContentSize.h"; sourceTree = "<group>"; };
+		CDDBB3B21918CE23002E6C67 /* UIView+ContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ContentSize.m"; sourceTree = "<group>"; };
 		CDE5F80518F3E28B00335B45 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CDE5F80918F3E4B200335B45 /* JSONModel+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+CoreData.h"; sourceTree = "<group>"; };
 		CDE5F80A18F3E4B200335B45 /* JSONModel+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+CoreData.m"; sourceTree = "<group>"; };
@@ -441,6 +451,7 @@
 		CD9C14A118F7B44D0043B738 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				CDDBB3A91918C501002E6C67 /* SVPullToRefresh */,
 				CD3D9BC719187B8400DDF332 /* EDStarRating */,
 				CD3D9B9B19187B7400DDF332 /* SDWebImage */,
 				CD9F3656190003A800762332 /* TPKeyboardAvoiding */,
@@ -490,6 +501,8 @@
 				CDAD9B24190A462800086996 /* UIColor+RGB.m */,
 				CDD6FE84190F953C00BDF78A /* UIScrollView+ContentSize.h */,
 				CDD6FE85190F953C00BDF78A /* UIScrollView+ContentSize.m */,
+				CDDBB3B11918CE23002E6C67 /* UIView+ContentSize.h */,
+				CDDBB3B21918CE23002E6C67 /* UIView+ContentSize.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -588,6 +601,18 @@
 				CDC4DF3718FE69DB0025615A /* HUD.m */,
 			);
 			name = HUD;
+			sourceTree = "<group>";
+		};
+		CDDBB3A91918C501002E6C67 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				CDDBB3AA1918C501002E6C67 /* SVPullToRefresh.h */,
+				CDDBB3AB1918C501002E6C67 /* UIScrollView+SVInfiniteScrolling.h */,
+				CDDBB3AC1918C501002E6C67 /* UIScrollView+SVInfiniteScrolling.m */,
+				CDDBB3AD1918C501002E6C67 /* UIScrollView+SVPullToRefresh.h */,
+				CDDBB3AE1918C501002E6C67 /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
 		CDE5F80718F3E4B200335B45 /* JSONModel */ = {
@@ -774,9 +799,11 @@
 				CDE5F82818F3E4B200335B45 /* NSArray+JSONModel.m in Sources */,
 				CD3D9BC519187B7400DDF332 /* UIImage+WebP.m in Sources */,
 				CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */,
+				CDDBB3B31918CE23002E6C67 /* UIView+ContentSize.m in Sources */,
 				CDE5F82618F3E4B200335B45 /* JSONModelClassProperty.m in Sources */,
 				CDAD9B25190A462800086996 /* UIColor+RGB.m in Sources */,
 				CD9F220318F43F81009C25C4 /* HomeVC.m in Sources */,
+				CDDBB3AF1918C501002E6C67 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				CDE5F82318F3E4B200335B45 /* JSONModel+CoreData.m in Sources */,
 				CD3D9BCF19187FEC00DDF332 /* FoodCell.m in Sources */,
 				CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */,
@@ -798,6 +825,7 @@
 				CDE5F82B18F3E4B200335B45 /* JSONModel+networking.m in Sources */,
 				CD35AEA118FAA0DC002E1882 /* WSGroupService.m in Sources */,
 				CDED974D18FBB2F800E74A0B /* FoodShopsCell.m in Sources */,
+				CDDBB3B01918C501002E6C67 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				CD3D9BC219187B7400DDF332 /* UIButton+WebCache.m in Sources */,
 				CD3D9BBC19187B7400DDF332 /* SDWebImageCompat.m in Sources */,
 				CD4550B01911311900224E77 /* LHLocationManager.m in Sources */,

@@ -10,4 +10,6 @@
 
 @interface FoodDetailVC : BaseVC
 
+- (id)initWithNibName:(NSString *)nibNameOrNil productNumber:(NSString *)number;
+
 @end

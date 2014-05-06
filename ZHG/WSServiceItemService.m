@@ -8,6 +8,7 @@
 
 #import "WSServiceItemService.h"
 #import "Product.h"
+#import "ProductDetail.h"
 
 static NSUInteger classId = 2;
 
@@ -57,7 +58,8 @@ static NSUInteger classId = 2;
     NSDictionary *dict =@{@"itemsn":itemsn};
     
     [SOAPClient requestFromURL:SOAPService(@"Ecommerce/ServiceItemService.asmx") soapAction:SOAPAction(@"GetItem") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        NSLog(@"%@",jsonString);
+        ProductDetailResponse *response = [[ProductDetailResponse alloc] initWithString:jsonString error:nil];
+        block(response, err);
     }];
 }
 
@@ -69,7 +71,8 @@ static NSUInteger classId = 2;
     NSDictionary *dict =@{@"itemsn":itemsn,@"usersn":usersn,@"groupsn":groupsn};
     
     [SOAPClient requestFromURL:SOAPService(@"Ecommerce/ServiceItemService.asmx") soapAction:SOAPAction(@"GetItemBasicProperty") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        NSLog(@"%@",jsonString);
+        ProductDetailResponse *response = [[ProductDetailResponse alloc] initWithString:jsonString error:nil];
+        block(response, err);
     }];
 }
 

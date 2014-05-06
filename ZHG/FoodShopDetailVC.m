@@ -9,6 +9,7 @@
 #import "FoodShopDetailVC.h"
 #import "UIScrollView+ContentSize.h"
 #import "SalesPromotionCell.h"
+#import "HUD.h"
 
 @interface FoodShopDetailVC ()<UIScrollViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIScrollView *topLevelScrollView;
