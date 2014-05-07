@@ -341,7 +341,7 @@
         else
         {
             Product *product = self.productDataModel.Datas[indexPath.row];
-            controller = [[FoodDetailVC alloc] initWithNibName:@"FoodDetailVC" productNumber:product.Itemsn];
+            controller = [[FoodDetailVC alloc] initWithNibName:@"FoodDetailVC" productNumber:product];
         }
         
         [self.navigationController pushViewController:controller animated:YES];

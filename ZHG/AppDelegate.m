@@ -1,7 +1,6 @@
 //
 //  AppDelegate.m
 //  ZHG
-//  ***_*** 恭喜你接手了一坨...CODES，特别是..UI.. 😁😄😄😄
 //  Created by lihong on 14-4-3.
 //  Copyright (c) 2014年 LiHong(410139419@qq.com). All rights reserved.
 //
@@ -11,6 +10,7 @@
 #import "WSProductCategory.h"
 #import "UIColor+RGB.h"
 #import "LHLocationManager.h"
+#import "UMSocial.h"
 
 @implementation AppDelegate
 
@@ -18,6 +18,7 @@
 {
     
     [LHLocationManager sharedInstance];
+    //[UMSocialData setAppKey:@"536999f656240b658005dca8"];
     
     UINavigationController *navigaationController =
     [[UINavigationController alloc] initWithRootViewController:[[HomeVC alloc] initWithNibName:@"HomeVC" bundle:nil]];

@@ -8,9 +8,10 @@
 
 #import "UserLoginVC.h"
 #import "AlertView.h"
-#import "WSUser.h"
+#import "WSUserService.h"
 #import "HUD.h"
 #import "UserRegisterVC.h"
+#import "MWSResponse.h"
 
 @interface UserLoginVC ()
 
@@ -58,7 +59,7 @@
     
     [self.view endEditing:YES];
     
-    [WSUser loginWithUserName:self.userPasswordTF.text
+    [WSUserService loginWithUserName:self.userPasswordTF.text
                   andPassword:self.userPasswordTF.text
                   onCompleted:^(JSONModel *model, JSONModelError* err){
                       

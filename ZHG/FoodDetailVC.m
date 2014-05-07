@@ -13,7 +13,8 @@
 #import "WSServiceItemService.h"
 #import "ProductDetail.h"
 #import "AlertView.h"
-
+#import "FoodOrderVC.h"
+#import "UMSocial.h"
 
 @interface FoodDetailVC ()<UIScrollViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *topLevelScrollView;
@@ -32,18 +33,18 @@
 @property (weak, nonatomic) IBOutlet UITextView *introductionTextView;
 
 
-@property (nonatomic, strong) NSString *productNumber;
+@property (nonatomic, strong) Product *productEntity;
 @end
 
 @implementation FoodDetailVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil productNumber:(NSString *)number
+- (id)initWithNibName:(NSString *)nibNameOrNil productNumber:(Product *)product
 {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self)
     {
         self.title = @"商品详情";
-        self.productNumber = number;
+        self.productEntity = product;
         self.edgesForExtendedLayout = UIRectEdgeLeft|UIRectEdgeRight;
     }
     return self;
@@ -74,7 +75,7 @@
         }
     }];*/
     
-    [WSServiceItemService getItem:self.productNumber onCompleted:^(JSONModel *model, JSONModelError *err) {
+    [WSServiceItemService getItem:self.productEntity.Itemsn onCompleted:^(JSONModel *model, JSONModelError *err) {
         [HUD hideHUDForView:self.view];
         
         ProductDetailResponse *response = (ProductDetailResponse *)model;
@@ -114,6 +115,48 @@
     
     NSInteger pageIndex = floorf( scrollView.contentOffset.x/scrollView.bounds.size.width);
     self.adPageControl.currentPage = pageIndex;
+}
+
+#pragma mark - Action
+
+- (IBAction)buyNow:(id)sender
+{
+    FoodOrderVC *vc = [[FoodOrderVC alloc] initWithNibName:@"FoodOrderVC" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)collect:(id)sender
+{
+    [WSServiceItemService addCollection:self.productEntity.Itemsn onCompleted:^(JSONModel *model, JSONModelError *err) {
+        
+    }];
+}
+
+- (IBAction)share:(id)sender
+{
+   /* [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"536999f656240b658005dca8"
+                                      shareText:@"测试分享"
+                                     shareImage:nil
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToQzone,UMShareToWechatTimeline,UMShareToQQ,UMShareToRenren,nil]
+                                       delegate:nil];*/
+}
+
+- (IBAction)callTelephone:(id)sender
+{
+
+    if(self.productEntity.Telephone == nil)
+    {
+        [AlertView showWithMessage:@"无联系电话"];
+        return;
+    }
+    
+    NSURL *telephoneURL =
+    [[NSURL alloc] initWithString:[@"tel://" stringByAppendingString:self.productEntity.Telephone]];
+    if([[UIApplication sharedApplication] canOpenURL:telephoneURL] == NO)
+        [AlertView showWithMessage:[@"无法拨打电话:" stringByAppendingString:self.productEntity.Telephone]];
+        
+    [[UIApplication sharedApplication] openURL:telephoneURL];
 }
 
 #pragma mark - UITableView DataSource

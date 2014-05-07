@@ -7,9 +7,10 @@
 //
 
 #import "UserRegisterVC.h"
-#import "WSUser.h"
+#import "WSUserService.h"
 #import "AlertView.h"
 #import "HUD.h"
+#import "MWSResponse.h"
 
 @interface UserRegisterVC ()
 @property (weak, nonatomic) IBOutlet UITextField *nicknameTextField;
@@ -80,7 +81,7 @@
     }
     
     
-    [WSUser registerWithUserName:self.phoneNumberTextField.text
+    [WSUserService registerWithUserName:self.phoneNumberTextField.text
                      andPassword:self.passwordTextField.text
                      phoneNumber:self.phoneNumberTextField.text
                         nickname:self.nicknameTextField.text

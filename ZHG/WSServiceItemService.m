@@ -117,7 +117,8 @@ static NSUInteger classId = 2;
 {
     NSDictionary *dict = @{@"itemsn":itemsn};
     [SOAPClient requestFromURL:SOAPService(@"Ecommerce/ServiceItemService.asmx") soapAction:SOAPAction(@"AddCollection") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        NSLog(@"%@",jsonString);
+        MWSResponse *response = [[MWSResponse alloc] initWithString:jsonString error:nil];
+        block(response, err);
     }];
 }
 

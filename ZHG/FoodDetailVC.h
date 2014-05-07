@@ -8,8 +8,8 @@
 
 #import "BaseVC.h"
 
+@class Product;
 @interface FoodDetailVC : BaseVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil productNumber:(NSString *)number;
-
+- (id)initWithNibName:(NSString *)nibNameOrNil productNumber:(Product *)product;
 @end
