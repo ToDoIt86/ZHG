@@ -7,6 +7,7 @@
 //
 
 #import "WSOrderService.h"
+#import "FoodOrder.h"
 
 @implementation WSOrderService
 
@@ -14,7 +15,8 @@
 {
     NSDictionary *dict = @{@"orderJsonStr":orderJsonString};
     [SOAPClient requestFromURL:SOAPService(@"ecommerce/OrderService.asmx") soapAction:SOAPAction(@"CreateOrder") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        
+        FoodOrderResponse *response = [[FoodOrderResponse alloc] initWithString:jsonString error:nil];
+        block(response, err);
     }];
 }
 @end

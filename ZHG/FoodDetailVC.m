@@ -14,7 +14,7 @@
 #import "ProductDetail.h"
 #import "AlertView.h"
 #import "FoodOrderVC.h"
-#import "UMSocial.h"
+//#import "UMSocial.h"
 
 @interface FoodDetailVC ()<UIScrollViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *topLevelScrollView;
