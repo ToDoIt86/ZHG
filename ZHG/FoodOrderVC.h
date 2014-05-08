@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Product.h"
 
 @interface FoodOrderVC : UIViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil product:(Product *)product;
 
 @end

@@ -9,6 +9,7 @@
 #import "WSServiceItemService.h"
 #import "Product.h"
 #import "ProductDetail.h"
+#import "ProductDetailTemplate.h"
 
 static NSUInteger classId = 2;
 
@@ -76,13 +77,16 @@ static NSUInteger classId = 2;
     }];
 }
 
+
 +(void)getItemContents:(NSString *)itemsn
            onCompleted:(JSONModelObjectBlock)block
 {
     NSDictionary *dict =@{@"itemsn":itemsn};
     
     [SOAPClient requestFromURL:SOAPService(@"Ecommerce/ServiceItemService.asmx") soapAction:SOAPAction(@"GetItemContents") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
-        NSLog(@"%@",jsonString);
+        ProductDetailTemplateResponse *response =
+        [[ProductDetailTemplateResponse alloc] initWithString:jsonString error:nil];
+        block(response, err);
     }];
 }
 

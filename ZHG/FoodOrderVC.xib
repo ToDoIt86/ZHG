@@ -7,12 +7,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FoodOrderVC">
             <connections>
+                <outlet property="addButton" destination="DgT-Lo-13J" id="hBk-bg-Atx"/>
+                <outlet property="amountTextField" destination="QaR-9F-XGD" id="WCX-Sj-mXG"/>
                 <outlet property="dateLabel" destination="JtC-P9-X1F" id="jRt-IM-qr4"/>
                 <outlet property="nameLable" destination="1Rs-kN-3J9" id="vpj-Y4-FdN"/>
                 <outlet property="orderInfoBackgroundView" destination="Esq-QG-vDO" id="F0Q-At-7Gh"/>
                 <outlet property="phoneNumberInfoBackgroundView" destination="q8q-vW-YKj" id="Pw3-b2-lDq"/>
                 <outlet property="phoneNumberLabel" destination="k46-kl-ddR" id="URk-oJ-2bO"/>
                 <outlet property="priceLabel" destination="LuK-I5-Cge" id="XyJ-2u-2zB"/>
+                <outlet property="subButton" destination="gEg-ec-ibV" id="wo8-8Y-zfv"/>
                 <outlet property="submitOrderButton" destination="3Ie-H4-Oyt" id="itO-za-pYH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -144,6 +147,9 @@
                     <state key="normal" image="step_button_left">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="sub:" destination="-1" eventType="touchUpInside" id="2S6-ca-LAs"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DgT-Lo-13J">
                     <rect key="frame" x="252" y="306" width="29" height="30"/>
@@ -151,6 +157,9 @@
                     <state key="normal" image="step_button_right">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="add:" destination="-1" eventType="touchUpInside" id="tnn-2G-ElZ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3Ie-H4-Oyt">
                     <rect key="frame" x="20" y="389" width="280" height="45"/>

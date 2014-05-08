@@ -78,7 +78,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" id="9J3-Xs-bNT">
-                                    <rect key="frame" x="218" y="8.999999661351799" width="1" height="106"/>
+                                    <rect key="frame" x="218" y="9" width="1" height="105.99999964561383"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
@@ -150,7 +150,7 @@
                                     </state>
                                 </button>
                                 <view contentMode="scaleToFill" id="VRL-LN-s1t">
-                                    <rect key="frame" x="269" y="82" width="1" height="20.000000407327338"/>
+                                    <rect key="frame" x="269" y="82" width="1" height="20.000000407782895"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>

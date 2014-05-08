@@ -14,6 +14,7 @@
 #import "ProductDetail.h"
 #import "AlertView.h"
 #import "FoodOrderVC.h"
+#import "ProductDetailTemplate.h"
 //#import "UMSocial.h"
 
 @interface FoodDetailVC ()<UIScrollViewDelegate,UITableViewDataSource,UIWebViewDelegate>
@@ -32,8 +33,9 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextView *introductionTextView;
 
-
 @property (nonatomic, strong) Product *productEntity;
+@property (nonatomic, strong) ProductDetailTemplateResponse *templateReponseEntity;
+@property (nonatomic, assign) BOOL isLoadedHTML, isLoadedTemplate;
 @end
 
 @implementation FoodDetailVC
@@ -91,6 +93,12 @@
             [self.webView loadHTMLString:response.Datas.Itemcontent baseURL:nil];
         }
     }];
+    
+    [WSServiceItemService getItemContents:self.productEntity.Itemsn onCompleted:^(JSONModel *model, JSONModelError *err) {
+        self.templateReponseEntity = (ProductDetailTemplateResponse *)model;
+        if(self.isLoadedHTML)  [self layoutProductDetialIntroduce];
+        else self.isLoadedTemplate = YES;
+    }];
 }
 
 #pragma mark － Advertising
@@ -121,7 +129,8 @@
 
 - (IBAction)buyNow:(id)sender
 {
-    FoodOrderVC *vc = [[FoodOrderVC alloc] initWithNibName:@"FoodOrderVC" bundle:nil];
+    
+    FoodOrderVC *vc = [[FoodOrderVC alloc] initWithNibName:@"FoodOrderVC" product:self.productEntity];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -177,6 +186,77 @@
     CGRect newRect = webView.frame;
     newRect.size = webView.scrollView.contentSize;
     webView.frame = newRect;
+    [self.topLevelScrollView calculateAndSetContentSize];
+    
+    if(self.isLoadedTemplate) [self layoutProductDetialIntroduce];
+    else self.isLoadedHTML = YES;
+}
+
+#pragma makr - 
+- (void)layoutProductDetialIntroduce
+{
+    UINib *nib = [UINib nibWithNibName:@"Template" bundle:nil];
+    NSArray *views = [nib instantiateWithOwner:nil options:nil];
+    CGRect newRect = CGRectMake(0,  self.topLevelScrollView.contentSize.height, 0, 0);
+    
+    for(ProductDetailTemplate *template in self.templateReponseEntity.Datas)
+    {
+        if([template.Contentmodel isEqualToString:@"model1"])
+        {
+            UIView *templateView = views[0];
+            newRect.size = templateView.bounds.size;
+            templateView.frame = newRect;
+            [self.topLevelScrollView addSubview:templateView];
+            newRect.origin.y += newRect.size.height;
+            
+            NSLog(@"%@",[template getTemplateData]);
+        }
+        else if([template.Contentmodel isEqualToString:@"model2"])
+        {
+            UIView *templateView = views[1];
+            newRect.size = templateView.bounds.size;
+            templateView.frame = newRect;
+            [self.topLevelScrollView addSubview:templateView];
+            newRect.origin.y += newRect.size.height;
+            
+        }
+        else if([template.Contentmodel isEqualToString:@"model3"])
+        {
+            UIView *templateView = views[2];
+            newRect.size = templateView.bounds.size;
+            templateView.frame = newRect;
+            [self.topLevelScrollView addSubview:templateView];
+            newRect.origin.y += newRect.size.height;
+            
+        }
+        else if([template.Contentmodel isEqualToString:@"model4"])
+        {
+            UIView *templateView = views[3];
+            newRect.size = templateView.bounds.size;
+            templateView.frame = newRect;
+            [self.topLevelScrollView addSubview:templateView];
+            newRect.origin.y += newRect.size.height;
+            
+        }
+        else if([template.Contentmodel isEqualToString:@"model5"])
+        {
+            UIView *templateView = views[4];
+            newRect.size = templateView.bounds.size;
+            templateView.frame = newRect;
+            [self.topLevelScrollView addSubview:templateView];
+            newRect.origin.y += newRect.size.height;
+            
+        }
+        else if([template.Contentmodel isEqualToString:@"model6"])
+        {
+            UIView *templateView = views[5];
+            newRect.size = templateView.bounds.size;
+            templateView.frame = newRect;
+            [self.topLevelScrollView addSubview:templateView];
+            newRect.origin.y += newRect.size.height;
+        }
+    }
+    
     [self.topLevelScrollView calculateAndSetContentSize];
 }
 

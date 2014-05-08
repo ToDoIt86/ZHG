@@ -44,5 +44,5 @@
 @end
 
 @interface FoodOrderResponse : MWSResponse
-@property (nonatomic, strong) NSArray<FoodOrder> *Datas;
+@property (nonatomic, strong) FoodOrder *Datas;
 @end
