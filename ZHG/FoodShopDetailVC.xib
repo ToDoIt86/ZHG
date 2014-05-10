@@ -7,8 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FoodShopDetailVC">
             <connections>
+                <outlet property="AvatarImageView" destination="FkP-rf-UZp" id="TY0-ZP-Odd"/>
                 <outlet property="adPageControl" destination="vJ4-CD-YpO" id="ikV-x2-YuC"/>
                 <outlet property="adScrollView" destination="oPP-K2-za1" id="xxy-gF-THJ"/>
+                <outlet property="locationLable" destination="pH7-HH-Rps" id="faA-kn-azh"/>
                 <outlet property="salesPromotionTableView" destination="d5N-hy-mfA" id="8j4-s9-efQ"/>
                 <outlet property="topLevelScrollView" destination="fxX-Fo-DRi" id="7em-gq-OTh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -78,7 +80,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" id="9J3-Xs-bNT">
-                                    <rect key="frame" x="218" y="9" width="1" height="105.99999964561383"/>
+                                    <rect key="frame" x="218" y="9.0000001304775239" width="1" height="106"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
@@ -150,7 +152,7 @@
                                     </state>
                                 </button>
                                 <view contentMode="scaleToFill" id="VRL-LN-s1t">
-                                    <rect key="frame" x="269" y="82" width="1" height="20.000000407782895"/>
+                                    <rect key="frame" x="269" y="82.000000839008365" width="1" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
@@ -225,7 +227,7 @@
                                     <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你现在的位置:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pH7-HH-Rps">
-                                    <rect key="frame" x="11" y="8" width="98" height="21"/>
+                                    <rect key="frame" x="11" y="8" width="274" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <nil key="highlightedColor"/>
@@ -249,10 +251,6 @@
                                     <color key="textColor" red="0.30196078430000001" green="0.75686274509999996" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qt4-b2-UsZ">
-                                    <rect key="frame" x="11" y="37" width="60" height="60"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_level" id="Uql-cd-f6M">
                                     <rect key="frame" x="79" y="29" width="26" height="29"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -270,6 +268,10 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad3.jpg" id="FkP-rf-UZp">
+                                    <rect key="frame" x="11" y="46" width="60" height="60"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </view>
@@ -310,6 +312,7 @@
         </view>
     </objects>
     <resources>
+        <image name="ad3.jpg" width="460" height="279"/>
         <image name="arror_right" width="40" height="35"/>
         <image name="favorites_number" width="42" height="38"/>
         <image name="location_pin_blue" width="40" height="35"/>

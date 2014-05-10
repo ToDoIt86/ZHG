@@ -15,6 +15,8 @@
 #import "AlertView.h"
 #import "FoodOrderVC.h"
 #import "ProductDetailTemplate.h"
+#import "UIImageView+WebCache.h"
+#import "Template.h"
 //#import "UMSocial.h"
 
 @interface FoodDetailVC ()<UIScrollViewDelegate,UITableViewDataSource,UIWebViewDelegate>
@@ -36,6 +38,12 @@
 @property (nonatomic, strong) Product *productEntity;
 @property (nonatomic, strong) ProductDetailTemplateResponse *templateReponseEntity;
 @property (nonatomic, assign) BOOL isLoadedHTML, isLoadedTemplate;
+
+@property (weak, nonatomic) IBOutlet UIView *productDetailView;
+@property (weak, nonatomic) IBOutlet UIImageView *AvatarImageView;
+
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
+
 @end
 
 @implementation FoodDetailVC
@@ -56,6 +64,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.AvatarImageView.clipsToBounds = YES;
+    self.AvatarImageView.layer.cornerRadius = 30.0;
+
     
     [self.salesPromotionTableView registerNib:[UINib nibWithNibName:@"SalesPromotionCell" bundle:nil]
                        forCellReuseIdentifier:@"SalesPromotionCell"];
@@ -90,7 +102,12 @@
             //self.addressLabel.text = response.Datas.Address;
            // self.phoneLabel.text = response.Datas.Telephone;
            // self.introductionTextView.text  = response.Datas.Itemintro;
+            self.discountLabel.text = response.Datas.Discount;
+            self.discountLabel2.text = response.Datas.Discount;
+            //[self.AvatarImageView setImageWithURL:[NSURL URLWithString:response.Datas.Itemimage] placeholderImage:nil];
             [self.webView loadHTMLString:response.Datas.Itemcontent baseURL:nil];
+            
+            self.buyButton.enabled = YES;
         }
     }];
     
@@ -186,6 +203,11 @@
     CGRect newRect = webView.frame;
     newRect.size = webView.scrollView.contentSize;
     webView.frame = newRect;
+    
+    newRect.origin.y += newRect.size.height;
+    newRect.size = self.productDetailView.bounds.size;
+    self.productDetailView.frame = newRect;
+    
     [self.topLevelScrollView calculateAndSetContentSize];
     
     if(self.isLoadedTemplate) [self layoutProductDetialIntroduce];
@@ -198,22 +220,21 @@
     UINib *nib = [UINib nibWithNibName:@"Template" bundle:nil];
     NSArray *views = [nib instantiateWithOwner:nil options:nil];
     CGRect newRect = CGRectMake(0,  self.topLevelScrollView.contentSize.height, 0, 0);
+    Template *templateView = nil;
     
     for(ProductDetailTemplate *template in self.templateReponseEntity.Datas)
     {
         if([template.Contentmodel isEqualToString:@"model1"])
         {
-            UIView *templateView = views[0];
+             templateView = views[0];
             newRect.size = templateView.bounds.size;
             templateView.frame = newRect;
             [self.topLevelScrollView addSubview:templateView];
             newRect.origin.y += newRect.size.height;
-            
-            NSLog(@"%@",[template getTemplateData]);
         }
         else if([template.Contentmodel isEqualToString:@"model2"])
         {
-            UIView *templateView = views[1];
+            templateView = views[1];
             newRect.size = templateView.bounds.size;
             templateView.frame = newRect;
             [self.topLevelScrollView addSubview:templateView];
@@ -222,7 +243,7 @@
         }
         else if([template.Contentmodel isEqualToString:@"model3"])
         {
-            UIView *templateView = views[2];
+            templateView = views[2];
             newRect.size = templateView.bounds.size;
             templateView.frame = newRect;
             [self.topLevelScrollView addSubview:templateView];
@@ -231,7 +252,7 @@
         }
         else if([template.Contentmodel isEqualToString:@"model4"])
         {
-            UIView *templateView = views[3];
+            templateView = views[3];
             newRect.size = templateView.bounds.size;
             templateView.frame = newRect;
             [self.topLevelScrollView addSubview:templateView];
@@ -240,7 +261,7 @@
         }
         else if([template.Contentmodel isEqualToString:@"model5"])
         {
-            UIView *templateView = views[4];
+            templateView = views[4];
             newRect.size = templateView.bounds.size;
             templateView.frame = newRect;
             [self.topLevelScrollView addSubview:templateView];
@@ -249,12 +270,14 @@
         }
         else if([template.Contentmodel isEqualToString:@"model6"])
         {
-            UIView *templateView = views[5];
+            templateView = views[5];
             newRect.size = templateView.bounds.size;
             templateView.frame = newRect;
             [self.topLevelScrollView addSubview:templateView];
             newRect.origin.y += newRect.size.height;
         }
+        
+        if(templateView) [templateView setWith:template];
     }
     
     [self.topLevelScrollView calculateAndSetContentSize];

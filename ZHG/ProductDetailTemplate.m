@@ -16,8 +16,8 @@
     
     for(NSUInteger i = 0; i < array.count;i++)
     {
-        if(([self.Contentmodel isEqualToString:@"model4"] ||   // 这几个模版类型带有文字，尼玛自己去看稳当吧
-            [self.Contentmodel isEqualToString:@"model5"] ||   // 这个鸟应用就是堆垃圾，所以以垃圾代码来写之
+        if(([self.Contentmodel isEqualToString:@"model4"] ||
+            [self.Contentmodel isEqualToString:@"model5"] ||
             [self.Contentmodel isEqualToString:@"model6"] )&&
             i == array.count -1)
         {
@@ -26,11 +26,11 @@
         else
         {
             NSString *str =
-            [NSString stringWithFormat:@"http://hyxx.nat123.net/%@",array[i]];
+            [NSString stringWithFormat:@"http://hyxx.nat123.net%@",array[i]];
             [newArray addObject:str];
         }
     }
-    
+   
     return newArray;
 }
 @end

@@ -23,6 +23,8 @@
 #import "Product.h"
 #import "SVPullToRefresh.h"
 
+#define kDefualtPageSize 5
+
 @interface FoodShopsListVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *foodShopListTableView;
 @property (strong, nonatomic) UITableView *dropView1,*dropView2,*dropView3,*dropView4;
@@ -33,6 +35,7 @@
 @property (assign, nonatomic) NSInteger firstSegmentedControlSelectedIndex;
 @property (strong, nonatomic) FoodShopResponse *foodShopDataModel;
 @property (strong, nonatomic) ProductResponse *productDataModel;
+@property (assign, nonatomic) NSInteger pageSize;
 @end
 
 @implementation FoodShopsListVC
@@ -52,7 +55,8 @@
     [super viewDidLoad];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-  
+    self.pageSize = kDefualtPageSize;
+    
     SegmentedControl *firstSegmentedControl = [[SegmentedControl alloc] initWithItems:@[@"探店淘美食",@"人气美食"]];
     [firstSegmentedControl addTarget:self action:@selector(didSelectedSegmentedControl:) forControlEvents:UIControlEventValueChanged];
     [firstSegmentedControl setSCFrame:CGRectMake(0, 0, 320, 40)];
@@ -74,7 +78,7 @@
     self.dropView1Items = @[@"离我最近",@"销量最好"];
     self.dropView2Items = @[@"附近",@"全贵阳",@"云岩区",@"南明区",@"白云区",@"花溪区"];
     self.dropView3Items = @[@"0.5km",@"1km",@"2km",@"3km",@"5km",@"10km"];
-    CGFloat rowHeight = 30.0;
+    CGFloat rowHeight = 44.0;
     
     newRect.origin.y+=newRect.size.height;
     newRect.size.width = newRect.size.width/3;
@@ -97,7 +101,6 @@
     self.dropView2.delegate = self;
     self.dropView2.dataSource = self;
 
-    
     newRect.origin.x += newRect.size.width;
     newRect.size.height = rowHeight * self.dropView3Items.count + 10;
     self.dropView3 = [[UITableView alloc] initWithFrame:newRect];
@@ -108,13 +111,27 @@
     self.dropView3.delegate = self;
     self.dropView3.dataSource = self;
     
+    newRect.origin.x -= newRect.size.width;
+    newRect.size.width *= 2;
+    self.dropView4 = [[UITableView alloc] initWithFrame:newRect];
+    self.dropView4.rowHeight = rowHeight;
+    self.dropView4.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.dropView4.backgroundColor = [UIColor r:242 g:242 b:242];
+    self.dropView4.hidden = YES;
+    self.dropView4.delegate = self;
+    self.dropView4.dataSource = self;
+    
     [self.view addSubview:self.dropView1];
     [self.view addSubview:self.dropView2];
     [self.view addSubview:self.dropView3];
+    [self.view addSubview:self.dropView4];
     
     self.selectedCellBackgroundView1 = [UIView new];
-    self.selectedCellBackgroundView1.backgroundColor = [UIColor r:232 g:93 b:80 a:0.8];
-    self.selectedCellBackgroundView1.layer.cornerRadius = 13;
+    self.selectedCellBackgroundView1.backgroundColor = [UIColor clearColor];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(5, 8, self.dropView1.bounds.size.width-10, rowHeight-16)];
+    view.backgroundColor = [UIColor r:232 g:93 b:80 a:0.8];
+    view.layer.cornerRadius = view.bounds.size.height/2.0;
+    [self.selectedCellBackgroundView1 addSubview:view];
     
     UIImage *backgoundImage = [UIImage imageNamed:@"drop_view_cell_backgound"];
     backgoundImage = [backgoundImage resizableImageWithCapInsets:UIEdgeInsetsMake(8, 18, 8, 8)];
@@ -127,15 +144,18 @@
     self.maskView.hidden = YES;
     [self.view insertSubview:self.maskView aboveSubview:self.foodShopListTableView];
     
+    [self refreshFoodShopsList];
+    
     [self.foodShopListTableView addPullToRefreshWithActionHandler:^{
         _firstSegmentedControlSelectedIndex == 0 ? [self refreshFoodShopsList] : [self refreshFoodList];
-    } position:SVPullToRefreshPositionTop];
-    [self.foodShopListTableView triggerPullToRefresh];
+    } position:SVPullToRefreshPositionBottom];
 }
 
 #pragma mark - Action
 - (void)didSelectedSegmentedControl:(SegmentedControl *)segmentedControl
 {
+    [self tapOnMaskView];
+    self.pageSize = kDefualtPageSize;
     self.firstSegmentedControlSelectedIndex = segmentedControl.selectedIndex;
 
     if(segmentedControl.selectedIndex == 0) [self refreshFoodShopsList];
@@ -151,14 +171,16 @@
         self.dropView1.hidden = NO;
         self.dropView2.hidden = YES;
         self.dropView3.hidden = YES;
+        self.dropView4.hidden = YES;
     }
     else if(segmentedControl.selectedIndex == 1)
     {
-        self.dropView1.hidden = YES;
         self.dropView2.hidden = NO;
-    }
-    else
+        self.dropView1.hidden = YES;
+        self.dropView4.hidden = YES;
+    }else if(segmentedControl.selectedIndex == 2)
     {
+        self.dropView4.hidden = NO;
         self.dropView1.hidden = YES;
         self.dropView2.hidden = YES;
         self.dropView3.hidden = YES;
@@ -170,38 +192,138 @@
     self.dropView2.hidden = YES;
     self.dropView1.hidden = YES;
     self.dropView3.hidden = YES;
+    self.dropView4.hidden = YES;
     self.maskView.hidden  = YES;
 }
 
-#pragma mark - Refresh data
+- (void)switchControlValueChanged:(UISwitch *)sender
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self tapOnMaskView];
+    });
+    
+    if(sender.on)
+    {
+        if(self.firstSegmentedControlSelectedIndex == 0)
+        {
+            [HUD showHUDInView:self.view title:@"加载中.."];
+            [WSGroupService getGroupByDiscount:100 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate onCompleted:^(JSONModel *model, JSONModelError *err) {
+                [HUD hideHUDForView:self.view];
+                self.productDataModel = (ProductResponse *)model;
+                
+                if(err || model == nil) [AlertView showWithMessage:@"获取数据失败"];
+                else if(self.productDataModel.success == NO) [AlertView showWithMessage:self.productDataModel.message];
+                else [self.foodShopListTableView reloadData];
+            }];
+        }
+    }
+    else
+    {
+        if(self.firstSegmentedControlSelectedIndex == 0) [self refreshFoodShopsList];
+        else [self refreshFoodList];
+    }
+}
+#pragma mark -  获取数据
 
 - (void)refreshFoodShopsList
 {
-    [HUD showHUDInView:self.view title:@"玩命加载中.."];
-    [WSGroupService getGroupByClassid:100 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate order:@"groupid" onCompleted:^(JSONModel *model, JSONModelError* err){
+    [HUD showHUDInView:self.view title:@"加载中.."];
+    
+    [WSGroupService getGroupByClassid:self.pageSize pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate order:@"groupid" onCompleted:^(JSONModel *model, JSONModelError* err){
         [HUD hideHUDForView:self.view];
         [self.foodShopListTableView.pullToRefreshView stopAnimating];
 
         self.foodShopDataModel  = (FoodShopResponse *)model;
         if(err || model == nil) [AlertView showWithMessage:@"加载数据失败"];
         else if(self.foodShopDataModel.success == NO) [AlertView showWithMessage:self.foodShopDataModel.message];
-        else [self.foodShopListTableView reloadData];
+        else
+        {
+            self.pageSize *= 2;
+            [self.foodShopListTableView reloadData];
+        }
     }];
 }
 
 - (void)refreshFoodList
 {
-    [HUD showHUDInView:self.view title:@"玩命加载中.."];
-    [WSServiceItemService getItemByCId:20 pageIndex:1 onCompleted:^(JSONModel *model, JSONModelError *err) {
+    [HUD showHUDInView:self.view title:@"加载中.."];
+    
+    [WSServiceItemService getItemByCId:self.pageSize pageIndex:1 onCompleted:^(JSONModel *model, JSONModelError *err) {
         [HUD hideHUDForView:self.view];
         [self.foodShopListTableView.pullToRefreshView stopAnimating];
 
         self.productDataModel = (ProductResponse *)model;
         if(err || model == nil) [AlertView showWithMessage:@"获取数据失败"];
         else if(self.productDataModel.success == NO) [AlertView showWithMessage:self.productDataModel.message];
+        else
+        {
+            self.pageSize *= 2;
+            [self.foodShopListTableView reloadData];
+        }
+    }];
+}
+
+// 离我最近商家
+- (void)loadNearbyFoodShop
+{
+    [HUD showHUDInView:self.view title:@"加载中.."];
+    [WSGroupService getNearGroupByClassid:100 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate onCompleted:^(JSONModel *model, JSONModelError *err) {
+        [HUD hideHUDForView:self.view];
+        self.foodShopDataModel  = (FoodShopResponse *)model;
+        
+        if(err || model == nil) [AlertView showWithMessage:@"加载数据失败"];
+        else if(self.foodShopDataModel.success == NO) [AlertView showWithMessage:self.foodShopDataModel.message];
         else [self.foodShopListTableView reloadData];
     }];
 }
+
+// 销量最好商家
+- (void)loadBestSalesFoodShop
+{
+    [HUD showHUDInView:self.view title:@"加载中.."];
+    [WSGroupService getGroupBySales:100 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate onCompleted:^(JSONModel *model, JSONModelError *err) {
+        [HUD hideHUDForView:self.view];
+        self.foodShopDataModel  = (FoodShopResponse *)model;
+        
+        if(err || model == nil) [AlertView showWithMessage:@"加载数据失败"];
+        else if(self.foodShopDataModel.success == NO) [AlertView showWithMessage:self.foodShopDataModel.message];
+        else [self.foodShopListTableView reloadData];
+    }];
+}
+
+- (void)loadFoodShopByAreaWithIndex:(NSIndexPath *)indexPath
+{
+    [HUD showHUDInView:self.view title:@"加载中.."];
+    //520104是乌当区得编号，这里但白云区使用。因为接口(WSAreaService)没有返回白云区的数据
+    NSInteger areaCodes[5] = {520100,520103,520102,520104,520105};
+    NSInteger areaCode = areaCodes[indexPath.row];
+    [WSGroupService getGroupByAreaId:@(areaCode) pageSize:100 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate order:@"groupid" onCompleted:^(JSONModel *model, JSONModelError *err) {
+         [HUD hideHUDForView:self.view];
+         self.foodShopDataModel  = (FoodShopResponse *)model;
+        
+         if(err || model == nil) [AlertView showWithMessage:@"加载数据失败"];
+         else if(self.foodShopDataModel.success == NO) [AlertView showWithMessage:self.foodShopDataModel.message];
+         else [self.foodShopListTableView reloadData];
+    }];
+
+}
+
+- (void)loadFoodShopByDistanceWithIndex:(NSIndexPath *)indexPath
+{
+    [HUD showHUDInView:self.view title:@"加载中.."];
+    CGFloat distanceArgs[] = {0.5,1,2,3,5,10};
+    
+    [WSGroupService getNearGroupByDistance:100 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate distance:distanceArgs[indexPath.row] onCompleted:^(JSONModel *model, JSONModelError *err) {
+       [HUD hideHUDForView:self.view];
+       self.foodShopDataModel  = (FoodShopResponse *)model;
+        
+       if(err || model == nil) [AlertView showWithMessage:@"加载数据失败"];
+       else if(self.foodShopDataModel.success == NO) [AlertView showWithMessage:self.foodShopDataModel.message];
+       else [self.foodShopListTableView reloadData];
+   }];
+
+}
+
 
 #pragma mark - UITableViewDataSource
 
@@ -210,6 +332,7 @@
     if(tableView == self.dropView1) return self.dropView1Items.count;
     if(tableView == self.dropView2) return self.dropView2Items.count;
     if(tableView == self.dropView3) return self.dropView3Items.count;
+    if(tableView == self.dropView4) return 1;
     
     if(self.firstSegmentedControlSelectedIndex == 0) return self.foodShopDataModel.Datas.count;
     if(self.firstSegmentedControlSelectedIndex == 1) return self.productDataModel.Datas.count;
@@ -232,7 +355,14 @@
                 shopCell = [[nib instantiateWithOwner:nil options:nil] objectAtIndex:0];
             }
             
-            FoodShop *shopEntity = self.foodShopDataModel.Datas[indexPath.row];
+            FoodShop *shopEntity = nil;
+            @try {
+                shopEntity = self.foodShopDataModel.Datas[indexPath.row];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"%@",exception.description);
+            }
+         
             shopCell.nameLabel.text = shopEntity.Groupname;
             shopCell.wifiIconImageView.hidden = !shopEntity.Wireless.boolValue;
             shopCell.parkingIconImageView.hidden = !shopEntity.Parking.boolValue;
@@ -254,10 +384,16 @@
                 foodCell = [[nib instantiateWithOwner:nil options:nil] objectAtIndex:0];
             }
             
-            Product *productEntity = self.productDataModel.Datas[indexPath.row];
+            Product *productEntity = nil;
+            @try {
+              productEntity  = self.productDataModel.Datas[indexPath.row];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"%@",exception.description);
+            }
+            
             foodCell.nameLabel.text = productEntity.Serviceitem;
-            if([productEntity.Itemsn isEqualToString:@"ff96b7c0-21c0-4407-a6e5-629665c645ec"])
-                NSLog(@"Name: %@", productEntity.Serviceitem);
+           // [foodCell.previewImageView setImageWithURL:[NSURL URLWithString:productEntity.Itemimage] placeholderImage:nil];
             //foodCell.addressLabel.text = productEntity.Address;
             
             return foodCell;
@@ -325,6 +461,25 @@
         return cell;
     }
     
+    if(tableView == self.dropView4)
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"DV4CID"];
+        if(cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DV4CID"];
+            cell.textLabel.text = @"支持优惠券";
+            cell.backgroundColor = [UIColor clearColor];
+            cell.textLabel.font = [UIFont systemFontOfSize:15];
+            
+            UISwitch *switchControl = [[UISwitch alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+            [switchControl addTarget:self action:@selector(switchControlValueChanged:) forControlEvents:UIControlEventValueChanged];
+            switchControl.onTintColor = [UIColor r:232 g:92 b:82 a:1];
+            cell.accessoryView = switchControl;
+        }
+        
+        return cell;
+    }
+    
     return cell;
 }
 
@@ -355,6 +510,13 @@
         {
             self.dropView1.hidden = YES;
             self.maskView.hidden = YES;
+            
+            if(self.firstSegmentedControlSelectedIndex == 0)
+            {
+                if(indexPath.row == 0) [self loadNearbyFoodShop];
+                else if(indexPath.row == 1) [self loadBestSalesFoodShop];
+            }
+            
             return;
         }
         
@@ -369,6 +531,8 @@
                 self.dropView2.hidden = YES;
                 self.dropView3.hidden = YES;
                 self.maskView.hidden = YES;
+                
+                if(self.firstSegmentedControlSelectedIndex == 0) [self loadFoodShopByAreaWithIndex:indexPath];
             }
             return;
         }
@@ -378,6 +542,8 @@
             self.dropView2.hidden = YES;
             self.dropView3.hidden = YES;
             self.maskView.hidden = YES;
+            
+            if(self.firstSegmentedControlSelectedIndex == 0) [self loadFoodShopByDistanceWithIndex:indexPath];
             
             return;
         }

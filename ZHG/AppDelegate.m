@@ -9,12 +9,12 @@
 #import "HomeVC.h"
 #import "UIColor+RGB.h"
 #import "LHLocationManager.h"
+#import "WSAreaService.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
     [LHLocationManager sharedInstance];
     //[UMSocialData setAppKey:@"536999f656240b658005dca8"];
     

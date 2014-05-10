@@ -25,7 +25,7 @@
                     order:(NSString *)order
               onCompleted:(JSONModelObjectBlock)block;
 
-+ (void)getGroupByAreaId:(NSString *)areaId
++ (void)getGroupByAreaId:(NSNumber *)areaId
                 pageSize:(NSUInteger)pageSize
                pageIndex:(NSUInteger)pageIndex
               coordinate:(CLLocationCoordinate2D)coordinate

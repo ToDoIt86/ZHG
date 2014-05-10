@@ -10,6 +10,7 @@
 #import "UIScrollView+ContentSize.h"
 #import "SalesPromotionCell.h"
 #import "HUD.h"
+#import "LHLocationManager.h"
 
 @interface FoodShopDetailVC ()<UIScrollViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIScrollView *topLevelScrollView;
@@ -17,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *adScrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *adPageControl;
 @property (weak, nonatomic) IBOutlet UITableView *salesPromotionTableView;
+@property (weak, nonatomic) IBOutlet UILabel *locationLable;
+@property (weak, nonatomic) IBOutlet UIImageView *AvatarImageView;
+
 @end
 
 @implementation FoodShopDetailVC
@@ -36,14 +40,25 @@
 {
     [super viewDidLoad];
     
+    self.AvatarImageView.clipsToBounds = YES;
+    self.AvatarImageView.layer.cornerRadius = 30.0;
+    
     [self.salesPromotionTableView registerNib:[UINib nibWithNibName:@"SalesPromotionCell" bundle:nil]
                        forCellReuseIdentifier:@"SalesPromotionCell"];
     
     [self insertAdContent];
     [self.topLevelScrollView calculateAndSetContentSize];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    self.locationLable.text = [LHLocationManager sharedInstance].streetAddress;
+    [[LHLocationManager sharedInstance] addObserver:self forKeyPath:@"streetAddress" options:NSKeyValueObservingOptionNew context:nil];
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    self.locationLable.text = [change objectForKey:@"new"];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
