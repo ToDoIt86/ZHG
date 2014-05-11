@@ -10,8 +10,14 @@
                 <outlet property="AvatarImageView" destination="FkP-rf-UZp" id="TY0-ZP-Odd"/>
                 <outlet property="adPageControl" destination="vJ4-CD-YpO" id="ikV-x2-YuC"/>
                 <outlet property="adScrollView" destination="oPP-K2-za1" id="xxy-gF-THJ"/>
+                <outlet property="dicountLabel1" destination="hx1-nK-lqM" id="1dl-eB-XOL"/>
+                <outlet property="discountLablel2" destination="if4-w4-EZ5" id="D0g-aa-dlu"/>
+                <outlet property="groupIntroduceTextView" destination="QoX-wK-YQi" id="9pt-84-WiV"/>
                 <outlet property="locationLable" destination="pH7-HH-Rps" id="faA-kn-azh"/>
+                <outlet property="numberOfShare" destination="cqi-as-JvE" id="52o-8O-Ddz"/>
+                <outlet property="produtNameLabel" destination="EX3-x0-zQx" id="N6Z-hY-Bxd"/>
                 <outlet property="salesPromotionTableView" destination="d5N-hy-mfA" id="8j4-s9-efQ"/>
+                <outlet property="shopAddressLabel" destination="Gvg-go-WyO" id="dXA-AR-DCV"/>
                 <outlet property="topLevelScrollView" destination="fxX-Fo-DRi" id="7em-gq-OTh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -49,7 +55,7 @@
                             <rect key="frame" x="0.0" y="160" width="320" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.8折－8.8折" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hx1-nK-lqM">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hx1-nK-lqM">
                                     <rect key="frame" x="12" y="11" width="148" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -66,6 +72,9 @@
                                     <state key="highlighted">
                                         <color key="titleColor" red="0.30196078430000001" green="0.75686274509999996" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="buyNow:" destination="-1" eventType="touchUpInside" id="eMY-fB-O9u"/>
+                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" id="eCc-9e-mT7">
                                     <rect key="frame" x="0.0" y="39" width="320" height="1"/>
@@ -80,17 +89,17 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" id="9J3-Xs-bNT">
-                                    <rect key="frame" x="218" y="9.0000001304775239" width="1" height="106"/>
+                                    <rect key="frame" x="218" y="8.9999995133162347" width="1" height="106"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="淘淘美食店双实惠下午套餐只有想不到没有做不到的实惠" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="EX3-x0-zQx">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="EX3-x0-zQx">
                                     <rect key="frame" x="10" y="6" width="206" height="58"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.8折－8.8折" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="if4-w4-EZ5">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="if4-w4-EZ5">
                                     <rect key="frame" x="10" y="63" width="148" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -138,6 +147,9 @@
                                     <state key="highlighted">
                                         <color key="titleColor" red="0.30196078430000001" green="0.75686274509999996" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="collect:" destination="-1" eventType="touchUpOutside" id="dgb-xX-CRw"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="odG-F2-scr">
                                     <rect key="frame" x="275" y="77" width="36" height="30"/>
@@ -150,9 +162,12 @@
                                     <state key="highlighted">
                                         <color key="titleColor" red="0.30196078430000001" green="0.75686274509999996" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="share:" destination="-1" eventType="touchUpInside" id="Qc2-NB-rAr"/>
+                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" id="VRL-LN-s1t">
-                                    <rect key="frame" x="269" y="82.000000839008365" width="1" height="20"/>
+                                    <rect key="frame" x="269" y="82" width="1" height="20.000000376999356"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>

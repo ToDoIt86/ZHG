@@ -7,7 +7,10 @@
 //
 
 #import "BaseVC.h"
+#import "FoodShop.h"
 
 @interface FoodShopDetailVC : BaseVC
+
+- (instancetype) initWithNibName:(NSString *)nibNameOrNil FoodShopEntity:(FoodShop *)foodShop;
 
 @end

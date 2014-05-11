@@ -204,18 +204,7 @@
     
     if(sender.on)
     {
-        if(self.firstSegmentedControlSelectedIndex == 0)
-        {
-            [HUD showHUDInView:self.view title:@"加载中.."];
-            [WSGroupService getGroupByDiscount:100 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate onCompleted:^(JSONModel *model, JSONModelError *err) {
-                [HUD hideHUDForView:self.view];
-                self.productDataModel = (ProductResponse *)model;
-                
-                if(err || model == nil) [AlertView showWithMessage:@"获取数据失败"];
-                else if(self.productDataModel.success == NO) [AlertView showWithMessage:self.productDataModel.message];
-                else [self.foodShopListTableView reloadData];
-            }];
-        }
+        if(self.firstSegmentedControlSelectedIndex == 0) [self loadFoodShopByDiscount];
     }
     else
     {
@@ -324,6 +313,19 @@
 
 }
 
+- (void)loadFoodShopByDiscount
+{
+    
+    [HUD showHUDInView:self.view title:@"加载中.."];
+    [WSGroupService getGroupByDiscount:100 pageIndex:1 coordinate:[LHLocationManager sharedInstance].coordinate onCompleted:^(JSONModel *model, JSONModelError *err) {
+        [HUD hideHUDForView:self.view];
+        self.productDataModel = (ProductResponse *)model;
+        
+        if(err || model == nil) [AlertView showWithMessage:@"获取数据失败"];
+        else if(self.productDataModel.success == NO) [AlertView showWithMessage:self.productDataModel.message];
+        else [self.foodShopListTableView reloadData];
+    }];
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -491,7 +493,8 @@
         UIViewController *controller = nil;
         if(self.firstSegmentedControlSelectedIndex == 0)
         {
-            controller = [[FoodShopDetailVC alloc] initWithNibName:@"FoodShopDetailVC" bundle:nil];
+            FoodShop *foodShop = self.foodShopDataModel.Datas[indexPath.row];
+            controller = [[FoodShopDetailVC alloc] initWithNibName:@"FoodShopDetailVC" FoodShopEntity:foodShop];
         }
         else
         {
