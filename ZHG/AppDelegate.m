@@ -10,11 +10,18 @@
 #import "UIColor+RGB.h"
 #import "LHLocationManager.h"
 #import "WSAreaService.h"
+#import "WSAdService.h"
+#import "WSUserService.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+//    [WSAdService getIndexBottomAdOnCompleted:NULL];
+//    [WSAdService getIndexAdOnCompleted:NULL];
+//    [WSUserService getTopManUserType:@"2" order:@"1" index:@"1" size:@"20" onCompleted:NULL];
+    [WSUserService getTopManClassWithParentId:@"1" onCompleted:NULL];
+    
     [LHLocationManager sharedInstance];
     //[UMSocialData setAppKey:@"536999f656240b658005dca8"];
     

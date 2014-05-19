@@ -8,6 +8,6 @@
 
 #import "SOAPClient.h"
 
-@interface WSAreaService : SOAPClient
+@interface WSAreaService : NSObject
 +(void)getChildAraeByCodeOnCompleted:(JSONModelObjectBlock)block;
 @end

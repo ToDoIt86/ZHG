@@ -19,4 +19,15 @@
         block(response, err);
     }];
 }
+
++ (void)GetOrdersByBuyerSn:(NSString *)buyersn
+                     index:(NSString *)index
+                      size:(NSString *)size
+               onCompleted:(JSONModelObjectBlock)block
+{
+    NSDictionary *dict = @{@"buyerSn":buyersn,@"pageIndex":index,@"pageSize":size};
+    [SOAPClient requestFromURL:SOAPService(@"ecommerce/OrderService.asmx") soapAction:SOAPAction(@"GetOrdersByBuyerSn") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
+        
+    }];
+}
 @end

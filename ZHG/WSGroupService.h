@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 // 探商淘美食服务接口
-@interface WSGroupService : SOAPClient
+@interface WSGroupService : NSObject
 
 + (void)getAllGroupOnCompleted:(JSONModelObjectBlock)block;
 

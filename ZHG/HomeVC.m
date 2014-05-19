@@ -48,13 +48,6 @@
     self.searchButton.frame = CGRectMake(320-44, 0, 44, 44);
     [self.searchButton setImage:[UIImage imageNamed:@"home_search_button"] forState:UIControlStateNormal];
     
-    /*CGRect  windowRect = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-44, 320, 44);
-    self.tabBarWindow = [[UIWindow alloc] initWithFrame:windowRect];
-    self.tabBarWindow.backgroundColor = [UIColor redColor];
-    self.tabBarWindow.windowLevel = UIWindowLevelNormal+2;
-    [self.tabBarWindow makeKeyAndVisible];
-    
-    [self.tabBarWindow addSubview:self.tabBar];*/
     
     [TabBar showTabBar:^(NSInteger index) {
         NSLog(@"%d",index);

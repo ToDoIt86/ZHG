@@ -8,6 +8,6 @@
 
 #import "SOAPClient.h"
 
-@interface ServiceClassService : SOAPClient
+@interface ServiceClassService : NSObject
 + (void)getCategoryIdWithParentId:(NSInteger)parentId onCompleted:(JSONModelObjectBlock)block;
 @end

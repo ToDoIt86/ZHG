@@ -8,8 +8,9 @@
 
 #import "SOAPClient.h"
 
-@interface WSServiceItemService : SOAPClient
+@interface WSServiceItemService : NSObject
 
+//推荐商品
 + (void)indexTopis:(NSInteger)count
        onCompleted:(JSONModelObjectBlock)block;
 

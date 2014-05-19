@@ -10,7 +10,7 @@
 
 @class MUser;
 
-@interface WSUserService : SOAPClient
+@interface WSUserService : NSObject
 
 + (void) registerWithUserName:(NSString *)userName
                   andPassword:(NSString *)password
@@ -25,5 +25,33 @@
 + (void) getUserInfoWithUserName:(NSString *)userName
                      andPassword:(NSString *)password
                      onCompleted:(JSONModelObjectBlock)block;
+
+// 首页.推荐达人. type的值由getTopman方法返回
++ (void) getTopManUserType:(NSString *)type
+                     order:(NSString *)order
+                     index:(NSString *)index
+                      size:(NSString *)size
+               onCompleted:(JSONModelObjectBlock)block;
+
+// 获取达人类型
++ (void)getTopManClassWithParentId:(NSString *)parentId
+                       onCompleted:(JSONModelObjectBlock)block;
+
+// 个人中心.用户积分
++ (void)getUserScoreWithUsersn:(NSString *)usersn
+                   onCompleted:(JSONModelObjectBlock)block;
+
+// 个人中心.修改用户信息. userInfo为getUserInfo接口返回的用户对象
++ (void)updateUserInfo:(NSString *)userInfo
+           onCompleted:(JSONModelObjectBlock)block;
+
+
+// 个人中心.地址信息
++ (void)getBuyerAddress:(NSString *)account
+            onCompleted:(JSONModelObjectBlock)block;
+
+// 个人中心.修改地址
++ (void)SOUBuyerAddress:(NSString *)address
+            onCompleted:(JSONModelObjectBlock)block;
 
 @end
