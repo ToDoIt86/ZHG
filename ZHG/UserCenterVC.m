@@ -39,7 +39,13 @@
     [button addTarget:self action:@selector(openHelpCenter) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
-    
+    if([UserManager isUserLogin] == NO)
+    {
+        UINavigationController *navigaationController;
+        UserLoginVC *ulVC = [[UserLoginVC alloc] initWithNibName:@"UserLoginVC" bundle:nil];
+        navigaationController = [[UINavigationController alloc] initWithRootViewController:ulVC];
+        [self presentViewController:navigaationController animated:YES completion:NULL];
+    }
 }
 
 
@@ -57,10 +63,7 @@
     UINavigationController *navigaationController;
     UserLoginVC *ulVC = [[UserLoginVC alloc] initWithNibName:@"UserLoginVC" bundle:nil];
     navigaationController = [[UINavigationController alloc] initWithRootViewController:ulVC];
-    
-    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-    window.rootViewController = nil;
-    window.rootViewController = navigaationController;
+    [self presentViewController:navigaationController animated:YES completion:NULL];
 }
 
 

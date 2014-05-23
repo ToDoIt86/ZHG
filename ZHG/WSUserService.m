@@ -43,7 +43,7 @@
                         
                         if(block){
                             JSONModelError *err = nil;
-                            MWSResponse *response = [[MWSResponse alloc] initWithString:jsonString error:&err];
+                            UserLoginResponse *response = [[UserLoginResponse alloc] initWithString:jsonString error:&err];
                             if(block)
                             {
                                 block(response,err);

@@ -18,6 +18,8 @@
 #import "HelpCenter.h"
 #import "UIColor+RGB.h"
 
+#define kTagHomeNavigationControllerView 520
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -39,12 +41,15 @@
     nav4 = [[UINavigationController alloc] initWithRootViewController:vc4];
     nav5 = [[UINavigationController alloc] initWithRootViewController:vc5];
 
+    nav1.view.tag = kTagHomeNavigationControllerView;
+    
     UITabBarController *tbCon = [[UITabBarController alloc] init];
     [tbCon setViewControllers:@[nav1,nav2,nav3,nav4,nav5]];
+    [tbCon setDelegate:self];
     
     for(UITabBarItem *item in tbCon.tabBar.items)
     {
-        item.imageInsets = UIEdgeInsetsMake(4, -5, -10, -5);
+        //item.imageInsets = UIEdgeInsetsMake(4, -5, -10, -5);
         item.title = nil;
     }
     
@@ -73,6 +78,13 @@
     [[UITabBarItem appearance] setTitleTextAttributes:attr forState:UIControlStateNormal];
 }
 
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    if(viewController.view.tag == kTagHomeNavigationControllerView)
+    {
+        
+    }
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

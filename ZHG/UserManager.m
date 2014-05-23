@@ -11,6 +11,8 @@
 static NSString *kUserName = @"kUserName";
 static NSString *kUserPassword = @"kUserPassword";
 
+static MUser *loginedUser = nil;
+
 @implementation UserManager
 
 + (NSString *)getUserName
@@ -42,5 +44,15 @@ static NSString *kUserPassword = @"kUserPassword";
     NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
     NSString *userPassword = [[NSUserDefaults standardUserDefaults] objectForKey:kUserPassword];
     return userName && userPassword;
+}
+
++ (MUser *)getLoginedUser
+{
+    return loginedUser;
+}
+
++ (void)setLoginedUser:(MUser *)user
+{
+    loginedUser = user;
 }
 @end

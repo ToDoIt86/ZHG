@@ -14,6 +14,7 @@
 #import "TabBar.h"
 #import "UserCenterVC.h"
 #import "UserManager.h"
+#import "SettingVC.h"
 
 @interface HomeVC ()<UINavigationControllerDelegate>
 @property (nonatomic, strong) UIImageView *logImageView;
@@ -83,6 +84,7 @@
    // UserLoginVC *vc = [[UserLoginVC alloc] initWithNibName:@"UserLoginVC" bundle:nil];
    // [self presentModalViewController:vc animated:YES];
 }
+
 
 
 #pragma mark － Advertising

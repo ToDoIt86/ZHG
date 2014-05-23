@@ -18,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title = @"设置";
     }
     return self;
 }
@@ -33,6 +33,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)dimissSelf:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

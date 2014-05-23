@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MUser.h"
 
 @interface UserManager : NSObject
 
@@ -16,5 +17,8 @@
 + (void)storeUserName:(NSString *)userName andPassword:(NSString *)password;
 + (void)logoutFromLocal;
 + (BOOL)isUserLogin;
+
++ (MUser *)getLoginedUser;
++ (void)setLoginedUser:(MUser *)user;
 
 @end

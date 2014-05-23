@@ -7,6 +7,7 @@
 //
 
 #import "JSONModel.h"
+#import "MWSResponse.h"
 
 @interface MUser : JSONModel
 @property (nonatomic, strong) NSString <Optional>
@@ -38,3 +39,11 @@
 *Sina_weibao,
 *Baidu;
 @end
+
+@protocol  User
+@end
+
+@interface UserLoginResponse : MWSResponse
+@property (nonatomic, strong) MUser *Datas;
+@end
+

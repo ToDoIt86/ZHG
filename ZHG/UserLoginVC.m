@@ -16,6 +16,7 @@
 #import "UserManager.h"
 #import "UIColor+RGB.h"
 #import "AppDelegate.h"
+#import "MUser.h"
 
 @interface UserLoginVC ()
 @property (weak, nonatomic) IBOutlet UITextField *userAccountTF;
@@ -24,7 +25,7 @@
 
 @implementation UserLoginVC
 
-- (id)init
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:@"UserLoginVC" bundle:nil];
     if (self) {
@@ -73,10 +74,12 @@
          
       [HUD hideHUDForView:self.view];
                       
-      MWSResponse *response = (MWSResponse *)model;
+      UserLoginResponse *response = (UserLoginResponse *)model;
       if(response.success == YES)
       {
+          [UserManager setLoginedUser:response.Datas];
           [UserManager storeUserName:userName andPassword:password];
+          [self dismissSelf];
       }
       else
       {
@@ -95,5 +98,24 @@
 - (void)pushRetrieveUserPassworController
 {
     
+}
+
+- (void)dismissSelf
+{
+    if(self.navigationController)
+    {
+        if([[self.navigationController.viewControllers[0] class] isSubclassOfClass:[self class]])
+        {
+            [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
+        }
+        else
+        {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
+    else
+    {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
 }
 @end

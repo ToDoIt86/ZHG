@@ -87,17 +87,35 @@
          [HUD hideHUDForView:self.view];
                          
          MWSResponse *response = (MWSResponse *)model;
-         if(response.success)
+         if(response && response.success)
          {
              [UserManager storeUserName:phoneNumber andPassword:password];
+             [self dismissSelf];
          }
          else
          {
-             NSString *message = [NSString stringWithFormat:@"注册失败,%@",response.message];
+             NSString *message = [NSString stringWithFormat:@"注册失败,%@",response? response.message:@""];
              [AlertView showWithMessage:message];
          }
     }];
 }
 
-
+- (void)dismissSelf
+{
+    if(self.navigationController)
+    {
+        if([[self.navigationController.viewControllers[0] class] isSubclassOfClass:[self class]])
+        {
+            [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
+        }
+        else
+        {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
+    else
+    {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
+}
 @end

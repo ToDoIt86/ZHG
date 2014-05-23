@@ -11,3 +11,6 @@
 @implementation MUser
 
 @end
+
+@implementation UserLoginResponse
+@end
