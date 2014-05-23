@@ -7,6 +7,10 @@
 //
 
 #import "UserCenterVC.h"
+#import "UserLoginVC.h"
+#import "UserManager.h"
+#import "UserManager.h"
+#import "UserLoginVC.h"
 
 @interface UserCenterVC ()
 
@@ -18,7 +22,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title = @"个人中心";
+        self.tabBarItem.image = [UIImage imageNamed:@"home_user_center"];
     }
     return self;
 }
@@ -26,8 +31,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+   
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle:@"帮助中心" forState:UIControlStateNormal];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 35, 0, 0)];
+    [button setFrame:CGRectMake(0, 0,  100, 40)];
+    [button addTarget:self action:@selector(openHelpCenter) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    
 }
+
+
+#pragma mark - Action
+
+- (void)openHelpCenter
+{
+    
+}
+
+- (IBAction)userLogout:(id)sender
+{
+    [UserManager logoutFromLocal];
+    
+    UINavigationController *navigaationController;
+    UserLoginVC *ulVC = [[UserLoginVC alloc] initWithNibName:@"UserLoginVC" bundle:nil];
+    navigaationController = [[UINavigationController alloc] initWithRootViewController:ulVC];
+    
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    window.rootViewController = nil;
+    window.rootViewController = navigaationController;
+}
+
 
 - (void)didReceiveMemoryWarning
 {

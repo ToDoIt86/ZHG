@@ -62,12 +62,20 @@ static dispatch_queue_t soapRequestQueue;
                                            headers:header
                                               etag:nil
                                              error:&error];
+            
+            NSString *message = nil;
+            if(responseData == nil || responseData.length == 0)
+                message = @"Has No ResponseData";
+            message  = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+            SOAPClientLog(message, url, soapAction);
         }
         @catch (NSException *exception) {
             SOAPClientLog(@"JSONHTTPClient 请求异常", url, soapAction);
             error = [JSONModelError errorBadResponse];
         }
     
+        NSString *xmlString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",xmlString);
         if(responseData && error == nil)
         {
             

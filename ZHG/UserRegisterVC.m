@@ -11,6 +11,8 @@
 #import "AlertView.h"
 #import "HUD.h"
 #import "MWSResponse.h"
+#import "HomeVC.h"
+#import "UserManager.h"
 
 @interface UserRegisterVC ()
 @property (weak, nonatomic) IBOutlet UITextField *nicknameTextField;
@@ -26,21 +28,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+       self.title = @"用户注册";
     }
     return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)getVerificationCode:(UIButton *)sender
@@ -50,54 +40,62 @@
 
 - (IBAction)userRegister:(UIButton *)sender
 {
-    if(self.phoneNumberTextField.text.length == 0)
+    NSString *nickName = self.nicknameTextField.text;
+    NSString *phoneNumber = self.phoneNumberTextField.text;
+    NSString *password = self.passwordTextField.text;
+    NSString *rPassword = self.repeatPasswordTextField.text;
+    
+    if(phoneNumber.length == 0)
     {
         [AlertView showWithMessage:@"请输入电话号码"];
         return;
     }
     
-    if(self.passwordTextField.text.length == 0)
+    if(password.length == 0)
     {
         [AlertView showWithMessage:@"请输入密码"];
         return;
     }
     
-    if(self.repeatPasswordTextField.text == 0)
+    if(rPassword.length == 0)
     {
         [AlertView showWithMessage:@"请重复输入密码"];
         return;
     }
     
-    if([self.repeatPasswordTextField.text isEqualToString:self.passwordTextField.text] == NO)
+    if([rPassword isEqualToString:password] == NO)
     {
         [AlertView showWithMessage:@"两次输入密码不一致!"];
         return;
     }
     
-    if(self.verificationCodeTextField.text.length == 0)
-    {
-        [AlertView showWithMessage:@"请输入验证码"];
-        return;
-    }
+//    if(self.verificationCodeTextField.text.length == 0)
+//    {
+//        [AlertView showWithMessage:@"请输入验证码"];
+//        return;
+//    }
     
+    [self.view endEditing:YES];
+    [HUD showHUDInView:self.view title:@"请稍后"];
     
-    [WSUserService registerWithUserName:self.phoneNumberTextField.text
-                     andPassword:self.passwordTextField.text
-                     phoneNumber:self.phoneNumberTextField.text
-                        nickname:self.nicknameTextField.text
-                     onCompleted:^(JSONModel *model, JSONModelError *err) {
+    [WSUserService registerWithUserName:phoneNumber
+                            andPassword:password
+                            phoneNumber:phoneNumber
+                               nickname:nickName
+                            onCompleted:^(JSONModel *model, JSONModelError *err) {
            
+         [HUD hideHUDForView:self.view];
                          
-                         MWSResponse *response = (MWSResponse *)model;
-                         if(response.success == NO)
-                         {
-                             NSString *message = [NSString stringWithFormat:@"注册失败,%@",response.message];
-                             [AlertView showWithMessage:message];
-                         }
-                         else
-                         {
-                             
-                         }
+         MWSResponse *response = (MWSResponse *)model;
+         if(response.success)
+         {
+             [UserManager storeUserName:phoneNumber andPassword:password];
+         }
+         else
+         {
+             NSString *message = [NSString stringWithFormat:@"注册失败,%@",response.message];
+             [AlertView showWithMessage:message];
+         }
     }];
 }
 

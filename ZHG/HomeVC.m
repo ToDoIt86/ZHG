@@ -12,8 +12,10 @@
 #import "UserLoginVC.h"
 #import "UIScrollView+ContentSize.h"
 #import "TabBar.h"
+#import "UserCenterVC.h"
+#import "UserManager.h"
 
-@interface HomeVC ()
+@interface HomeVC ()<UINavigationControllerDelegate>
 @property (nonatomic, strong) UIImageView *logImageView;
 @property (nonatomic, strong) UIButton *searchButton;
 
@@ -28,11 +30,12 @@
 
 @implementation HomeVC
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-       
+        self.tabBarItem.image = [UIImage imageNamed:@"home_setting"];
     }
     return self;
 }
@@ -48,10 +51,6 @@
     self.searchButton.frame = CGRectMake(320-44, 0, 44, 44);
     [self.searchButton setImage:[UIImage imageNamed:@"home_search_button"] forState:UIControlStateNormal];
     
-    
-    [TabBar showTabBar:^(NSInteger index) {
-        NSLog(@"%d",index);
-    }];
     
     [self insertAdContent];
 }
@@ -108,5 +107,10 @@
     
     NSInteger pageIndex = floorf( scrollView.contentOffset.x/scrollView.bounds.size.width);
     self.adPageControl.currentPage = pageIndex;
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    
 }
 @end

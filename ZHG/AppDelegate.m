@@ -9,46 +9,68 @@
 #import "HomeVC.h"
 #import "UIColor+RGB.h"
 #import "LHLocationManager.h"
-#import "WSAreaService.h"
-#import "WSAdService.h"
-#import "WSUserService.h"
+#import "UserLoginVC.h"
+#import "UserManager.h"
+#import "SettingVC.h"
+#import "MessageVC.h"
+#import "MoreVC.h"
+#import "UserCenterVC.h"
+#import "HelpCenter.h"
+#import "UIColor+RGB.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    [WSAdService getIndexBottomAdOnCompleted:NULL];
-//    [WSAdService getIndexAdOnCompleted:NULL];
-//    [WSUserService getTopManUserType:@"2" order:@"1" index:@"1" size:@"20" onCompleted:NULL];
-    [WSUserService getTopManClassWithParentId:@"1" onCompleted:NULL];
-    
     [LHLocationManager sharedInstance];
-    //[UMSocialData setAppKey:@"536999f656240b658005dca8"];
+    [self setAppearance];
     
-    UINavigationController *navigaationController =
-    [[UINavigationController alloc] initWithRootViewController:[[HomeVC alloc] initWithNibName:@"HomeVC" bundle:nil]];
+    UIViewController *vc1, *vc2, *vc3, *vc4, *vc5;
+    vc1 = [[HomeVC alloc] initWithNibName:@"HomeVC" bundle:nil];
+    vc2 = [[UserCenterVC alloc] initWithNibName:@"UserCenterVC" bundle:nil];
+    vc3 = [[MessageVC alloc] initWithNibName:@"MessageVC" bundle:nil];
+    vc4 = [[HelpCenter alloc] initWithNibName:@"HelpCenter" bundle:nil];
+    vc5 = [[MoreVC alloc] initWithNibName:@"MoreVC" bundle:nil];
+    
+    UINavigationController *nav1, *nav2, *nav3, *nav4, *nav5;
+    nav1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    nav2 = [[UINavigationController alloc] initWithRootViewController:vc2];
+    nav3 = [[UINavigationController alloc] initWithRootViewController:vc3];
+    nav4 = [[UINavigationController alloc] initWithRootViewController:vc4];
+    nav5 = [[UINavigationController alloc] initWithRootViewController:vc5];
+
+    UITabBarController *tbCon = [[UITabBarController alloc] init];
+    [tbCon setViewControllers:@[nav1,nav2,nav3,nav4,nav5]];
+    
+    for(UITabBarItem *item in tbCon.tabBar.items)
+    {
+        item.imageInsets = UIEdgeInsetsMake(4, -5, -10, -5);
+        item.title = nil;
+    }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = navigaationController;
+    self.window.rootViewController = tbCon;
+    [self.window makeKeyAndVisible];
     
+    return YES;
+}
+
+- (void)setAppearance
+{
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigation_bar_background"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithWhite:1 alpha:1], NSForegroundColorAttributeName,[UIFont systemFontOfSize:18], NSFontAttributeName,
-                                                            nil]];
-
-    [self.window makeKeyAndVisible];
-
-    for(UIView *v in navigaationController.navigationBar.subviews)
-    {
-        if([NSStringFromClass([v class]) isEqualToString:@"_UINavigationBarBackground"])
-        {
-            [v setFrame:CGRectMake(0, 0, 320,44)];
-        }
-    }
+                                                           nil]];
     
-    return YES;
+    UIImage *image = [[UIImage imageNamed:@"tabbar"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+    [[UITabBar appearance] setBackgroundImage:image];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    NSDictionary *attr = @{UITextAttributeTextColor:[UIColor whiteColor]};
+    [[UITabBarItem appearance] setTitleTextAttributes:attr forState:UIControlStateNormal];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

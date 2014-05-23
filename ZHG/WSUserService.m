@@ -52,6 +52,14 @@
                     }];
 }
 
+- (void)sendChkCodeSMS:(NSString *)account onCompleted:(JSONModelObjectBlock)block
+{
+    NSDictionary *dict = @{@"account":account};
+    [SOAPClient requestFromURL:SOAPService(@"") soapAction:SOAPAction(@"") params:dict completion:^(NSString *jsonString, JSONModelError *err) {
+        
+    }];
+}
+
 + (void) getUserInfoWithUserName:(NSString *)userName
                      andPassword:(NSString *)password
                      onCompleted:(JSONModelObjectBlock)block
@@ -88,7 +96,7 @@
 {
     NSDictionary *dict = @{@"parentid":parentId};
     [SOAPClient requestFromURL:SOAPService(@"user/UserConterService.asmx")
-                    soapAction:@"http://tempuri.org/GetTopmanClass"
+                    soapAction:SOAPAction(@"GetTopmanClass")
                         params:dict
                     completion:^(NSString *jsonString, JSONModelError *err) {
                         NSLog(@"---%@",jsonString);

@@ -9,5 +9,32 @@
 #import "JSONModel.h"
 
 @interface MUser : JSONModel
-
+@property (nonatomic, strong) NSString <Optional>
+*Infoid,
+*Email,
+*Phonenumber,
+*Sex,
+*Birthdate,
+*Nickname,
+*Concern,
+*Praise,
+*Lognum,
+*Collection,
+*Usertype,
+*Istopman,
+*Headpic,
+*Jointime,
+*Grade,
+*Signature,
+*Photo,
+*Buyerid,
+*Buyersn,
+*Account,
+*Pwd,
+*Status,
+*Regtime,
+*QQ,
+*Weixin,
+*Sina_weibao,
+*Baidu;
 @end

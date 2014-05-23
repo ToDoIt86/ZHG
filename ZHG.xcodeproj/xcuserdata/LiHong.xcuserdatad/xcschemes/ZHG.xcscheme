@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CDB021B318ED9F30003B5A10"
-               BuildableName = "&#x7c7d;&#x60e0;.app"
+               BuildableName = "ZHTest.app"
                BlueprintName = "ZHG"
                ReferencedContainer = "container:ZHG.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CDB021B318ED9F30003B5A10"
-            BuildableName = "&#x7c7d;&#x60e0;.app"
+            BuildableName = "ZHTest.app"
             BlueprintName = "ZHG"
             ReferencedContainer = "container:ZHG.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CDB021B318ED9F30003B5A10"
-            BuildableName = "&#x7c7d;&#x60e0;.app"
+            BuildableName = "ZHTest.app"
             BlueprintName = "ZHG"
             ReferencedContainer = "container:ZHG.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CDB021B318ED9F30003B5A10"
-            BuildableName = "&#x7c7d;&#x60e0;.app"
+            BuildableName = "ZHTest.app"
             BlueprintName = "ZHG"
             ReferencedContainer = "container:ZHG.xcodeproj">
          </BuildableReference>

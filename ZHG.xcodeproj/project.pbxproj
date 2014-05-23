@@ -48,6 +48,14 @@
 		CD71791A18FE168800B0F400 /* UserCenterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD71791818FE168800B0F400 /* UserCenterVC.xib */; };
 		CD71791E18FE16AF00B0F400 /* UserResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71791C18FE16AF00B0F400 /* UserResetPasswordVC.m */; };
 		CD71791F18FE16AF00B0F400 /* UserResetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD71791D18FE16AF00B0F400 /* UserResetPasswordVC.xib */; };
+		CD7B9D8F192F2A0C003B7949 /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7B9D8D192F2A0C003B7949 /* MessageVC.m */; };
+		CD7B9D90192F2A0C003B7949 /* MessageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7B9D8E192F2A0C003B7949 /* MessageVC.xib */; };
+		CD7B9D94192F2A2A003B7949 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7B9D92192F2A2A003B7949 /* SettingVC.m */; };
+		CD7B9D95192F2A2A003B7949 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7B9D93192F2A2A003B7949 /* SettingVC.xib */; };
+		CD7B9D99192F2A38003B7949 /* MoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7B9D97192F2A38003B7949 /* MoreVC.m */; };
+		CD7B9D9A192F2A38003B7949 /* MoreVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7B9D98192F2A38003B7949 /* MoreVC.xib */; };
+		CD7B9D9E192F2BBA003B7949 /* HelpCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7B9D9C192F2BBA003B7949 /* HelpCenter.m */; };
+		CD7B9D9F192F2BBA003B7949 /* HelpCenter.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7B9D9D192F2BBA003B7949 /* HelpCenter.xib */; };
 		CD944E3119147BD200BAE409 /* FoodShop.m in Sources */ = {isa = PBXBuildFile; fileRef = CD944E3019147BD200BAE409 /* FoodShop.m */; };
 		CD944E3419147F0400BAE409 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = CD944E3319147F0400BAE409 /* Product.m */; };
 		CD944E371914810E00BAE409 /* ProductDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = CD944E361914810E00BAE409 /* ProductDetail.m */; };
@@ -82,6 +90,7 @@
 		CDB331CF1911DF3F009CCF5B /* FoodDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB331CD1911DF3F009CCF5B /* FoodDetailVC.m */; };
 		CDB331D01911DF3F009CCF5B /* FoodDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB331CE1911DF3F009CCF5B /* FoodDetailVC.xib */; };
 		CDB3E9D41900C35000663C03 /* SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3E9D31900C35000663C03 /* SegmentedControl.m */; };
+		CDC2EC77192DD3C500374D21 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC2EC76192DD3C500374D21 /* UserManager.m */; };
 		CDC4DF2E18FE2FF90025615A /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DF2D18FE2FF90025615A /* AlertView.m */; };
 		CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DF3318FE69410025615A /* MBProgressHUD.m */; };
 		CDC4DF3818FE69DB0025615A /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DF3718FE69DB0025615A /* HUD.m */; };
@@ -202,6 +211,18 @@
 		CD71791B18FE16AF00B0F400 /* UserResetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserResetPasswordVC.h; sourceTree = "<group>"; };
 		CD71791C18FE16AF00B0F400 /* UserResetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserResetPasswordVC.m; sourceTree = "<group>"; };
 		CD71791D18FE16AF00B0F400 /* UserResetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserResetPasswordVC.xib; sourceTree = "<group>"; };
+		CD7B9D8C192F2A0C003B7949 /* MessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVC.h; sourceTree = "<group>"; };
+		CD7B9D8D192F2A0C003B7949 /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
+		CD7B9D8E192F2A0C003B7949 /* MessageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageVC.xib; sourceTree = "<group>"; };
+		CD7B9D91192F2A2A003B7949 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		CD7B9D92192F2A2A003B7949 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		CD7B9D93192F2A2A003B7949 /* SettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		CD7B9D96192F2A38003B7949 /* MoreVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreVC.h; sourceTree = "<group>"; };
+		CD7B9D97192F2A38003B7949 /* MoreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreVC.m; sourceTree = "<group>"; };
+		CD7B9D98192F2A38003B7949 /* MoreVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreVC.xib; sourceTree = "<group>"; };
+		CD7B9D9B192F2BBA003B7949 /* HelpCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCenter.h; sourceTree = "<group>"; };
+		CD7B9D9C192F2BBA003B7949 /* HelpCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCenter.m; sourceTree = "<group>"; };
+		CD7B9D9D192F2BBA003B7949 /* HelpCenter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpCenter.xib; sourceTree = "<group>"; };
 		CD944E2F19147BD200BAE409 /* FoodShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodShop.h; sourceTree = "<group>"; };
 		CD944E3019147BD200BAE409 /* FoodShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodShop.m; sourceTree = "<group>"; };
 		CD944E3219147F0400BAE409 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
@@ -237,7 +258,7 @@
 		CDA154931911C8E500DF0733 /* WSServiceItemService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSServiceItemService.m; sourceTree = "<group>"; };
 		CDAD9B23190A462800086996 /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGB.h"; sourceTree = "<group>"; };
 		CDAD9B24190A462800086996 /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGB.m"; sourceTree = "<group>"; };
-		CDB021B418ED9F30003B5A10 /* 籽惠.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "籽惠.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDB021B418ED9F30003B5A10 /* ZHTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB021B718ED9F30003B5A10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CDB021B918ED9F30003B5A10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CDB021BB18ED9F30003B5A10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -258,6 +279,8 @@
 		CDB331CE1911DF3F009CCF5B /* FoodDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodDetailVC.xib; sourceTree = "<group>"; };
 		CDB3E9D21900C35000663C03 /* SegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedControl.h; sourceTree = "<group>"; };
 		CDB3E9D31900C35000663C03 /* SegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedControl.m; sourceTree = "<group>"; };
+		CDC2EC75192DD3C500374D21 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		CDC2EC76192DD3C500374D21 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		CDC4DF2C18FE2FF90025615A /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		CDC4DF2D18FE2FF90025615A /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		CDC4DF3218FE69410025615A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -424,6 +447,8 @@
 				CD1AF415191A28A3002A0093 /* FoodOrder.m */,
 				CD032C40191B6BE9007F874D /* ProductDetailTemplate.h */,
 				CD032C41191B6BE9007F874D /* ProductDetailTemplate.m */,
+				CDC2EC75192DD3C500374D21 /* UserManager.h */,
+				CDC2EC76192DD3C500374D21 /* UserManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -431,13 +456,12 @@
 		CD6369A018EEA68A00BA5D99 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CD7B9D85192F297D003B7949 /* Home */,
+				CD7B9D86192F299B003B7949 /* Setting */,
 				CD71790B18FE159100B0F400 /* User */,
-				CD9C14A518F7CC140043B738 /* Food */,
-				CD9F21FD18F43F6C009C25C4 /* BaseVC.h */,
-				CD9F21FE18F43F6C009C25C4 /* BaseVC.m */,
-				CD9F220018F43F81009C25C4 /* HomeVC.h */,
-				CD9F220118F43F81009C25C4 /* HomeVC.m */,
-				CD9F220218F43F81009C25C4 /* HomeVC.xib */,
+				CD7B9D8A192F29E6003B7949 /* Messge */,
+				CD7B9DA0192F2BBF003B7949 /* Help */,
+				CD7B9D8B192F29F8003B7949 /* More */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -485,6 +509,59 @@
 				CD71791818FE168800B0F400 /* UserCenterVC.xib */,
 			);
 			name = User;
+			sourceTree = "<group>";
+		};
+		CD7B9D85192F297D003B7949 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CD9C14A518F7CC140043B738 /* Food */,
+				CD9F21FD18F43F6C009C25C4 /* BaseVC.h */,
+				CD9F21FE18F43F6C009C25C4 /* BaseVC.m */,
+				CD9F220018F43F81009C25C4 /* HomeVC.h */,
+				CD9F220118F43F81009C25C4 /* HomeVC.m */,
+				CD9F220218F43F81009C25C4 /* HomeVC.xib */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		CD7B9D86192F299B003B7949 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CD7B9D91192F2A2A003B7949 /* SettingVC.h */,
+				CD7B9D92192F2A2A003B7949 /* SettingVC.m */,
+				CD7B9D93192F2A2A003B7949 /* SettingVC.xib */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		CD7B9D8A192F29E6003B7949 /* Messge */ = {
+			isa = PBXGroup;
+			children = (
+				CD7B9D8C192F2A0C003B7949 /* MessageVC.h */,
+				CD7B9D8D192F2A0C003B7949 /* MessageVC.m */,
+				CD7B9D8E192F2A0C003B7949 /* MessageVC.xib */,
+			);
+			name = Messge;
+			sourceTree = "<group>";
+		};
+		CD7B9D8B192F29F8003B7949 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				CD7B9D96192F2A38003B7949 /* MoreVC.h */,
+				CD7B9D97192F2A38003B7949 /* MoreVC.m */,
+				CD7B9D98192F2A38003B7949 /* MoreVC.xib */,
+			);
+			name = More;
+			sourceTree = "<group>";
+		};
+		CD7B9DA0192F2BBF003B7949 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				CD7B9D9B192F2BBA003B7949 /* HelpCenter.h */,
+				CD7B9D9C192F2BBA003B7949 /* HelpCenter.m */,
+				CD7B9D9D192F2BBA003B7949 /* HelpCenter.xib */,
+			);
+			name = Help;
 			sourceTree = "<group>";
 		};
 		CD9238FA18F593A4007E99C4 /* WebService */ = {
@@ -588,7 +665,7 @@
 		CDB021B518ED9F30003B5A10 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDB021B418ED9F30003B5A10 /* 籽惠.app */,
+				CDB021B418ED9F30003B5A10 /* ZHTest.app */,
 				CDB021D518ED9F30003B5A10 /* ZHGTests.xctest */,
 			);
 			name = Products;
@@ -611,6 +688,7 @@
 		CDB021BD18ED9F30003B5A10 /* ZHG */ = {
 			isa = PBXGroup;
 			children = (
+				CDC2EC74192DD35700374D21 /* Untils */,
 				CD1AF413191A284B002A0093 /* res */,
 				CD6369A118EEA69500BA5D99 /* View */,
 				CD6369A018EEA68A00BA5D99 /* Controller */,
@@ -652,6 +730,13 @@
 				CDB021DF18ED9F30003B5A10 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDC2EC74192DD35700374D21 /* Untils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Untils;
 			sourceTree = "<group>";
 		};
 		CDC4DF3518FE694E0025615A /* HUD */ = {
@@ -756,7 +841,7 @@
 			);
 			name = ZHG;
 			productName = ZHG;
-			productReference = CDB021B418ED9F30003B5A10 /* 籽惠.app */;
+			productReference = CDB021B418ED9F30003B5A10 /* ZHTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CDB021D418ED9F30003B5A10 /* ZHGTests */ = {
@@ -819,8 +904,10 @@
 				CDD6FE83190F716F00BDF78A /* ad3.jpg in Resources */,
 				CDD6FE81190F716F00BDF78A /* ad1.jpg in Resources */,
 				CDD6FE82190F716F00BDF78A /* ad2.jpg in Resources */,
+				CD7B9D9F192F2BBA003B7949 /* HelpCenter.xib in Resources */,
 				CD71791518FE15CA00B0F400 /* UserRegisterVC.xib in Resources */,
 				CDD6FE8D190F9F6500BDF78A /* cell_icon.jpg in Resources */,
+				CD7B9D95192F2A2A003B7949 /* SettingVC.xib in Resources */,
 				CDD6FE80190F716F00BDF78A /* ad0.jpg in Resources */,
 				CDD6FE8B190F9C0500BDF78A /* SalesPromotionCell.xib in Resources */,
 				CDB021D018ED9F30003B5A10 /* Images.xcassets in Resources */,
@@ -830,6 +917,8 @@
 				CDED974E18FBB2F800E74A0B /* FoodShopsCell.xib in Resources */,
 				CD9F220418F43F81009C25C4 /* HomeVC.xib in Resources */,
 				CDD6FE8F190F9FAA00BDF78A /* cell_icon2.jpg in Resources */,
+				CD7B9D9A192F2A38003B7949 /* MoreVC.xib in Resources */,
+				CD7B9D90192F2A0C003B7949 /* MessageVC.xib in Resources */,
 				CD71791F18FE16AF00B0F400 /* UserResetPasswordVC.xib in Resources */,
 				CD032C44191B79F1007F874D /* Template.xib in Resources */,
 				CDB331D01911DF3F009CCF5B /* FoodDetailVC.xib in Resources */,
@@ -857,6 +946,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD3D9BBD19187B7400DDF332 /* SDWebImageDecoder.m in Sources */,
+				CD7B9D94192F2A2A003B7949 /* SettingVC.m in Sources */,
 				CD01CB65191C64B400C3B4B5 /* Template.m in Sources */,
 				CD3D9BC119187B7400DDF332 /* SDWebImagePrefetcher.m in Sources */,
 				CD9F220A18F44609009C25C4 /* MUser.m in Sources */,
@@ -872,9 +962,11 @@
 				CDE5F82618F3E4B200335B45 /* JSONModelClassProperty.m in Sources */,
 				CDAD9B25190A462800086996 /* UIColor+RGB.m in Sources */,
 				CD9F220318F43F81009C25C4 /* HomeVC.m in Sources */,
+				CD7B9D9E192F2BBA003B7949 /* HelpCenter.m in Sources */,
 				CDDBB3AF1918C501002E6C67 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				CDE5F82318F3E4B200335B45 /* JSONModel+CoreData.m in Sources */,
 				CD3D9BCF19187FEC00DDF332 /* FoodCell.m in Sources */,
+				CD7B9D99192F2A38003B7949 /* MoreVC.m in Sources */,
 				CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */,
 				CD3D9BC019187B7400DDF332 /* SDWebImageManager.m in Sources */,
 				CD3D9BBA19187B7400DDF332 /* NSData+ImageContentType.m in Sources */,
@@ -900,6 +992,7 @@
 				CDDBB3B01918C501002E6C67 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				CD3D9BC219187B7400DDF332 /* UIButton+WebCache.m in Sources */,
 				CD3D9BBC19187B7400DDF332 /* SDWebImageCompat.m in Sources */,
+				CD7B9D8F192F2A0C003B7949 /* MessageVC.m in Sources */,
 				CD4550B01911311900224E77 /* LHLocationManager.m in Sources */,
 				CDB021C418ED9F30003B5A10 /* main.m in Sources */,
 				CD71790F18FE15AD00B0F400 /* UserLoginVC.m in Sources */,
@@ -910,6 +1003,7 @@
 				CD944E3D1914842100BAE409 /* ProductStyle.m in Sources */,
 				CDA154941911C8E500DF0733 /* WSServiceItemService.m in Sources */,
 				CD5E2BB0192A4E3F005B62EA /* WSAdService.m in Sources */,
+				CDC2EC77192DD3C500374D21 /* UserManager.m in Sources */,
 				CD3D9BC319187B7400DDF332 /* UIImage+GIF.m in Sources */,
 				CD944E3119147BD200BAE409 /* FoodShop.m in Sources */,
 				CD3D9BCA19187B8400DDF332 /* EDStarRating.m in Sources */,
@@ -1068,7 +1162,7 @@
 					"-framework",
 					Reveal,
 				);
-				PRODUCT_NAME = "籽惠";
+				PRODUCT_NAME = ZHTest;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1094,7 +1188,7 @@
 					"$(PROJECT_DIR)/ZHG/umeng_ios_social_sdk_3.3.7_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/ZHG/umeng_ios_social_sdk_3.3.7_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
-				PRODUCT_NAME = "籽惠";
+				PRODUCT_NAME = ZHTest;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
