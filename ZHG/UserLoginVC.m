@@ -83,7 +83,7 @@
       }
       else
       {
-          NSString *message = [NSString stringWithFormat:@"登录失败，%@",response.message];
+          NSString *message = [NSString stringWithFormat:@"登录失败!请检查用户名、密码是否正确,网络连接是否正常?"];
           [AlertView showWithMessage:message];
       }
   }];

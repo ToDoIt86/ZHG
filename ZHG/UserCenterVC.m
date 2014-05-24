@@ -11,8 +11,10 @@
 #import "UserManager.h"
 #import "UserManager.h"
 #import "UserLoginVC.h"
+#import "UIScrollView+ContentSize.h"
 
 @interface UserCenterVC ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -32,6 +34,8 @@
 {
     [super viewDidLoad];
    
+    [self.scrollView calculateAndSetContentSize];
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button setTitle:@"帮助中心" forState:UIControlStateNormal];
     [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 35, 0, 0)];
