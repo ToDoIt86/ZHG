@@ -10,6 +10,7 @@
 
 static NSString *kUserName = @"kUserName";
 static NSString *kUserPassword = @"kUserPassword";
+static NSString *kUserObject = @"kUserObject";
 
 static MUser *loginedUser = nil;
 
@@ -48,11 +49,17 @@ static MUser *loginedUser = nil;
 
 + (MUser *)getLoginedUser
 {
+    if(loginedUser)return loginedUser;
+    
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kUserObject];
+    loginedUser = [[MUser alloc] initWithDict:dict];
     return loginedUser;
 }
 
 + (void)setLoginedUser:(MUser *)user
 {
     loginedUser = user;
+    [[NSUserDefaults standardUserDefaults] setObject:[user toDict] forKey:kUserObject];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

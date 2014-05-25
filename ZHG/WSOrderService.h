@@ -12,7 +12,7 @@
 + (void)createOrder:(NSString *)orderJsonString onCompleted:(JSONModelObjectBlock)block;
 
 // 获取 个人中心.购物历史
-+ (void)GetOrdersByBuyerSn:(NSString *)buyersn
++ (void)getOrdersByBuyerSn:(NSString *)buyersn
                      index:(NSString *)index
                       size:(NSString *)size
                onCompleted:(JSONModelObjectBlock)block;

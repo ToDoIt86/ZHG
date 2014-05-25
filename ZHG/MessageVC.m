@@ -18,6 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.title = @"消息中心";
         self.tabBarItem.image = [UIImage imageNamed:@"home_message"];
     }
     return self;

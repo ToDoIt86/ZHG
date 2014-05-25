@@ -38,6 +38,9 @@
 *Weixin,
 *Sina_weibao,
 *Baidu;
+
+- (NSDictionary *)toDict;
+- (id)initWithDict:(NSDictionary *)dict;
 @end
 
 @protocol  User

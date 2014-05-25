@@ -20,7 +20,7 @@
     }];
 }
 
-+ (void)GetOrdersByBuyerSn:(NSString *)buyersn
++ (void)getOrdersByBuyerSn:(NSString *)buyersn
                      index:(NSString *)index
                       size:(NSString *)size
                onCompleted:(JSONModelObjectBlock)block

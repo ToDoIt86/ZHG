@@ -15,7 +15,7 @@
 #import "MessageVC.h"
 #import "MoreVC.h"
 #import "UserCenterVC.h"
-#import "HelpCenter.h"
+#import "HelpCenterVC.h"
 #import "UIColor+RGB.h"
 
 #define kTagHomeNavigationControllerView 520
@@ -31,7 +31,7 @@
     vc1 = [[HomeVC alloc] initWithNibName:@"HomeVC" bundle:nil];
     vc2 = [[UserCenterVC alloc] initWithNibName:@"UserCenterVC" bundle:nil];
     vc3 = [[MessageVC alloc] initWithNibName:@"MessageVC" bundle:nil];
-    vc4 = [[HelpCenter alloc] initWithNibName:@"HelpCenter" bundle:nil];
+    vc4 = [[HelpCenterVC alloc] initWithNibName:@"HelpCenterVC" bundle:nil];
     vc5 = [[MoreVC alloc] initWithNibName:@"MoreVC" bundle:nil];
     
     UINavigationController *nav1, *nav2, *nav3, *nav4, *nav5;
