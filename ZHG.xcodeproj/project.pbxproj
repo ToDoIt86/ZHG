@@ -95,6 +95,8 @@
 		CDC4DF2E18FE2FF90025615A /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DF2D18FE2FF90025615A /* AlertView.m */; };
 		CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DF3318FE69410025615A /* MBProgressHUD.m */; };
 		CDC4DF3818FE69DB0025615A /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC4DF3718FE69DB0025615A /* HUD.m */; };
+		CDC7BBC21934973B005CD042 /* DarenHotTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC7BBC01934973B005CD042 /* DarenHotTagCell.m */; };
+		CDC7BBC31934973B005CD042 /* DarenHotTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC7BBC11934973B005CD042 /* DarenHotTagCell.xib */; };
 		CDCE314A192AD17A00F6746C /* WSHelpCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCE3149192AD17A00F6746C /* WSHelpCenter.m */; };
 		CDD6FE7A190F6AD600BDF78A /* FoodShopDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD6FE78190F6AD600BDF78A /* FoodShopDetailVC.m */; };
 		CDD6FE7B190F6AD600BDF78A /* FoodShopDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD6FE79190F6AD600BDF78A /* FoodShopDetailVC.xib */; };
@@ -122,9 +124,20 @@
 		CDE5F82B18F3E4B200335B45 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F81D18F3E4B200335B45 /* JSONModel+networking.m */; };
 		CDE5F82C18F3E4B200335B45 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F82018F3E4B200335B45 /* JSONKeyMapper.m */; };
 		CDE5F82D18F3E4B200335B45 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE5F82218F3E4B200335B45 /* JSONValueTransformer.m */; };
+		CDE721541932D1A700B8B53A /* DarenHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE721521932D1A700B8B53A /* DarenHomeVC.m */; };
+		CDE721551932D1A700B8B53A /* DarenHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE721531932D1A700B8B53A /* DarenHomeVC.xib */; };
+		CDE721591932D1DA00B8B53A /* DarenZoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE721571932D1DA00B8B53A /* DarenZoneVC.m */; };
+		CDE7215A1932D1DA00B8B53A /* DarenZoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE721581932D1DA00B8B53A /* DarenZoneVC.xib */; };
+		CDE7215E1932D20000B8B53A /* DarenListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE7215C1932D20000B8B53A /* DarenListVC.m */; };
+		CDE7215F1932D20000B8B53A /* DarenListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE7215D1932D20000B8B53A /* DarenListVC.xib */; };
+		CDE721681932D28A00B8B53A /* DarenNoteListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE721661932D28A00B8B53A /* DarenNoteListVC.m */; };
+		CDE721691932D28A00B8B53A /* DarenNoteListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE721671932D28A00B8B53A /* DarenNoteListVC.xib */; };
+		CDE7216D1932D29B00B8B53A /* DarenNoteDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE7216B1932D29B00B8B53A /* DarenNoteDetailVC.m */; };
+		CDE7216E1932D29B00B8B53A /* DarenNoteDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE7216C1932D29B00B8B53A /* DarenNoteDetailVC.xib */; };
 		CDECA6B1190E96A6001A5B3A /* ServiceClassService.m in Sources */ = {isa = PBXBuildFile; fileRef = CDECA6B0190E96A6001A5B3A /* ServiceClassService.m */; };
 		CDED974D18FBB2F800E74A0B /* FoodShopsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDED974B18FBB2F800E74A0B /* FoodShopsCell.m */; };
 		CDED974E18FBB2F800E74A0B /* FoodShopsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDED974C18FBB2F800E74A0B /* FoodShopsCell.xib */; };
+		CDFAA0EB193484DD0066FD92 /* WSDaren.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFAA0EA193484DD0066FD92 /* WSDaren.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -290,6 +303,9 @@
 		CDC4DF3318FE69410025615A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CDC4DF3618FE69DB0025615A /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
 		CDC4DF3718FE69DB0025615A /* HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUD.m; sourceTree = "<group>"; };
+		CDC7BBBF1934973B005CD042 /* DarenHotTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarenHotTagCell.h; sourceTree = "<group>"; };
+		CDC7BBC01934973B005CD042 /* DarenHotTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarenHotTagCell.m; sourceTree = "<group>"; };
+		CDC7BBC11934973B005CD042 /* DarenHotTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DarenHotTagCell.xib; sourceTree = "<group>"; };
 		CDCE3148192AD17A00F6746C /* WSHelpCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSHelpCenter.h; sourceTree = "<group>"; };
 		CDCE3149192AD17A00F6746C /* WSHelpCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSHelpCenter.m; sourceTree = "<group>"; };
 		CDD6FE77190F6AD600BDF78A /* FoodShopDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodShopDetailVC.h; sourceTree = "<group>"; };
@@ -337,11 +353,28 @@
 		CDE5F82018F3E4B200335B45 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		CDE5F82118F3E4B200335B45 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		CDE5F82218F3E4B200335B45 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		CDE721511932D1A700B8B53A /* DarenHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarenHomeVC.h; sourceTree = "<group>"; };
+		CDE721521932D1A700B8B53A /* DarenHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarenHomeVC.m; sourceTree = "<group>"; };
+		CDE721531932D1A700B8B53A /* DarenHomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DarenHomeVC.xib; sourceTree = "<group>"; };
+		CDE721561932D1DA00B8B53A /* DarenZoneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarenZoneVC.h; sourceTree = "<group>"; };
+		CDE721571932D1DA00B8B53A /* DarenZoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarenZoneVC.m; sourceTree = "<group>"; };
+		CDE721581932D1DA00B8B53A /* DarenZoneVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DarenZoneVC.xib; sourceTree = "<group>"; };
+		CDE7215B1932D20000B8B53A /* DarenListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarenListVC.h; sourceTree = "<group>"; };
+		CDE7215C1932D20000B8B53A /* DarenListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarenListVC.m; sourceTree = "<group>"; };
+		CDE7215D1932D20000B8B53A /* DarenListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DarenListVC.xib; sourceTree = "<group>"; };
+		CDE721651932D28A00B8B53A /* DarenNoteListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarenNoteListVC.h; sourceTree = "<group>"; };
+		CDE721661932D28A00B8B53A /* DarenNoteListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarenNoteListVC.m; sourceTree = "<group>"; };
+		CDE721671932D28A00B8B53A /* DarenNoteListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DarenNoteListVC.xib; sourceTree = "<group>"; };
+		CDE7216A1932D29B00B8B53A /* DarenNoteDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarenNoteDetailVC.h; sourceTree = "<group>"; };
+		CDE7216B1932D29B00B8B53A /* DarenNoteDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarenNoteDetailVC.m; sourceTree = "<group>"; };
+		CDE7216C1932D29B00B8B53A /* DarenNoteDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DarenNoteDetailVC.xib; sourceTree = "<group>"; };
 		CDECA6AF190E96A6001A5B3A /* ServiceClassService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceClassService.h; sourceTree = "<group>"; };
 		CDECA6B0190E96A6001A5B3A /* ServiceClassService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceClassService.m; sourceTree = "<group>"; };
 		CDED974A18FBB2F800E74A0B /* FoodShopsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodShopsCell.h; sourceTree = "<group>"; };
 		CDED974B18FBB2F800E74A0B /* FoodShopsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodShopsCell.m; sourceTree = "<group>"; };
 		CDED974C18FBB2F800E74A0B /* FoodShopsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodShopsCell.xib; sourceTree = "<group>"; };
+		CDFAA0E9193484DD0066FD92 /* WSDaren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDaren.h; sourceTree = "<group>"; };
+		CDFAA0EA193484DD0066FD92 /* WSDaren.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDaren.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,6 +526,9 @@
 				CD032C43191B79F1007F874D /* Template.xib */,
 				CD01CB63191C64B400C3B4B5 /* Template.h */,
 				CD01CB64191C64B400C3B4B5 /* Template.m */,
+				CDC7BBBF1934973B005CD042 /* DarenHotTagCell.h */,
+				CDC7BBC01934973B005CD042 /* DarenHotTagCell.m */,
+				CDC7BBC11934973B005CD042 /* DarenHotTagCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -519,6 +555,7 @@
 		CD7B9D85192F297D003B7949 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CD9F54C219323E5A005991C8 /* Daren */,
 				CD9C14A518F7CC140043B738 /* Food */,
 				CD9F21FD18F43F6C009C25C4 /* BaseVC.h */,
 				CD9F21FE18F43F6C009C25C4 /* BaseVC.m */,
@@ -590,6 +627,8 @@
 				CD5E2BAF192A4E3F005B62EA /* WSAdService.m */,
 				CDCE3148192AD17A00F6746C /* WSHelpCenter.h */,
 				CDCE3149192AD17A00F6746C /* WSHelpCenter.m */,
+				CDFAA0E9193484DD0066FD92 /* WSDaren.h */,
+				CDFAA0EA193484DD0066FD92 /* WSDaren.m */,
 			);
 			name = WebService;
 			sourceTree = "<group>";
@@ -639,6 +678,28 @@
 				CD9F365E190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 			);
 			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		CD9F54C219323E5A005991C8 /* Daren */ = {
+			isa = PBXGroup;
+			children = (
+				CDE721511932D1A700B8B53A /* DarenHomeVC.h */,
+				CDE721521932D1A700B8B53A /* DarenHomeVC.m */,
+				CDE721531932D1A700B8B53A /* DarenHomeVC.xib */,
+				CDE7215B1932D20000B8B53A /* DarenListVC.h */,
+				CDE7215C1932D20000B8B53A /* DarenListVC.m */,
+				CDE7215D1932D20000B8B53A /* DarenListVC.xib */,
+				CDE721561932D1DA00B8B53A /* DarenZoneVC.h */,
+				CDE721571932D1DA00B8B53A /* DarenZoneVC.m */,
+				CDE721581932D1DA00B8B53A /* DarenZoneVC.xib */,
+				CDE721651932D28A00B8B53A /* DarenNoteListVC.h */,
+				CDE721661932D28A00B8B53A /* DarenNoteListVC.m */,
+				CDE721671932D28A00B8B53A /* DarenNoteListVC.xib */,
+				CDE7216A1932D29B00B8B53A /* DarenNoteDetailVC.h */,
+				CDE7216B1932D29B00B8B53A /* DarenNoteDetailVC.m */,
+				CDE7216C1932D29B00B8B53A /* DarenNoteDetailVC.xib */,
+			);
+			name = Daren;
 			sourceTree = "<group>";
 		};
 		CDAD9B1F190A45FB00086996 /* Helper */ = {
@@ -906,12 +967,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE721551932D1A700B8B53A /* DarenHomeVC.xib in Resources */,
 				CDD6FE83190F716F00BDF78A /* ad3.jpg in Resources */,
 				CDD6FE81190F716F00BDF78A /* ad1.jpg in Resources */,
 				CDD6FE82190F716F00BDF78A /* ad2.jpg in Resources */,
 				CD71791518FE15CA00B0F400 /* UserRegisterVC.xib in Resources */,
 				CDD6FE8D190F9F6500BDF78A /* cell_icon.jpg in Resources */,
 				CD7B9D95192F2A2A003B7949 /* SettingVC.xib in Resources */,
+				CDE721691932D28A00B8B53A /* DarenNoteListVC.xib in Resources */,
+				CDE7215F1932D20000B8B53A /* DarenListVC.xib in Resources */,
 				CD70076D1931C3AB005E4576 /* HelpCenterVC.xib in Resources */,
 				CDD6FE80190F716F00BDF78A /* ad0.jpg in Resources */,
 				CDD6FE8B190F9C0500BDF78A /* SalesPromotionCell.xib in Resources */,
@@ -924,10 +988,13 @@
 				CDD6FE8F190F9FAA00BDF78A /* cell_icon2.jpg in Resources */,
 				CD7B9D9A192F2A38003B7949 /* MoreVC.xib in Resources */,
 				CD7B9D90192F2A0C003B7949 /* MessageVC.xib in Resources */,
+				CDC7BBC31934973B005CD042 /* DarenHotTagCell.xib in Resources */,
 				CD71791F18FE16AF00B0F400 /* UserResetPasswordVC.xib in Resources */,
 				CD032C44191B79F1007F874D /* Template.xib in Resources */,
 				CDB331D01911DF3F009CCF5B /* FoodDetailVC.xib in Resources */,
 				CD9C14AD18F7CC6F0043B738 /* FoodShopsListVC.xib in Resources */,
+				CDE7216E1932D29B00B8B53A /* DarenNoteDetailVC.xib in Resources */,
+				CDE7215A1932D1DA00B8B53A /* DarenZoneVC.xib in Resources */,
 				CDD6FE7B190F6AD600BDF78A /* FoodShopDetailVC.xib in Resources */,
 				CDB021C218ED9F30003B5A10 /* InfoPlist.strings in Resources */,
 				CD3D9BCE19187FEC00DDF332 /* FoodCell.xib in Resources */,
@@ -955,7 +1022,9 @@
 				CD01CB65191C64B400C3B4B5 /* Template.m in Sources */,
 				CD3D9BC119187B7400DDF332 /* SDWebImagePrefetcher.m in Sources */,
 				CD9F220A18F44609009C25C4 /* MUser.m in Sources */,
+				CDC7BBC21934973B005CD042 /* DarenHotTagCell.m in Sources */,
 				CDC4DF2E18FE2FF90025615A /* AlertView.m in Sources */,
+				CDE7216D1932D29B00B8B53A /* DarenNoteDetailVC.m in Sources */,
 				CDE5F82718F3E4B200335B45 /* JSONModelError.m in Sources */,
 				CD9F3662190003A800762332 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD1AF416191A28A3002A0093 /* FoodOrder.m in Sources */,
@@ -967,6 +1036,7 @@
 				CDE5F82618F3E4B200335B45 /* JSONModelClassProperty.m in Sources */,
 				CDAD9B25190A462800086996 /* UIColor+RGB.m in Sources */,
 				CD9F220318F43F81009C25C4 /* HomeVC.m in Sources */,
+				CDE721681932D28A00B8B53A /* DarenNoteListVC.m in Sources */,
 				CDDBB3AF1918C501002E6C67 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				CDE5F82318F3E4B200335B45 /* JSONModel+CoreData.m in Sources */,
 				CD3D9BCF19187FEC00DDF332 /* FoodCell.m in Sources */,
@@ -987,11 +1057,13 @@
 				CDB021C818ED9F30003B5A10 /* AppDelegate.m in Sources */,
 				CDD6FE8A190F9C0500BDF78A /* SalesPromotionCell.m in Sources */,
 				CDE5F82518F3E4B200335B45 /* JSONModelArray.m in Sources */,
+				CDFAA0EB193484DD0066FD92 /* WSDaren.m in Sources */,
 				CD9F21FF18F43F6C009C25C4 /* BaseVC.m in Sources */,
 				CDC4DF3818FE69DB0025615A /* HUD.m in Sources */,
 				CDE5F82B18F3E4B200335B45 /* JSONModel+networking.m in Sources */,
 				CD35AEA118FAA0DC002E1882 /* WSGroupService.m in Sources */,
 				CDED974D18FBB2F800E74A0B /* FoodShopsCell.m in Sources */,
+				CDE721591932D1DA00B8B53A /* DarenZoneVC.m in Sources */,
 				CD1AF410191A1B09002A0093 /* TabBar.m in Sources */,
 				CD7007701931C5D9005E4576 /* MHelpInfo.m in Sources */,
 				CD70076C1931C3AB005E4576 /* HelpCenterVC.m in Sources */,
@@ -1010,6 +1082,7 @@
 				CDA154941911C8E500DF0733 /* WSServiceItemService.m in Sources */,
 				CD5E2BB0192A4E3F005B62EA /* WSAdService.m in Sources */,
 				CDC2EC77192DD3C500374D21 /* UserManager.m in Sources */,
+				CDE721541932D1A700B8B53A /* DarenHomeVC.m in Sources */,
 				CD3D9BC319187B7400DDF332 /* UIImage+GIF.m in Sources */,
 				CD944E3119147BD200BAE409 /* FoodShop.m in Sources */,
 				CD3D9BCA19187B8400DDF332 /* EDStarRating.m in Sources */,
@@ -1019,6 +1092,7 @@
 				CD3D9BBF19187B7400DDF332 /* SDWebImageDownloaderOperation.m in Sources */,
 				CD71791418FE15CA00B0F400 /* UserRegisterVC.m in Sources */,
 				CD3D9BC419187B7400DDF332 /* UIImage+MultiFormat.m in Sources */,
+				CDE7215E1932D20000B8B53A /* DarenListVC.m in Sources */,
 				CD71791E18FE16AF00B0F400 /* UserResetPasswordVC.m in Sources */,
 				CD9F365F190003A800762332 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				CD3D9BC619187B7400DDF332 /* UIImageView+WebCache.m in Sources */,

@@ -15,6 +15,7 @@
 #import "UserCenterVC.h"
 #import "UserManager.h"
 #import "SettingVC.h"
+#import "DarenHomeVC.h"
 
 @interface HomeVC ()<UINavigationControllerDelegate>
 @property (nonatomic, strong) UIImageView *logImageView;
@@ -61,6 +62,7 @@
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar addSubview:self.logImageView];
     [self.navigationController.navigationBar addSubview:self.searchButton];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -80,12 +82,13 @@
 {
     FoodShopsListVC *vc = [[FoodShopsListVC alloc] initWithNibName:@"FoodShopsListVC" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
-    
-   // UserLoginVC *vc = [[UserLoginVC alloc] initWithNibName:@"UserLoginVC" bundle:nil];
-   // [self presentModalViewController:vc animated:YES];
 }
 
-
+- (IBAction)pushDarenHomeVC:(id)sender
+{
+    DarenHomeVC *dhvc = [[DarenHomeVC alloc] initWithNibName:@"DarenHomeVC" bundle:nil];
+    [self.navigationController pushViewController:dhvc animated:YES];
+}
 
 #pragma mark － Advertising
 

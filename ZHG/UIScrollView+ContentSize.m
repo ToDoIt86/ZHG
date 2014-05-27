@@ -20,4 +20,5 @@
     
     self.contentSize = newRect.size;
 }
+
 @end
