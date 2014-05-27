@@ -17,6 +17,9 @@
 		CD1AF410191A1B09002A0093 /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1AF40F191A1B09002A0093 /* TabBar.m */; };
 		CD1AF412191A1B23002A0093 /* TabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1AF411191A1B23002A0093 /* TabBar.xib */; };
 		CD1AF416191A28A3002A0093 /* FoodOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1AF415191A28A3002A0093 /* FoodOrder.m */; };
+		CD1E1F7B1934A69F00B4357C /* DarenListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD1E1F791934A69F00B4357C /* DarenListCell.m */; };
+		CD1E1F7C1934A69F00B4357C /* DarenListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1E1F7A1934A69F00B4357C /* DarenListCell.xib */; };
+		CD1E1F821934B10300B4357C /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD1E1F811934B10300B4357C /* avatar.jpg */; };
 		CD2C6BE218F6C92A0004ABD5 /* SOAPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */; };
 		CD35AEA118FAA0DC002E1882 /* WSGroupService.m in Sources */ = {isa = PBXBuildFile; fileRef = CD35AEA018FAA0DC002E1882 /* WSGroupService.m */; };
 		CD3D9BB919187B7400DDF332 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3D9B9D19187B7400DDF332 /* MKAnnotationView+WebCache.m */; };
@@ -168,6 +171,10 @@
 		CD1AF411191A1B23002A0093 /* TabBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBar.xib; sourceTree = "<group>"; };
 		CD1AF414191A28A3002A0093 /* FoodOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodOrder.h; sourceTree = "<group>"; };
 		CD1AF415191A28A3002A0093 /* FoodOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodOrder.m; sourceTree = "<group>"; };
+		CD1E1F781934A69F00B4357C /* DarenListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarenListCell.h; sourceTree = "<group>"; };
+		CD1E1F791934A69F00B4357C /* DarenListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarenListCell.m; sourceTree = "<group>"; };
+		CD1E1F7A1934A69F00B4357C /* DarenListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DarenListCell.xib; sourceTree = "<group>"; };
+		CD1E1F811934B10300B4357C /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
 		CD2C6BE018F6C92A0004ABD5 /* SOAPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOAPClient.h; path = JSONModel/JSONModelNetworking/SOAPClient.h; sourceTree = "<group>"; };
 		CD2C6BE118F6C92A0004ABD5 /* SOAPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOAPClient.m; path = JSONModel/JSONModelNetworking/SOAPClient.m; sourceTree = "<group>"; };
 		CD35AE9F18FAA0DC002E1882 /* WSGroupService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGroupService.h; sourceTree = "<group>"; };
@@ -529,6 +536,9 @@
 				CDC7BBBF1934973B005CD042 /* DarenHotTagCell.h */,
 				CDC7BBC01934973B005CD042 /* DarenHotTagCell.m */,
 				CDC7BBC11934973B005CD042 /* DarenHotTagCell.xib */,
+				CD1E1F781934A69F00B4357C /* DarenListCell.h */,
+				CD1E1F791934A69F00B4357C /* DarenListCell.m */,
+				CD1E1F7A1934A69F00B4357C /* DarenListCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -720,6 +730,7 @@
 		CDB021AB18ED9F30003B5A10 = {
 			isa = PBXGroup;
 			children = (
+				CD1E1F811934B10300B4357C /* avatar.jpg */,
 				CDB021BD18ED9F30003B5A10 /* ZHG */,
 				CDB021CF18ED9F30003B5A10 /* Images.xcassets */,
 				CDB021DC18ED9F30003B5A10 /* ZHGTests */,
@@ -988,6 +999,7 @@
 				CDD6FE8F190F9FAA00BDF78A /* cell_icon2.jpg in Resources */,
 				CD7B9D9A192F2A38003B7949 /* MoreVC.xib in Resources */,
 				CD7B9D90192F2A0C003B7949 /* MessageVC.xib in Resources */,
+				CD1E1F7C1934A69F00B4357C /* DarenListCell.xib in Resources */,
 				CDC7BBC31934973B005CD042 /* DarenHotTagCell.xib in Resources */,
 				CD71791F18FE16AF00B0F400 /* UserResetPasswordVC.xib in Resources */,
 				CD032C44191B79F1007F874D /* Template.xib in Resources */,
@@ -998,6 +1010,7 @@
 				CDD6FE7B190F6AD600BDF78A /* FoodShopDetailVC.xib in Resources */,
 				CDB021C218ED9F30003B5A10 /* InfoPlist.strings in Resources */,
 				CD3D9BCE19187FEC00DDF332 /* FoodCell.xib in Resources */,
+				CD1E1F821934B10300B4357C /* avatar.jpg in Resources */,
 				CD71791018FE15AD00B0F400 /* UserLoginVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1039,6 +1052,7 @@
 				CDE721681932D28A00B8B53A /* DarenNoteListVC.m in Sources */,
 				CDDBB3AF1918C501002E6C67 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				CDE5F82318F3E4B200335B45 /* JSONModel+CoreData.m in Sources */,
+				CD1E1F7B1934A69F00B4357C /* DarenListCell.m in Sources */,
 				CD3D9BCF19187FEC00DDF332 /* FoodCell.m in Sources */,
 				CD7B9D99192F2A38003B7949 /* MoreVC.m in Sources */,
 				CDC4DF3418FE69410025615A /* MBProgressHUD.m in Sources */,

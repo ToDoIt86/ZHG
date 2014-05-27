@@ -62,7 +62,11 @@
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar addSubview:self.logImageView];
     [self.navigationController.navigationBar addSubview:self.searchButton];
+    
+    // 进入达人后，导航栏会被隐藏，tabbar背景会被改变。这里改回来
     self.navigationController.navigationBarHidden = NO;
+    UIImage *image = [[UIImage imageNamed:@"tabbar"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+    [self.tabBarController.tabBar setBackgroundImage:image];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -40,6 +40,8 @@
     [super viewDidLoad];
    
     self.navigationController.navigationBarHidden = YES;
+    UIImage *image = [[UIImage imageNamed:@"darenNavBacgound"] resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
+    [self.tabBarController.tabBar setBackgroundImage:image];
     
     UINib *nib = [UINib nibWithNibName:@"DarenHotTagCell" bundle:nil];
     [self.hotTagTableView registerNib:nib forCellReuseIdentifier:@"DarenHotTagCell"];
